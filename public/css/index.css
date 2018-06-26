@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Latin Modern Mono";
+  src: url("../fonts/lmmonoprop10-regular.otf");
+  font-weight: 400;
+}
+
+@keyframes onOff {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes showHide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  font-family: "Latin Modern Mono";
+  color: white;
+  font-size: 16px;
+  background-color: #000;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/on.jpg);
+  background-position: top, top;
+  background-size: cover, contain;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  animation: onOff 3s infinite;
+}
+
+.title-box {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+[class^="title-"]:not(.title-box) {
+  display: block;
+}
+
+.title-main {
+  /* letter-spacing: 0.5em; */
+  animation: showHide 3s infinite;
+}
+
+.title-sub {
+  animation: showHide 3s infinite;
+  animation-direction: reverse;
+  animation-delay: 3s;
+}
