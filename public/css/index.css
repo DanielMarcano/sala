@@ -70,10 +70,11 @@ body {
 }
 
 .logo {
-  height: 10vh;
+  height: 18vh;
 }
 
 .title-sub {
+  font-size: 0.8em;
   animation: showHide 5s infinite;
 }
 
