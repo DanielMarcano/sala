@@ -5,9 +5,10 @@
 }
 
 @font-face {
-  font-family: "Latin Modern Mono";
-  src: url("../fonts/lmmonoprop10-regular.otf");
-  font-weight: 900;
+  font-family: 'sofiapro-light';
+  src: url('../fonts/sofiapro-light-webfont.woff2') format('woff2'), url('../fonts/sofiapro-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @keyframes onOff {
@@ -35,10 +36,13 @@
 }
 
 body {
-  font-family: "Latin Modern Mono";
+  font-family: "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
   color: white;
   font-size: 16px;
   background-color: #000;
+  min-width: 100vw;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .header {
@@ -49,11 +53,12 @@ body {
   background-size: cover, contain;
   background-repeat: no-repeat, no-repeat, no-repeat;
   animation: onOff 5s infinite;
+  max-width: 100vw;
 }
 
 .title-box {
   position: absolute;
-  top: 80%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -80%);
   text-align: center;
@@ -64,13 +69,30 @@ body {
   display: block;
 }
 
-.title-main {
-  /* letter-spacing: 0.5em; */
-  animation: showHide 5s infinite;
+.logo {
+  height: 10vh;
 }
 
 .title-sub {
-  /* animation: showHide 3s infinite;
-  animation-direction: reverse;
-  animation-delay: 3s; */
+  animation: showHide 5s infinite;
+}
+
+@media (max-width: 560px) {
+  .title-box {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    height: 15vh;
+  }
+  .title-box {
+    top: 95%;
+  }
 }
