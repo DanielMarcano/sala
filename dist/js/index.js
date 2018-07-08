@@ -1,0 +1,1 @@
+"use strict";window.onload=function(){var o=document.getElementsByTagName("body")[0];window.scrollTo({left:0,top:o.scrollHeight})};

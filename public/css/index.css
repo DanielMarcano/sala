@@ -9,7 +9,7 @@
 
 [class^="icon-"],
 [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
+  /* use !important to prevent issues with browser extensions that change font */
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -79,7 +79,7 @@
 
 body {
   font-family: "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
-  color: white;
+  color: #FFF;
   font-size: 16px;
   background-color: #000;
   min-width: 100vw;
@@ -93,6 +93,7 @@ h1 {
   margin-bottom: 0.8em;
   letter-spacing: 0.45em;
   animation: showHide 5s infinite;
+  pointer-events: none;
 }
 
 .address {
