@@ -11,7 +11,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const inject = require('gulp-inject');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
-const imageminPngQuant  = require ('imagemin-pngquant');
+const imageminPngQuant = require('imagemin-pngquant');
 
 gulp.task('optimize', () => {
   return gulp.src('public/img/*')
@@ -42,7 +42,7 @@ const fonts = () => {
 };
 
 const inline = () => {
-  return gulp.src('./public/***/*.html')
+  return gulp.src('./public/**/*.html')
     .pipe(inlinesource())
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.stream());
@@ -108,6 +108,8 @@ const watch = () => {
 
   // const cssWatcher = gulp.watch('./public/**/*.css', gulp.series(optimizeCSS, inline));
   // cssWatcher.on('change', watcherReporter);
+
+  const htmlWatcher = gulp.watch('./public/**/*.html', gulp.series(inline));
 
   const scssWatcher = gulp.watch('./public/**/*.scss', gulp.series(compileSass, optimizeCSS, inline));
   scssWatcher.on('change', watcherReporter);

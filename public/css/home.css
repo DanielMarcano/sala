@@ -80,27 +80,24 @@ body {
   font-size: 16px; }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   text-align: center;
   width: 100vw;
-  max-width: 100vw; }
-
-.social-links {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around; }
-
-a.social-link {
-  cursor: pointer;
-  text-decoration: none;
-  color: white; }
-
-a.social-link:visited {
-  color: white; }
-
-a[href^="mailto"]:visited {
-  color: white !important; }
+  max-width: 100vw;
+  display: block; }
+  .footer__links {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around; }
+  .footer__link {
+    cursor: pointer;
+    text-decoration: none;
+    color: white; }
+    .footer__link:visited {
+      color: white; }
+    .footer__link[href^="mailto"]:visited {
+      color: white !important; }
 
 h1 {
   text-align: center;
