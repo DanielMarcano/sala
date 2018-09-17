@@ -5,6 +5,7 @@
     width: 100vw;
     max-width: 100vw;
     display: block;
+    z-index: 1000;
 
     &__links {
       display: flex;
@@ -23,6 +24,16 @@
 
       &[href^="mailto"]:visited {
         color: white !important;
+      }
+
+      &--socio {
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        white-space: normal;
+        /* Give it a margin-right equal to the
+        letter-spacing, so that our text still
+        looks centered!*/
+        margin-right: -0.5rem; 
       }
 
     }

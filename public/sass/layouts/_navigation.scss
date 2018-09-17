@@ -1,0 +1,134 @@
+// *{
+//     border: 1px solid red;
+// }
+
+.navigation {
+    position: fixed;
+    width: inherit;
+    height: 4.5rem;
+    top: 0;
+    left: 0;
+    padding-top: 4.5rem;
+    z-index: 1000;
+    
+    &__checkbox {
+        display: none;
+    }
+
+    &__header {
+        position: absolute;
+        height: 4.5rem;
+        width: inherit;
+        top: 0;
+        left: 0;
+    }
+
+    &__button {
+        height: 3em;
+        width: 3rem;
+        position: absolute;
+        top: 1.15rem;
+        right: 2rem;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba(black, .1);
+        text-align: center;
+        transition: all .2s;
+        cursor: pointer;
+
+        @include remove_user_select();
+    }
+    &__button:hover+&__header>&__icon::before {
+        top: -1rem;
+    }
+    &__button:hover+&__header>&__icon::after {
+        top: 1rem;
+    }
+    &__checkbox:checked+&__header>&__button &__icon {
+        background-color: transparent;
+    }
+    &__checkbox:checked+&__header>&__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:checked+&__header>&__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+    &__main-link {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,45%);
+        height: 2.5rem;
+    }
+    &__logo {
+        height: inherit;
+    }
+    &__nav {
+        width: inherit;
+        display: flex;
+        text-align: center;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        position: absolute;
+        visibility: hidden;
+        height: 0;
+        background-color: #000;
+        height: 80vh;
+        opacity: 0;
+        transition: all .2s;
+    }
+    &__link {
+        display: list-item;
+        padding: 1.5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        color: inherit;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+        &:focus {
+            color: inherit;
+        }
+        &:visited {
+            color: inherit;
+        }
+    }
+    &__icon {
+        position: absolute;
+        top: 1.4rem; // this stays
+        left: .2rem;
+        pointer-events: none;
+        transition: all .2s;
+        &,
+        &::before,
+        &::after {
+            width: 2.5rem;
+            height: 3px;
+            background-color: white;
+            display: inline-block;
+            transition: all .2s;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+        &::before {
+            top: -.8rem;
+        }
+        &::after {
+            top: .8rem;
+        }
+    }
+
+    &__checkbox:checked~&__nav {
+        visibility: visible;
+        display: flex;
+        opacity: 1;
+    }
+}
