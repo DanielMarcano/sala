@@ -41,6 +41,8 @@ const fonts = () => {
     .pipe(gulp.dest('./dist/fonts'));
 };
 
+gulp.task('fonts', fonts);
+
 const inline = () => {
   return gulp.src('./public/**/*.html')
     .pipe(inlinesource())
@@ -79,6 +81,8 @@ const optimizeCSS = () => {
     .pipe(browserSync.stream());
 };
 
+gulp.task('optimize:css', optimizeCSS);
+
 // const defaultContent = (done) => {
 //   console.log('This is my default content');
 //   done();
@@ -110,6 +114,7 @@ const watch = () => {
   // cssWatcher.on('change', watcherReporter);
 
   const htmlWatcher = gulp.watch('./public/**/*.html', gulp.series(inline));
+  htmlWatcher.on('change', watcherReporter);
 
   const scssWatcher = gulp.watch('./public/**/*.scss', gulp.series(compileSass, optimizeCSS, inline));
   scssWatcher.on('change', watcherReporter);

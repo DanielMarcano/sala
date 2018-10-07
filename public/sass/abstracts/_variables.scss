@@ -1,0 +1,6 @@
+$navigation-height: 4.5rem;
+$footer-height: 3rem;
+
+$content-top-margin: $navigation-height;
+$content-size-diff: $navigation-height + $footer-height;
+$content-size: calc(100vh - #{$content-size-diff});

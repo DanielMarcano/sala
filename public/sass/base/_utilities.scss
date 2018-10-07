@@ -2,3 +2,13 @@
     animation: showHide 5s infinite;
     pointer-events: none;
 }
+
+.u-main-content {
+    height: $content-size !important;
+    max-height: $content-size !important;
+    margin-top: $content-top-margin !important;
+}
+
+.u-text-standout {
+    font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important;
+}
