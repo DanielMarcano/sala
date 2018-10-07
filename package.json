@@ -18,19 +18,23 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "imagemin-jpeg-recompress": "^5.1.0",
-    "imagemin-pngquant": "^6.0.0"
+    "imagemin-pngquant": "^6.0.0",
+    "ityped": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.52",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.24.5",
+    "browserify": "^16.2.3",
     "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "gulp": "4",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-babel": "^8.0.0",
     "gulp-cache": "^1.0.2",
     "gulp-clean-css": "^3.9.4",
     "gulp-cli": "^2.0.1",
@@ -47,6 +51,8 @@
     "gulp-smushit": "^1.2.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify-es": "^1.0.4",
-    "gulp-useref": "^3.1.5"
+    "gulp-useref": "^3.1.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

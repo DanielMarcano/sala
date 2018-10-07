@@ -6,6 +6,10 @@ const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync');
 const inlinesource = require('gulp-inline-source');
 const babel = require('gulp-babel');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const inject = require('gulp-inject');
@@ -89,14 +93,43 @@ gulp.task('optimize:css', optimizeCSS);
 // };
 
 const translateAndUglify = () => {
-  return gulp.src('./public/js/*.js')
-    .pipe(babel())
+  return gulp.src('./public/js/**/*.js')
+    .pipe(babel({
+      presets: ['@babel/env'],
+    }))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream());
 };
 
-gulp.task('uglify-js', translateAndUglify);
+const js = () => {
+  return browserify({
+    entries: ['./node_modules/ityped', './public/js/index.js'],
+  })
+    .transform(babelify)
+    .bundle()
+    .pipe(source('index.js')) // Readable Stream -> Stream Of Vinyl Files
+    .pipe(buffer()) // Vinyl Files -> Buffered Vinyl Files
+    // Pipe Gulp Plugins Here
+    // .pipe(babel({
+    //   presets: ['@babel/env'],
+    // }))
+    // .pipe(uglify())
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(browserSync.stream());
+};
+
+// gulp.task('scripts', () => {
+//   browserify(['myEntryPoint.js', 'myModule.js'])
+//   .transform(babelify)
+//   .bundle()
+//   .pipe(source('bundle.js')
+//   .pipe(gulp.dest('dist/scripts'))
+//   .pipe(buffer())     // You need this if you want to continue using the stream with other plugins
+// });
+
+
+gulp.task('compile:js', js);
 
 // const defaultTasks = gulp.series(gulp.parallel('uglify-js'), defaultContent);
 
@@ -107,7 +140,7 @@ const watcherReporter = (path, stats) => {
 };
 
 const watch = () => {
-  const jsWatcher = gulp.watch('./public/**/*.js', gulp.series(translateAndUglify, inline));
+  const jsWatcher = gulp.watch('./public/**/*.js', gulp.series(js, inline));
   jsWatcher.on('change', watcherReporter);
 
   // const cssWatcher = gulp.watch('./public/**/*.css', gulp.series(optimizeCSS, inline));
@@ -147,4 +180,4 @@ const injectIndex = (done) => {
 
 gulp.task('injectIndex', injectIndex);
 
-gulp.task('default', gulp.series(compileSass, optimizeCSS, translateAndUglify, inline, fonts, startBrowserSync, watch));
+gulp.task('default', gulp.series(compileSass, optimizeCSS, js, inline, fonts, startBrowserSync, watch));
