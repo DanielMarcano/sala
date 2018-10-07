@@ -10,6 +10,7 @@
     left: 0;
     padding-top: 4.5rem;
     z-index: 1000;
+    background: black;
     
     &__checkbox {
         display: none;
@@ -79,6 +80,7 @@
         transition: all .2s;
         height: $content-size !important;
         max-height: $content-size !important;
+        overflow-y: scroll;
     }
     &__link {
         display: list-item;
@@ -132,6 +134,11 @@
     &__checkbox:checked~&__nav {
         visibility: visible;
         display: flex;
+        z-index: 2000;
         opacity: 1;
+    }
+
+    &__checkbox:checked:root {
+        pointer-events: none;
     }
 }

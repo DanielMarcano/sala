@@ -13,7 +13,7 @@ const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngQuant = require('imagemin-pngquant');
 
-gulp.task('optimize', () => {
+gulp.task('optimize:img', () => {
   return gulp.src('public/img/*')
     .pipe(imagemin([
       imagemin.gifsicle(),
@@ -44,7 +44,7 @@ const fonts = () => {
 gulp.task('fonts', fonts);
 
 const inline = () => {
-  return gulp.src('./public/**/*.html')
+  return gulp.src('./public/**/*.+(html|ejs)')
     .pipe(inlinesource())
     .pipe(gulp.dest('./dist'))
     .pipe(browserSync.stream());
@@ -113,7 +113,7 @@ const watch = () => {
   // const cssWatcher = gulp.watch('./public/**/*.css', gulp.series(optimizeCSS, inline));
   // cssWatcher.on('change', watcherReporter);
 
-  const htmlWatcher = gulp.watch('./public/**/*.html', gulp.series(inline));
+  const htmlWatcher = gulp.watch('./public/**/*.+(html|ejs)', gulp.series(inline));
   htmlWatcher.on('change', watcherReporter);
 
   const scssWatcher = gulp.watch('./public/**/*.scss', gulp.series(compileSass, optimizeCSS, inline));
