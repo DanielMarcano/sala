@@ -246,6 +246,55 @@ body {
   .navigation__checkbox:checked:root {
     pointer-events: none; }
 
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  margin-top: 4.5rem; }
+  .row:not(:last-child) {
+    margin-bottom: 1rem; }
+  .row:after, .row:before {
+    content: "";
+    display: table; }
+  .row:after {
+    content: "";
+    clear: both; }
+  .row [class^="col"] {
+    position: relative;
+    float: left; }
+  .row [class^="col"] + [class^="col"] {
+    margin-left: 6rem; }
+  .row .col-1 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 1) + (6rem * (1 - 1))); }
+  .row .col-2 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 2) + (6rem * (2 - 1))); }
+  .row .col-3 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 3) + (6rem * (3 - 1))); }
+  .row .col-4 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 4) + (6rem * (4 - 1))); }
+  .row .col-5 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 5) + (6rem * (5 - 1))); }
+  .row .col-6 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 6) + (6rem * (6 - 1))); }
+  .row .col-7 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 7) + (6rem * (7 - 1))); }
+  .row .col-8 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 8) + (6rem * (8 - 1))); }
+  .row .col-9 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 9) + (6rem * (9 - 1))); }
+  .row .col-10 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 10) + (6rem * (10 - 1))); }
+  .row .col-11 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 11) + (6rem * (11 - 1))); }
+  .row .col-12 {
+    width: calc((calc((100% - (6rem * (12 - 1))) / 12) * 12) + (6rem * (12 - 1))); }
+
+@media screen and (max-width: 550px) {
+  .row [class^="col"] {
+    width: auto;
+    float: none; }
+  .col + .col {
+    margin-left: 0; } }
+
 h1 {
   text-align: center;
   font-size: 0.8em;
@@ -273,10 +322,10 @@ h1 {
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%) scale(2);
-    margin-left: -.5rem;
+    margin-right: 1.5rem;
     text-transform: uppercase;
-    font-size: 100%;
+    font-size: 80%;
     word-wrap: nowrap;
     line-height: 1.5rem;
     text-align: left;
-    max-width: 7rem; }
+    max-width: 5rem; }

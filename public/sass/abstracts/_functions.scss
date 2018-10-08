@@ -1,0 +1,7 @@
+@function single_column_width() {
+    @return calc((100% - (#{$gutter-horizontal} * (12 - 1))) / 12);
+}
+
+@function numbered_column_width($number) {
+    @return calc((#{single_column_width()} * #{$number}) + (#{$gutter-horizontal} * (#{$number} - 1)));
+}

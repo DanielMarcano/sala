@@ -4,3 +4,11 @@ $footer-height: 3rem;
 $content-top-margin: $navigation-height;
 $content-size-diff: $navigation-height + $footer-height;
 $content-size: calc(100vh - #{$content-size-diff});
+
+// Grid
+
+$grid-width: 114rem;
+$first-row-margin: $content-top-margin;
+$gutter-vertical: 1rem;
+$gutter-horizontal: 6rem;
+$margin-left: 1.6%;

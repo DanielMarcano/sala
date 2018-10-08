@@ -1,23 +1,19 @@
 const gulp = require('gulp');
-// const rename = require('gulp-rename');
-// const sass = require('gulp-sass');
 const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync');
 const inlinesource = require('gulp-inline-source');
-const babel = require('gulp-babel');
 const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const inject = require('gulp-inject');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngQuant = require('imagemin-pngquant');
 
-gulp.task('optimize:img', () => {
+const optimizeImages = () => {
   return gulp.src('public/img/*')
     .pipe(imagemin([
       imagemin.gifsicle(),
@@ -32,13 +28,9 @@ gulp.task('optimize:img', () => {
     ]))
 
     .pipe(gulp.dest('dist/img'));
-});
+};
 
-// const images = () => {
-//   return gulp.src('./public/img/*')
-//     .pipe(imagemin())
-//     .pipe(gulp.dest('./dist/img'));
-// };
+gulp.task('optimize:img', optimizeImages);
 
 const fonts = () => {
   return gulp.src('./public/fonts/**/*')
@@ -62,6 +54,8 @@ const startBrowserSync = (done) => {
   });
   done();
 };
+
+gulp.task('start:server', startBrowserSync);
 
 const compileSass = () => {
   return gulp.src('./public/sass/pages/*.scss')
@@ -87,53 +81,20 @@ const optimizeCSS = () => {
 
 gulp.task('optimize:css', optimizeCSS);
 
-// const defaultContent = (done) => {
-//   console.log('This is my default content');
-//   done();
-// };
-
-const translateAndUglify = () => {
-  return gulp.src('./public/js/**/*.js')
-    .pipe(babel({
-      presets: ['@babel/env'],
-    }))
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'))
-    .pipe(browserSync.stream());
-};
-
 const js = () => {
   return browserify({
-    entries: ['./node_modules/ityped', './public/js/index.js'],
+    entries: ['./public/js/index.js'],
   })
     .transform(babelify)
     .bundle()
     .pipe(source('index.js')) // Readable Stream -> Stream Of Vinyl Files
     .pipe(buffer()) // Vinyl Files -> Buffered Vinyl Files
-    // Pipe Gulp Plugins Here
-    // .pipe(babel({
-    //   presets: ['@babel/env'],
-    // }))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream());
 };
 
-// gulp.task('scripts', () => {
-//   browserify(['myEntryPoint.js', 'myModule.js'])
-//   .transform(babelify)
-//   .bundle()
-//   .pipe(source('bundle.js')
-//   .pipe(gulp.dest('dist/scripts'))
-//   .pipe(buffer())     // You need this if you want to continue using the stream with other plugins
-// });
-
-
 gulp.task('compile:js', js);
-
-// const defaultTasks = gulp.series(gulp.parallel('uglify-js'), defaultContent);
-
-// module.exports = { default: defaultTasks };
 
 const watcherReporter = (path, stats) => {
   console.log(`File ${path} was changed`);
@@ -143,9 +104,6 @@ const watch = () => {
   const jsWatcher = gulp.watch('./public/**/*.js', gulp.series(js, inline));
   jsWatcher.on('change', watcherReporter);
 
-  // const cssWatcher = gulp.watch('./public/**/*.css', gulp.series(optimizeCSS, inline));
-  // cssWatcher.on('change', watcherReporter);
-
   const htmlWatcher = gulp.watch('./public/**/*.+(html|ejs)', gulp.series(inline));
   htmlWatcher.on('change', watcherReporter);
 
@@ -154,30 +112,5 @@ const watch = () => {
 };
 
 gulp.task('watch', watch);
-
-const injectIndex = (done) => {
-  const target = gulp.src('./public/index.html');
-  // It's not necessary to read the files (will speed up things), we're only after their paths:
-  const sources = gulp.src(['./public/**/*.css'], {
-    read: false,
-  });
-
-  // gulp.src('./public/index.html')
-  //   .pipe(inject(gulp.src(['./public/**/*.js'], ['./public/**/*.css']), {
-  //     starttag: '<!-- inject:{{path}} -->',
-  //     relative: true,
-  //     transform: (filePath, file) => {
-  //       // return file contents as string
-  //       return file.contents.toString('utf8');
-  //     },
-  //   }))
-  //   .pipe(gulp.dest('./dist'));
-  // done();
-
-  return target.pipe(inject(sources))
-    .pipe(gulp.dest('./dist'));
-};
-
-gulp.task('injectIndex', injectIndex);
 
 gulp.task('default', gulp.series(compileSass, optimizeCSS, js, inline, fonts, startBrowserSync, watch));

@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
   res.status(200).render('index');
 });
 
+app.get('/contacto', (req, res) => {
+  res.status(200).render('html/contacto');
+});
+
 app.use((req, res, next) => {
   return res.status(404).render('html/error');
 });
