@@ -21,3 +21,52 @@
       opacity: 0;
     }
   }
+
+  @keyframes changeName {
+    25% {
+      transform: translateX(-200%);
+    }
+    50% {
+      opacity: 0;
+    }
+    75% {
+      transform: translateX(120%);
+      background-color: black;
+  
+    }
+    100% {
+      content: "Ahora";
+      transform: translateX(0);
+      background-color: white;
+      text-align: center;
+      color: black;
+    }
+  }
+  
+  @keyframes reverseChangeName {
+    
+    0% {
+      content: "ahora";
+      transform: translateX(0);
+      text-align: center;
+      background-color: white;
+      color: black;
+    }
+    
+    25% {
+          transform: translateX(200%);
+    }
+    
+    50% {
+      background-color: black;
+      opacity: 0;
+    }
+    
+    75% {
+     transform: translateX(-140%);
+    }
+    
+    100% {
+      transform: translateX(0);
+    }
+  }

@@ -1,1 +1,20 @@
 @import "../main";
+
+.contact {
+    position: relative;
+    display: inline-block;
+    height: 70%;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    border-radius: .2rem;
+
+    &__address {
+        position: relative;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

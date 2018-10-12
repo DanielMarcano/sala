@@ -16,21 +16,27 @@
     <link rel="stylesheet" href="../css/contacto.css" inline>
 </head>
 
-<body>
+<body class="u-preload">
     <%- include('../templates/navigation'); %>
-    <div class="row">
-        <div class="col-6">
-            <section class="error">
-                <h2 class="error__code u-text-standout u-blink">404</h2>
-                <div class="error__message-box">
-                    <h2 class="error__message">Ups... Sobrepasaste los límites de la</h2>
-                    <a href="http://www.salaonbcn.com" class="error__link">
-                        <img src="img/logo_white.png" alt="Logo" title="Logo" class="error__logo">
-                    </a>
+    <main class="main u-main-content">
+        <div class="contact">
+            <article class="contact__phone">
+
+            </article>
+            <section class="contact__address">
+                <div class="row">
+                        +34 93 525 2289
+                        @salaonbcn 
+                        Carrer Nàpols, 305
+                        salaonbcn@gmail.com
+                    <div class="col-12">
+                        <a href="https://www.google.com/maps/dir/?api=1&origin=Sagrada%20Familia&origin_place_id=ChIJk_s92NyipBIRUMnDG8Kq2Js&destination=Sala%20On%20Barcelona&destination_place_id=ChIJ4dC_ZV-jpBIRV_8BIsejxjk&travelmode=walking"
+                            class="link">Ven a Sala Ón</a>
+                    </div>
                 </div>
             </section>
         </div>
-    </div>
+    </main>
     <%- include('../templates/footer'); %>
 </body>
 

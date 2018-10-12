@@ -20,3 +20,16 @@
 .u-text-standout {
     font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important;
 }
+
+.u-row-height {
+    height: inherit !important;
+}
+
+.u-top-margin-row {
+    margin-top: $first-row-margin;
+}
+
+.u-preload {
+    animation-duration: 0s !important;
+    transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
