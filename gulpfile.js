@@ -4,6 +4,9 @@ const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync');
 const inlinesource = require('gulp-inline-source');
 const browserify = require('browserify');
+const rename = require('gulp-rename');
+const glob = require('glob');
+const es = require('event-stream');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -81,17 +84,26 @@ const optimizeCSS = () => {
 
 gulp.task('optimize:css', optimizeCSS);
 
-const js = () => {
-  return browserify({
-    entries: ['./public/js/index.js'],
-  })
-    .transform(babelify)
-    .bundle()
-    .pipe(source('index.js')) // Readable Stream -> Stream Of Vinyl Files
-    .pipe(buffer()) // Vinyl Files -> Buffered Vinyl Files
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'))
-    .pipe(browserSync.stream());
+const js = (done) => {
+  glob('./public/js/*.js', (err, files) => {
+    const tasks = files.map((entry) => {
+      console.log(entry);
+      return browserify({ entries: [entry] })
+        .transform(babelify)
+        .bundle()
+        .pipe(source(entry))
+        .pipe(rename({
+          dirname: '',
+          extname: '.bundle.js',
+        }))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(browserSync.stream());
+    });
+
+    es.merge(tasks).on('end', done);
+  });
 };
 
 gulp.task('compile:js', js);

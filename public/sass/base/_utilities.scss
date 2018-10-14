@@ -30,6 +30,30 @@
 }
 
 .u-preload {
-    animation-duration: 0s !important;
-    transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+    & *, & *::after, & *::before {
+        -webkit-animation-duration: 0s !important;
+        animation-duration: 0s !important;
+        transition: all 0s;
+    }
 }
+
+.u-margin-bottom-small {
+    margin-bottom: 1rem !important;
+}
+
+.u-margin-bottom-normal {
+    margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-medium {
+    margin-bottom: 3rem !important;
+}
+
+.u-margin-bottom-big {
+    margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-extra-big {
+    margin-bottom: 5rem !important;
+}
+

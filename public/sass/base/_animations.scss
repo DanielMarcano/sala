@@ -24,19 +24,19 @@
 
   @keyframes changeName {
     25% {
-      transform: translateX(-200%);
+      transform: translateX(-200%) translateY(-50%);
     }
     50% {
       opacity: 0;
     }
     75% {
-      transform: translateX(120%);
+      transform: translateX(120%) translateY(-50%);
       background-color: black;
   
     }
     100% {
       content: "Ahora";
-      transform: translateX(0);
+      transform: translateX(-50%) translateY(-50%);
       background-color: white;
       text-align: center;
       color: black;
@@ -47,14 +47,14 @@
     
     0% {
       content: "ahora";
-      transform: translateX(0);
+      transform: translateX(-50%) translateY(-50%);
       text-align: center;
       background-color: white;
       color: black;
     }
     
     25% {
-          transform: translateX(200%);
+          transform: translateX(200%) translateY(-50%);
     }
     
     50% {
@@ -63,10 +63,10 @@
     }
     
     75% {
-     transform: translateX(-140%);
+     transform: translateX(-140%) translateY(-50%);
     }
     
     100% {
-      transform: translateX(0);
+      transform: translateX(-50%) translateY(-50%);
     }
   }

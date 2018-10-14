@@ -1,34 +1,33 @@
 .link {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     color: transparent;
+
+    font-size: 1rem;
+    text-align: center;
     background-color: black;
-    left: 50%;
-    top: 50%;
     text-decoration: none;
     border: 1px solid white;
-    padding: 1rem 6rem;
+    // To increase height, increase padding-top
+    // of this element and its pseudo-elements
+    padding: 1rem 3rem;
     border-radius: .2rem;
     letter-spacing: .5rem;
     overflow: hidden;
-    transform: translate(-50%, -50%);
-    
+
     &::after {
       content: "Ven a Sala Ón";
       color: white;
-      border-radius: .1rem;
       position: absolute;
-      display: inline-block;
-      width: 100%;
-      height: 100%;
+      width: 101%;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    padding: 1.1rem 0;
       text-align: center;
-      line-height: 3rem;
-      left: 0;
-      top: 0;
       transition: all .2s;
-      animation: reverseChangeName .2s ease-out;
-      transform: translateX(0);
-      pointer-events: none;
-  
+      animation: reverseChangeName ease-out;
+      animation-duration: .2s;
     }
     
     &:link, &:visited {
@@ -37,7 +36,8 @@
     
     &:hover {
       &::after {
-        animation: .2s changeName forwards ease-out;
+        animation: changeName forwards ease-out;
+        animation-duration: .2s;
       }
     }
 

@@ -2,19 +2,39 @@
 
 .contact {
     position: relative;
-    display: inline-block;
-    height: 70%;
-    width: 70%;
+    height: 100%;
+    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid white;
-    border-radius: .2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+
+    &__brief {
+     text-align: center;
+    }
+
+    &__title {
+        font-weight: 300;
+        letter-spacing: .5rem;
+    }
+
+    &__phone {
+
+        // background-color: red;
+    }
+
+    &__email {
+        // background-color: blue;
+    }
 
     &__address {
-        position: relative;
-        bottom: 0%;
-        left: 50%;
-        transform: translateX(-50%);
+        // background-color: yellow;
     }
+
 }

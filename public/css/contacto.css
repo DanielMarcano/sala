@@ -34,15 +34,15 @@ body {
 
 @keyframes changeName {
   25% {
-    transform: translateX(-200%); }
+    transform: translateX(-200%) translateY(-50%); }
   50% {
     opacity: 0; }
   75% {
-    transform: translateX(120%);
+    transform: translateX(120%) translateY(-50%);
     background-color: black; }
   100% {
     content: "Ahora";
-    transform: translateX(0);
+    transform: translateX(-50%) translateY(-50%);
     background-color: white;
     text-align: center;
     color: black; } }
@@ -50,48 +50,19 @@ body {
 @keyframes reverseChangeName {
   0% {
     content: "ahora";
-    transform: translateX(0);
+    transform: translateX(-50%) translateY(-50%);
     text-align: center;
     background-color: white;
     color: black; }
   25% {
-    transform: translateX(200%); }
+    transform: translateX(200%) translateY(-50%); }
   50% {
     background-color: black;
     opacity: 0; }
   75% {
-    transform: translateX(-140%); }
+    transform: translateX(-140%) translateY(-50%); }
   100% {
-    transform: translateX(0); } }
-
-.u-blink {
-  animation: showHide 5s infinite;
-  pointer-events: none; }
-
-.u-blink-reverse {
-  animation: showHide 6s 2.5s infinite;
-  pointer-events: none;
-  animation-fill-mode: backwards; }
-
-.u-main-content {
-  height: calc(100vh - 7.5rem) !important;
-  max-height: calc(100vh - 7.5rem) !important;
-  margin-top: 4.5rem !important;
-  margin-bottom: 3rem !important;
-  z-index: 0; }
-
-.u-text-standout {
-  font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important; }
-
-.u-row-height {
-  height: inherit !important; }
-
-.u-top-margin-row {
-  margin-top: 4.5rem; }
-
-.u-preload {
-  animation-duration: 0s !important;
-  transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important; }
+    transform: translateX(-50%) translateY(-50%); } }
 
 /** Beginning of icomoon **/
 @font-face {
@@ -143,39 +114,82 @@ body {
   font-weight: normal;
   font-style: normal; }
 
+.u-blink {
+  animation: showHide 5s infinite;
+  pointer-events: none; }
+
+.u-blink-reverse {
+  animation: showHide 6s 2.5s infinite;
+  pointer-events: none;
+  animation-fill-mode: backwards; }
+
+.u-main-content {
+  height: calc(100vh - 7.5rem) !important;
+  max-height: calc(100vh - 7.5rem) !important;
+  margin-top: 4.5rem !important;
+  margin-bottom: 3rem !important;
+  z-index: 0; }
+
+.u-text-standout {
+  font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important; }
+
+.u-row-height {
+  height: inherit !important; }
+
+.u-top-margin-row {
+  margin-top: 4.5rem; }
+
+.u-preload *, .u-preload *::after, .u-preload *::before {
+  -webkit-animation-duration: 0s !important;
+  animation-duration: 0s !important;
+  transition: all 0s; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1rem !important; }
+
+.u-margin-bottom-normal {
+  margin-bottom: 2rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 3rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-extra-big {
+  margin-bottom: 5rem !important; }
+
 .link {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   color: transparent;
+  font-size: 1rem;
+  text-align: center;
   background-color: black;
-  left: 50%;
-  top: 50%;
   text-decoration: none;
   border: 1px solid white;
-  padding: 1rem 6rem;
+  padding: 1rem 3rem;
   border-radius: .2rem;
   letter-spacing: .5rem;
-  overflow: hidden;
-  transform: translate(-50%, -50%); }
+  overflow: hidden; }
   .link::after {
     content: "Ven a Sala Ón";
     color: white;
-    border-radius: .1rem;
     position: absolute;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 1.1rem 0;
     text-align: center;
-    line-height: 3rem;
-    left: 0;
-    top: 0;
     transition: all .2s;
-    animation: reverseChangeName .2s ease-out;
-    transform: translateX(0);
-    pointer-events: none; }
+    animation: reverseChangeName ease-out;
+    animation-duration: .2s; }
   .link:link, .link:visited {
     text-transform: uppercase; }
   .link:hover::after {
-    animation: .2s changeName forwards ease-out; }
+    animation: changeName forwards ease-out;
+    animation-duration: .2s; }
   @media screen and (max-width: 959px) {
     .link::after, .link:hover::after {
       -webkit-animation: none;
@@ -379,16 +393,20 @@ body {
 
 .contact {
   position: relative;
-  display: inline-block;
-  height: 70%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid white;
-  border-radius: .2rem; }
-  .contact__address {
-    position: relative;
-    bottom: 0%;
-    left: 50%;
-    transform: translateX(-50%); }
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-size: 1.3rem;
+  letter-spacing: .2rem; }
+  .contact__brief {
+    text-align: center; }
+  .contact__title {
+    font-weight: 300;
+    letter-spacing: .5rem; }
