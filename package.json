@@ -6,7 +6,7 @@
   "repository": "https://github.com/DanielMarcano/salaonbcn.git",
   "author": "Daniel Marcano",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/app.js",
     "nodemon": "nodemon server.js -e \"css, js, html\""
   },
   "engines": {
