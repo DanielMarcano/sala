@@ -38,6 +38,11 @@
 
         @include remove_user_select();
     }
+
+    &__button:focus {
+        outline: none;
+    }
+
     &__button:hover+&__header>&__icon::before {
         top: -1rem;
     }

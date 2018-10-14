@@ -18,7 +18,7 @@
     }
   
     [class^="col"] {
-      position: relative;
+      // position: relative;
       float: left;
     }
   
@@ -70,8 +70,8 @@
       float: none;
     }
   
-    .col + .col {
-      margin-left: 0;
+    .row [class^="col"] + [class^="col"] {
+      margin-left: 0 !important;
     }
   }
   

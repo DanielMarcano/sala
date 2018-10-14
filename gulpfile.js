@@ -125,4 +125,4 @@ const watch = () => {
 
 gulp.task('watch', watch);
 
-gulp.task('default', gulp.series(compileSass, optimizeCSS, js, inline, fonts, startBrowserSync, watch));
+gulp.task('default', gulp.series(optimizeImages, compileSass, optimizeCSS, js, inline, fonts, startBrowserSync, watch));

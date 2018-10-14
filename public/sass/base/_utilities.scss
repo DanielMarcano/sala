@@ -17,6 +17,11 @@
     z-index: 0;
 }
 
+.u-content-margin {
+    margin-top: $content-top-margin !important;
+    margin-bottom: $footer-height !important;
+}
+
 .u-text-standout {
     font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important;
 }
@@ -57,3 +62,42 @@
     margin-bottom: 5rem !important;
 }
 
+.u-margin-top-small {
+    margin-top: 1rem !important;
+}
+
+.u-margin-top-normal {
+    margin-top: 2rem !important;
+}
+
+.u-margin-top-medium {
+    margin-top: 3rem !important;
+}
+
+.u-margin-top-big {
+    margin-top: 4rem !important;
+}
+
+.u-margin-top-extra-big {
+    margin-top: 5rem !important;
+}
+
+.u-padding-top-small {
+    padding-top: 1rem !important;
+}
+
+.u-padding-top-normal {
+    padding-top: 2rem !important;
+}
+
+.u-padding-top-medium {
+    padding-top: 3rem !important;
+}
+
+.u-padding-top-big {
+    padding-top: 4rem !important;
+}
+
+.u-padding-top-extra-big {
+    padding-top: 5rem !important;
+}

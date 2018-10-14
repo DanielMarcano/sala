@@ -130,6 +130,10 @@ body {
   margin-bottom: 3rem !important;
   z-index: 0; }
 
+.u-content-margin {
+  margin-top: 4.5rem !important;
+  margin-bottom: 3rem !important; }
+
 .u-text-standout {
   font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important; }
 
@@ -158,6 +162,36 @@ body {
 
 .u-margin-bottom-extra-big {
   margin-bottom: 5rem !important; }
+
+.u-margin-top-small {
+  margin-top: 1rem !important; }
+
+.u-margin-top-normal {
+  margin-top: 2rem !important; }
+
+.u-margin-top-medium {
+  margin-top: 3rem !important; }
+
+.u-margin-top-big {
+  margin-top: 4rem !important; }
+
+.u-margin-top-extra-big {
+  margin-top: 5rem !important; }
+
+.u-padding-top-small {
+  padding-top: 1rem !important; }
+
+.u-padding-top-normal {
+  padding-top: 2rem !important; }
+
+.u-padding-top-medium {
+  padding-top: 3rem !important; }
+
+.u-padding-top-big {
+  padding-top: 4rem !important; }
+
+.u-padding-top-extra-big {
+  padding-top: 5rem !important; }
 
 .link {
   position: relative;
@@ -264,6 +298,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; }
+  .navigation__button:focus {
+    outline: none; }
   .navigation__button:hover + .navigation__header > .navigation__icon::before {
     top: -1rem; }
   .navigation__button:hover + .navigation__header > .navigation__icon::after {
@@ -355,7 +391,6 @@ body {
     content: "";
     clear: both; }
   .row [class^="col"] {
-    position: relative;
     float: left; }
   .row [class^="col"] + [class^="col"] {
     margin-left: 6rem; }
@@ -388,8 +423,8 @@ body {
   .row [class^="col"] {
     width: auto;
     float: none; }
-  .col + .col {
-    margin-left: 0; } }
+  .row [class^="col"] + [class^="col"] {
+    margin-left: 0 !important; } }
 
 .contact {
   position: relative;
@@ -403,10 +438,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: left;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: .2rem; }
   .contact__brief {
     text-align: center; }
   .contact__title {
     font-weight: 300;
-    letter-spacing: .5rem; }
+    letter-spacing: .5rem;
+    margin-top: 0;
+    text-transform: uppercase; }

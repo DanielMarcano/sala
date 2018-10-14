@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     text-align: left;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     letter-spacing: .2rem;
 
     &__brief {
@@ -22,6 +22,8 @@
     &__title {
         font-weight: 300;
         letter-spacing: .5rem;
+        margin-top: 0;
+        text-transform: uppercase;
     }
 
     &__phone {
