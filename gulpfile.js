@@ -85,7 +85,7 @@ const optimizeCSS = () => {
 gulp.task('optimize:css', optimizeCSS);
 
 const js = (done) => {
-  glob('./public/js/*.js', (err, files) => {
+  glob('./public/js/!(*.bundle).js', (err, files) => {
     const tasks = files.map((entry) => {
       return browserify({ entries: [entry] })
         .transform(babelify.configure({ presets: ['@babel/preset-env'] }))
@@ -112,7 +112,7 @@ const watcherReporter = (path, stats) => {
 gulp.task('compile:js', js);
 
 const watch = () => {
-  const jsWatcher = gulp.watch('./public/**/*.js', gulp.series(js, inline));
+  const jsWatcher = gulp.watch('./public/js/!(*.bundle).js', gulp.series(js, inline));
   jsWatcher.on('change', watcherReporter);
 
   const htmlWatcher = gulp.watch('./public/**/*.+(html|ejs)', gulp.series(inline));

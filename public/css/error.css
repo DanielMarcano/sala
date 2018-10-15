@@ -433,28 +433,26 @@ body {
   max-width: 100vw;
   max-height: 100vh; }
   .error__code {
+    display: block;
     font-size: 10rem;
-    font-weight: 100; }
-    .error__code::after {
-      content: ':(';
-      color: yellow;
-      position: absolute;
-      top: 35%;
-      left: 49%;
-      transform: rotate(90deg);
-      font-size: 1rem; }
+    font-weight: 100;
+    min-height: 14rem;
+    height: 20%; }
   .error__message-box {
     position: absolute;
     top: 50%;
     left: 50%;
+    min-width: 90%;
     transform: translate(-50%, -50%);
     mix-blend-mode: screen;
     text-align: center;
     text-transform: uppercase; }
   .error__message {
-    width: 100%;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
     padding: 0 .2rem;
-    background-color: yellow;
+    background-color: white;
     color: black; }
   .error__logo {
     display: inline-block;
