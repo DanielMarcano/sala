@@ -498,17 +498,32 @@ body {
     text-align: center;
     font-weight: 300;
     letter-spacing: .5rem;
-    margin-top: 0;
+    text-indent: .5rem;
     text-transform: uppercase;
     font-size: 1.3rem;
     margin-top: 2rem;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    pointer-events: none;
+    transition: all .3s;
+    text-align: center; }
+  .about__creator-link {
+    display: inline-block;
+    overflow: hidden; }
+    @media screen and (min-width: 959px) {
+      .about__creator-link:hover > .about__creator-image {
+        transform: scale(1.1);
+        filter: grayscale(100%); }
+      .about__creator-link:hover + .about__creator-name {
+        background-color: black;
+        color: white; } }
   .about__creator-image {
     display: block;
     margin: 0 auto;
     height: 270px;
     width: 250px;
-    border-radius: .2rem; }
+    border-radius: .2rem;
+    transition: all .3s;
+    perspective: 700px; }
     @media screen and (orientation: landscape) and (max-height: 500px) and (max-width: 900px) {
       .about__creator-image {
         height: 200px;
