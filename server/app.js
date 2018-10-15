@@ -19,6 +19,7 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.json());
+app.use(express.static(`${distPath}/html`));
 app.use(express.static(distPath));
 
 app.use(router);

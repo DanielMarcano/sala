@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'icomoon';
-    src: url('../fonts/icomoon.woff?e2onl6') format('woff');
+    src: url('/fonts/icomoon.woff?e2onl6') format('woff');
     font-weight: normal;
     font-style: normal;
   }
@@ -42,7 +42,8 @@
 
   @font-face {
     font-family: 'sofiapro-light';
-    src: url('../fonts/sofiapro-light-webfont.woff2') format('woff2'), url('../fonts/sofiapro-light-webfont.woff') format('woff');
+    src: url('/fonts/sofiapro-light-webfont.woff2') format('woff2'), 
+         url('/fonts/sofiapro-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
@@ -54,8 +55,8 @@
 
   @font-face {
     font-family: 'lobster-tworegular';
-    src: url('../fonts/lobstertwo-regular-webfont.woff2') format('woff2'),
-         url('../fonts/lobstertwo-regular-webfont.woff') format('woff');
+    src: url('/fonts/lobstertwo-regular-webfont.woff2') format('woff2'),
+         url('/fonts/lobstertwo-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

@@ -87,9 +87,8 @@ gulp.task('optimize:css', optimizeCSS);
 const js = (done) => {
   glob('./public/js/*.js', (err, files) => {
     const tasks = files.map((entry) => {
-      console.log(entry);
       return browserify({ entries: [entry] })
-        .transform(babelify)
+        .transform(babelify.configure({ presets: ['@babel/preset-env'] }))
         .bundle()
         .pipe(source(entry))
         .pipe(rename({
@@ -98,7 +97,7 @@ const js = (done) => {
         }))
         .pipe(buffer())
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'))
+        .pipe(gulp.dest('./public/js'))
         .pipe(browserSync.stream());
     });
 
@@ -106,11 +105,11 @@ const js = (done) => {
   });
 };
 
-gulp.task('compile:js', js);
-
 const watcherReporter = (path, stats) => {
   console.log(`File ${path} was changed`);
 };
+
+gulp.task('compile:js', js);
 
 const watch = () => {
   const jsWatcher = gulp.watch('./public/**/*.js', gulp.series(js, inline));
