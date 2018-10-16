@@ -1,18 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include('../templates/meta'); %>
     <title>Sala On - Contáctanos</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#000000">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="../css/contacto.css" inline>
 </head>
 
@@ -20,7 +11,7 @@
 
 <body class="u-preload">
     <%- include('../templates/navigation'); %>
-    <main class="main u-main-content">
+    <main class="main u-content-margin u-viewport-height">
         <div class="contact">
             <div class="row">
                 <div class="col-12">
@@ -35,7 +26,7 @@
             </div>
             <div class="row u-margin-bottom-normal">
                     <div class="col-12">
-                            <span class="contact__phone">+34 935 25 22 89</span>
+                            <a class="contact__phone" href="tel:+34935252289" rel="nofollow">935 25 22 89</a>
                     </div>
             </div>
             <div class="row u-margin-bottom-big">
@@ -46,7 +37,7 @@
             <div class="row">
                 <div class="col-12">
                         <a href="https://www.google.com/maps/dir/?api=1&origin=Sagrada%20Familia&origin_place_id=ChIJk_s92NyipBIRUMnDG8Kq2Js&destination=Sala%20On%20Barcelona&destination_place_id=ChIJ4dC_ZV-jpBIRV_8BIsejxjk&travelmode=walking"
-                        class="link">Ven a Sala Ón</a>
+                        class="link link--contact">Ven a Sala Ón</a>
                 </div>
             </div>
         </div>

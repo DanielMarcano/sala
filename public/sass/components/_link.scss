@@ -15,8 +15,21 @@
     letter-spacing: .5rem;
     overflow: hidden;
 
+    &--contact {
+      &::after {
+        content: "Ven a Sala Ón";
+      }
+    }
+
+    &--event {
+      border-radius: 0 !important;
+
+      &::after {
+        content: "Comprar";
+      }
+    }
+
     &::after {
-      content: "Ven a Sala Ón";
       color: white;
       position: absolute;
       width: 101%;

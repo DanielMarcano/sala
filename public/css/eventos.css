@@ -432,27 +432,20 @@ body {
   .row [class^="col"] + [class^="col"] {
     margin-left: 0 !important; } }
 
-.contact {
+.event {
   position: relative;
-  height: 20px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  letter-spacing: .2rem; }
-  .contact__brief {
-    text-align: center; }
-  .contact__title {
-    font-weight: 300;
-    letter-spacing: .5rem;
-    text-indent: .5rem;
-    margin-top: 0;
-    text-transform: uppercase; }
-  .contact__phone:link, .contact__phone:visited {
-    text-decoration: none;
-    border-bottom: 1px solid white;
-    color: white; }
+  align-content: center;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 1px solid white; }
+  .event__img {
+    border: 1px solid white;
+    height: 100%;
+    max-width: 290px;
+    float: left; }
+  .event__title {
+    width: 30%;
+    float: right; }

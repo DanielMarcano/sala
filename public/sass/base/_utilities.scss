@@ -9,12 +9,9 @@
     animation-fill-mode: backwards;
 }
 
-.u-main-content {
+.u-viewport-height {
     height: $content-size !important;
-    max-height: $content-size !important;
-    margin-top: $content-top-margin !important;
-    margin-bottom: $footer-height !important;
-    z-index: 0;
+    // max-height: $content-size !important;
 }
 
 .u-content-margin {
@@ -100,4 +97,8 @@
 
 .u-padding-top-extra-big {
     padding-top: 5rem !important;
+}
+
+.u-no-margin {
+    margin: 0 !important;
 }

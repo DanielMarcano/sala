@@ -18,6 +18,7 @@
         text-align: center;
         font-weight: 300;
         letter-spacing: .5rem;
+        text-indent: .5rem;
         margin-top: 0;
         text-transform: uppercase;
     }
@@ -36,6 +37,8 @@
         color: black;
         background-color: white;
         letter-spacing: .5rem;
+        text-indent: .5rem;
+        padding: .5rem 1rem;
         text-transform: uppercase;
 
         @media screen and (max-width: 550px) {
@@ -49,7 +52,9 @@
         text-align: center;
         background-color: white;
         color: black;
+        padding: .5rem 1rem;
         letter-spacing: .5rem;
+        text-indent: .5rem;
 
         @media screen and (max-width: 550px) {
             letter-spacing: 0;
@@ -79,7 +84,7 @@
     }
 
     &__creators {
-        background-color: white;
+        background-color: #fcfcfc;
         color: black;
         text-align: center;
         display: inline-block;

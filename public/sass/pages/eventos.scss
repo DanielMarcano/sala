@@ -1,0 +1,24 @@
+@import "../main";
+
+.event {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 1px solid white;
+
+    &__img {
+        border: 1px solid white;
+        height: 100%;
+        max-width: 290px;
+        float: left;
+    }
+
+    &__title {
+        width: 30%;
+        float: right;
+    }
+}

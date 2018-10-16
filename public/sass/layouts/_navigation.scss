@@ -1,7 +1,3 @@
-// *{
-//     border: 1px solid red;
-// }
-
 .navigation {
     position: fixed;
     width: 100%;
@@ -86,6 +82,10 @@
         height: $content-size !important;
         max-height: $content-size !important;
         overflow-y: scroll;
+
+        @media screen and (max-width: 500px) {
+            justify-content: flex-start;
+        }
     }
     &__link {
         display: list-item;
