@@ -1,15 +1,21 @@
+// LAYOUT VARIABLES
+
+$header-height: 7rem;
 $navigation-height: 4.5rem;
 $footer-height: 3rem;
 
-$content-top-margin: $navigation-height;
-$content-size-diff: $navigation-height + $footer-height;
-$content-size: calc(100vh - #{$content-size-diff});
-$content-size-mobile: calc(100vh - #{$navigation-height});
+// CONTENT VARIABLES
 
-// Grid
+$navigation-margin: $navigation-height;
+$navigation-plus-footer: $navigation-height + $footer-height;
+$navigation-plus-header-plus-footer: $navigation-height + $header-height + $footer-height;
+$fixed-content-size: calc(100vh - #{$navigation-plus-footer});
+$fixed-content-size-plus-header: calc(100vh - #{$navigation-plus-header-plus-footer});
+
+// GRID VARIABLES
 
 $grid-width: 114rem;
-$first-row-margin: $content-top-margin;
+$first-row-margin: $navigation-margin;
 $gutter-vertical: 1rem;
 $gutter-horizontal: 6rem;
 $margin-left: 1.6%;

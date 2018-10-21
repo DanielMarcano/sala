@@ -29,8 +29,8 @@ const optimizeImages = () => {
       imageminPngQuant(),
       imagemin.svgo(),
     ]))
-
-    .pipe(gulp.dest('dist/img'));
+    .pipe(gulp.dest('dist/img'))
+    .pipe(browserSync.stream());
 };
 
 gulp.task('optimize:img', optimizeImages);
@@ -54,6 +54,7 @@ gulp.task('inline', inline);
 const startBrowserSync = (done) => {
   browserSync.init({
     proxy: 'localhost:3000',
+    tunnel: true,
   });
   done();
 };
@@ -120,6 +121,9 @@ const watch = () => {
 
   const scssWatcher = gulp.watch('./public/**/*.scss', gulp.series(compileSass, optimizeCSS, inline));
   scssWatcher.on('change', watcherReporter);
+
+  const imgWatcher = gulp.watch('./public/img/*', gulp.series(optimizeImages));
+  imgWatcher.on('change', watcherReporter);
 };
 
 gulp.task('watch', watch);

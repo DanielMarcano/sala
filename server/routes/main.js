@@ -16,8 +16,8 @@ router.get('/alquiler', (req, res) => {
   res.status(200).render('html/alquiler');
 });
 
-router.get('/eventos', (req, res) => {
-  res.status(200).render('html/eventos');
+router.get('/programacion', (req, res) => {
+  res.status(200).render('html/programacion');
 });
 
 router.use((req, res, next) => {

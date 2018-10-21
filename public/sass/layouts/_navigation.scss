@@ -7,7 +7,7 @@
     padding-top: 4.5rem;
     z-index: 1000;
     background: black;
-    
+
     &__checkbox {
         display: none;
     }
@@ -31,8 +31,6 @@
         text-align: center;
         transition: all .2s;
         cursor: pointer;
-
-        @include remove_user_select();
     }
 
     &__button:focus {
@@ -42,31 +40,38 @@
     &__button:hover+&__header>&__icon::before {
         top: -1rem;
     }
+
     &__button:hover+&__header>&__icon::after {
         top: 1rem;
     }
+
     &__checkbox:checked+&__header>&__button &__icon {
         background-color: transparent;
     }
+
     &__checkbox:checked+&__header>&__button &__icon::before {
         top: 0;
         transform: rotate(135deg);
     }
+
     &__checkbox:checked+&__header>&__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
     }
+
     &__main-link {
         position: absolute;
         display: inline-block;
         top: 0;
         left: 50%;
-        transform: translate(-50%,45%);
+        transform: translate(-50%, 45%);
         height: 2.5rem;
     }
+
     &__logo {
         height: inherit;
     }
+
     &__nav {
         width: inherit;
         display: flex;
@@ -79,14 +84,15 @@
         background-color: #000;
         opacity: 0;
         transition: all .2s;
-        height: $content-size !important;
-        max-height: $content-size !important;
+        height: $fixed-content-size !important;
+        max-height: $fixed-content-size !important;
         overflow-y: scroll;
 
         @media screen and (max-width: 500px) {
             justify-content: flex-start;
         }
     }
+
     &__link {
         display: list-item;
         padding: 1.5rem;
@@ -95,24 +101,30 @@
         letter-spacing: .5rem;
         color: inherit;
         transition: all .3s;
-        
+
         &:hover {
-            background-color: white;
-            color: black;
+            @media screen and (min-width: 900px) {
+                background-color: white;
+                color: black;
+            }
         }
+
         &:focus {
             color: inherit;
         }
+
         &:visited {
             color: inherit;
         }
     }
+
     &__icon {
         position: absolute;
         top: 1.4rem; // this stays
         left: .2rem;
         pointer-events: none;
         transition: all .2s;
+
         &,
         &::before,
         &::after {
@@ -122,15 +134,18 @@
             display: inline-block;
             transition: all .2s;
         }
+
         &::before,
         &::after {
             content: "";
             position: absolute;
             left: 0;
         }
+
         &::before {
             top: -.8rem;
         }
+
         &::after {
             top: .8rem;
         }

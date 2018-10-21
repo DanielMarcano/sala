@@ -1,0 +1,19 @@
+.header {
+    position: relative;
+    height: $header-height;
+    margin-top: $navigation-margin;
+
+    &__title {
+        position: absolute;
+        display: inline-block;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -65%);
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}

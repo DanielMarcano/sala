@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../templates/meta'); %>
+    <title>Sala On - Programación</title>
+    <link rel="stylesheet" href="../css/programacion.css" inline>
+</head>
+
+
+
+<body>
+    <%- include('../templates/navigation'); %>
+    <header class="header">
+        <h1 class="header__title">Programación</h1>
+    </header>
+    <main class="main u-footer-margin">
+        <div class="events">
+            <div class="event-group">
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/azulynotanrosa.jpg" alt="Azul y no tan Rosa">
+                    <a href="https://entradium.com/entradas/azul-y-no-tan-rosa-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/cap2intentos.jpg" alt="Cap 2 Intentos">
+                    <a href="https://entradium.com/entradas/cap-2-intentos-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/paquete3.jpg" alt="Paquete #3">
+                    <a href="https://entradium.com/entradas/paquete-3-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/lacasadelfindelostiempos.jpg" alt="La Casa del Fin de los Tiempos">
+                    <a href="https://entradium.com/entradas/la-casa-del-fin-de-los-tiempos-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/ann.jpg" alt="Ann">
+                    <a href="https://entradium.com/entradas/ann-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/backseatfighter.jpg" alt="Backseat Fighter">
+                    <a href="https://entradium.com/entradas/backseat-fighter-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event">
+                    <h2 class="event__title">Película</h2>
+                    <a href="#" class="event__sinopsis event__link">Sinopsis</a>
+                    <img class="event__img" src="/img/papitamanitoston.jpg" alt="Papita Maní Tostón">
+                    <a href="https://entradium.com/entradas/papita-mani-toston-veffbcn2018" class="event__buy event__link">Comprar</a>
+                </article>
+                <article class="event__empty"></article>
+                <article class="event__empty"></article>
+            </div>
+        </div>
+    </main>
+    <div class="popup">
+        <div class="popup__content">
+            <h2 class="popup__title u-margin-bottom-small">Azul y no tan Rosa</h2>
+            <p class="popup__length">Miguel Ferrari | 2012 | 110 mins</p>
+            <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+            <p class="popup__description">Diego, un fotógrafo de éxito, decide formalizar su relación con Fabrizio
+                yéndose a vivir con él,
+                pero, de manera inesperada, se ve obligado a hacerse cargo de su hijo Armando, que vive en
+                España y al que no ha visto desde hace años. El chico llega con una maleta cargada de
+                reproches, de modo que a Diego no le resultará fácil restablecer la relación afectiva con él. En
+                tales circunstancias, un grupo de radicales homófobos le propinan a Fabrizio una brutal paliza
+                que lo deja en coma.</p>
+            <div class="sponsors">
+                <h2 class="popup__subtitle u-margin-bottom-normal">Patrocinadores</h2>
+                <article class="sponsor">
+                    <div class="sponsor__image u-margin-bottom-normal">
+                        <a href="https://www.venezuelanfilmfest.com/"><img src="/img/venezuelanfilmfest.png" alt="Venezuelan Film Festival"></a>
+                    </div>
+                    <div class="sponsor__brief">
+                            <p>
+                                    Fundado por Irene Yibirin, el Festival de Cine Venezolano en Nueva York -VEFFNY-
+                                    anteriormente conocido como FesNuCive, es un festival cinematográfico competitivo y
+                                    cuidadosamente comisariado, comprometido con el reconocimiento de lo mejor del
+                                    nuevo cine venezolano y llevando lo más representativo de él a la ciudad de Nueva
+                                    York.
+                            </p>
+                            <p>El Venezuelan Film Festival -VEFF- se expande a España con la primera edición del
+                                    -VEFFBCN- en la cosmopolita ciudad de Barcelona, capital de Cataluña. Este primer
+                                    encuentro se llevará a cabo en las instalaciones de la Sala Ón, un nuevo espacio
+                                    escénico para contribuir con el desarrollo de la actividad artística de la ciudad condal.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <%- include('../templates/footer'); %>
+</body>
+
+</html>

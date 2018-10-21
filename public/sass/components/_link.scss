@@ -2,18 +2,21 @@
     position: relative;
     display: inline-block;
     color: transparent;
-
     font-size: 1rem;
     text-align: center;
     background-color: black;
     text-decoration: none;
     border: 1px solid white;
-    // To increase height, increase padding-top
-    // of this element and its pseudo-elements
-    padding: 1rem 3rem;
     border-radius: .2rem;
     letter-spacing: .5rem;
     overflow: hidden;
+    // To increase height, increase padding-top
+    // of this element and its pseudo-elements
+    padding: 1rem 3rem;
+
+    @media screen and (max-width: 900px) {
+      padding: 2rem 3rem;
+    }
 
     &--contact {
       &::after {
@@ -35,12 +38,16 @@
       width: 101%;
       left: 50%;
       top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-    padding: 1.1rem 0;
+      transform: translateX(-50%) translateY(-52.7%);
       text-align: center;
       transition: all .2s;
       animation: reverseChangeName ease-out;
       animation-duration: .2s;
+      padding: 1.1rem 0;
+
+      @media screen and (max-width: 900px) {
+        padding: 2.1rem 0;
+      }
     }
     
     &:link, &:visited {

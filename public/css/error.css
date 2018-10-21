@@ -122,12 +122,23 @@ body {
   pointer-events: none;
   animation-fill-mode: backwards; }
 
-.u-viewport-height {
-  height: calc(100vh - 7.5rem) !important; }
+.u-fixed-content-size {
+  height: calc(100vh - 7.5rem) !important;
+  width: 100vw; }
+
+.u-fixed-content-size-plus-header {
+  height: calc(100vh - 14.5rem) !important;
+  width: 100vw; }
 
 .u-content-margin {
   margin-top: 4.5rem !important;
   margin-bottom: 3rem !important; }
+
+.u-footer-margin {
+  margin-bottom: 3rem !important; }
+
+.u-remove-margin-left {
+  margin-left: 0 !important; }
 
 .u-text-standout {
   font-family: "lobster-tworegular", "sofiapro-light", "HelveticaNeue-Light", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif !important; }
@@ -200,10 +211,13 @@ body {
   background-color: black;
   text-decoration: none;
   border: 1px solid white;
-  padding: 1rem 3rem;
   border-radius: .2rem;
   letter-spacing: .5rem;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 1rem 3rem; }
+  @media screen and (max-width: 900px) {
+    .link {
+      padding: 2rem 3rem; } }
   .link--contact::after {
     content: "Ven a Sala Ón"; }
   .link--event {
@@ -216,12 +230,15 @@ body {
     width: 101%;
     left: 50%;
     top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    padding: 1.1rem 0;
+    transform: translateX(-50%) translateY(-52.7%);
     text-align: center;
     transition: all .2s;
     animation: reverseChangeName ease-out;
-    animation-duration: .2s; }
+    animation-duration: .2s;
+    padding: 1.1rem 0; }
+    @media screen and (max-width: 900px) {
+      .link::after {
+        padding: 2.1rem 0; } }
   .link:link, .link:visited {
     text-transform: uppercase; }
   .link:hover::after {
@@ -233,6 +250,23 @@ body {
       -moz-animation: none;
       -o-animation: none;
       animation: none; } }
+
+.header {
+  position: relative;
+  height: 7rem;
+  margin-top: 4.5rem; }
+  .header__title {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -65%);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .5rem;
+    text-indent: .5rem;
+    text-transform: uppercase;
+    text-align: center; }
 
 .footer {
   position: fixed;
@@ -294,13 +328,7 @@ body {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all .2s;
-    cursor: pointer;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
+    cursor: pointer; }
   .navigation__button:focus {
     outline: none; }
   .navigation__button:hover + .navigation__header > .navigation__icon::before {
@@ -350,9 +378,10 @@ body {
     letter-spacing: .5rem;
     color: inherit;
     transition: all .3s; }
-    .navigation__link:hover {
-      background-color: white;
-      color: black; }
+    @media screen and (min-width: 900px) {
+      .navigation__link:hover {
+        background-color: white;
+        color: black; } }
     .navigation__link:focus {
       color: inherit; }
     .navigation__link:visited {
