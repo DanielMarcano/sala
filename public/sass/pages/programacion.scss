@@ -42,6 +42,10 @@
         margin: 3rem;
         min-width: 275px;
         min-height: 350px;
+
+        @include respond(phone) {
+            display: none;
+        }
     }
 
     &__img {
@@ -77,13 +81,9 @@
     &__link {
 
         transform-origin: left;
-
-        &:link,
-        &:visited {
-            text-decoration: none;
-            color: white;
-            transition: all .2s ease-in-out;
-        }
+        text-decoration: none;
+        color: white;
+        transition: all .2s ease-in-out;
 
         &::before {
             content: '';
@@ -99,15 +99,20 @@
             background-color: white;
             transform: scaleX(0);
             transition: all .1s ease-in-out;
-
         }
 
         &:hover {
             color: black;
 
+            @include respond(phone) {
+                color: white;
+            }
+
             &::before {
-                @media screen and (min-width: 900px) {
-                    transform: scale(1);
+                transform: scale(1);
+
+                @include respond(phone) {
+                    transform: scale(0);
                 }
             }
         }
@@ -115,18 +120,17 @@
 
 }
 
-body {
-    overflow: hidden;
-}
-
 .popup {
-    position: absolute;
+    position: fixed;
     display: block;
     overflow-y: scroll;
     z-index: 200;
     top: 0;
-    left: 0;
+    left: 3000px;
     background: white;
+    transition: all 1s ease-in;
+    opacity: 0;
+    
 
     &::before {
         content: '';
@@ -134,10 +138,11 @@ body {
         position: fixed;
         height: 100%;
         width: 100%;
-        left: 0;
-        background-image: linear-gradient(to right, rgba(grey, .1), rgba(grey, .1)), url(/img/azulynotanrosacover.jpg);
+        left: 3000px;
+        transition: all 1s ease-in;
         background-size: cover;
-    background-position: center;
+        background-position: center;
+        opacity: 0;
     }
     
     margin-top: $navigation-margin;
@@ -189,14 +194,86 @@ body {
         line-height: 2rem;
     }
 
-    .sponsor__brief p:not(:last-child) {
-        margin-bottom: 1rem;
+    &__link {
+        text-decoration: none;
+        color: black;
+        position: absolute;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        text-indent: .3rem;
+        font-weight: 900;
     }
 
-    .sponsor__image {
-        position: relative;
-        display: block;
-        text-align: center;
+    &__buy {
+        top: 2rem;
+        right: 2rem;
+        color: white;
+    }
+
+    &__close {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        left: 2rem;
+        top: 2rem;
     }
 
 }
+
+.popup:target {
+    left: 0;
+    transition: all .6s .5s;
+    opacity: 1;
+
+    &::before {
+        left: 0;
+        transition: all .9s;
+        opacity: 1;
+    }
+}
+
+/* This is where I add each background to each event */
+
+#azulynotanrosa {
+    &::before {
+        background-image: linear-gradient(to right bottom, rgba(black, 1) 10%, rgba(grey, .1) 15%), url(/img/azulynotanrosacover.jpg);
+    }
+}
+
+#cap2intentos {
+    &::before {
+        background-image: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1)), url(/img/cap2intentoscover.jpg);
+    }
+}
+
+#paquete3 {
+    &::before {
+        background-image: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1)), url(/img/paquete3cover.jpg);
+    }
+}
+
+#lacasadelfin {
+    &::before {
+        background-image: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1)), url(/img/lacasadelfindelostiemposcover.jpg);
+    }
+}
+
+#ann {
+    &::before {
+        background-image: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1)), url(/img/anncover.jpeg);
+    }
+}
+
+#backseat {
+    &::before {
+        background-image: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1)), url(/img/backstreetfightercover.jpg);
+    }
+}
+
+#papita {
+    &::before {
+        background-image: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1)), url(/img/papitamanitostoncover.jpg);
+    }
+}
+

@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/* 
+** $breakpoint argument choices:
+** - phone
+** - tab-port
+** - tab-land
+** - big-desktop
+**
+** 1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -8,7 +17,8 @@
 
 html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 100%; }
 
 body {
   color: #FFF;
@@ -499,6 +509,9 @@ body {
     margin: 3rem;
     min-width: 275px;
     min-height: 350px; }
+    @media (max-width: 37.5em) {
+      .event__empty {
+        display: none; } }
   .event__img {
     position: absolute;
     top: 50%;
@@ -524,11 +537,10 @@ body {
     letter-spacing: .3rem;
     text-indent: .3rem; }
   .event__link {
-    transform-origin: left; }
-    .event__link:link, .event__link:visited {
-      text-decoration: none;
-      color: white;
-      transition: all .2s ease-in-out; }
+    transform-origin: left;
+    text-decoration: none;
+    color: white;
+    transition: all .2s ease-in-out; }
     .event__link::before {
       content: '';
       transform-origin: right;
@@ -545,21 +557,25 @@ body {
       transition: all .1s ease-in-out; }
     .event__link:hover {
       color: black; }
-      @media screen and (min-width: 900px) {
-        .event__link:hover::before {
-          transform: scale(1); } }
-
-body {
-  overflow: hidden; }
+      @media (max-width: 37.5em) {
+        .event__link:hover {
+          color: white; } }
+      .event__link:hover::before {
+        transform: scale(1); }
+        @media (max-width: 37.5em) {
+          .event__link:hover::before {
+            transform: scale(0); } }
 
 .popup {
-  position: absolute;
+  position: fixed;
   display: block;
   overflow-y: scroll;
   z-index: 200;
   top: 0;
-  left: 0;
+  left: 3000px;
   background: white;
+  transition: all 1s ease-in;
+  opacity: 0;
   margin-top: 4.5rem;
   min-height: calc(100vh - 7.5rem);
   width: 100vw;
@@ -570,10 +586,11 @@ body {
     position: fixed;
     height: 100%;
     width: 100%;
-    left: 0;
-    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.1), rgba(128, 128, 128, 0.1)), url(/img/azulynotanrosacover.jpg);
+    left: 3000px;
+    transition: all 1s ease-in;
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    opacity: 0; }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -606,9 +623,53 @@ body {
     text-transform: uppercase;
     text-align: justify;
     line-height: 2rem; }
-  .popup .sponsor__brief p:not(:last-child) {
-    margin-bottom: 1rem; }
-  .popup .sponsor__image {
-    position: relative;
-    display: block;
-    text-align: center; }
+  .popup__link {
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-indent: .3rem;
+    font-weight: 900; }
+  .popup__buy {
+    top: 2rem;
+    right: 2rem;
+    color: white; }
+  .popup__close {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    left: 2rem;
+    top: 2rem; }
+
+.popup:target {
+  left: 0;
+  transition: all .6s .5s;
+  opacity: 1; }
+  .popup:target::before {
+    left: 0;
+    transition: all .9s;
+    opacity: 1; }
+
+/* This is where I add each background to each event */
+#azulynotanrosa::before {
+  background-image: linear-gradient(to right bottom, black 10%, rgba(128, 128, 128, 0.1) 15%), url(/img/azulynotanrosacover.jpg); }
+
+#cap2intentos::before {
+  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/cap2intentoscover.jpg); }
+
+#paquete3::before {
+  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/paquete3cover.jpg); }
+
+#lacasadelfin::before {
+  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/lacasadelfindelostiemposcover.jpg); }
+
+#ann::before {
+  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/anncover.jpeg); }
+
+#backseat::before {
+  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/backstreetfightercover.jpg); }
+
+#papita::before {
+  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/papitamanitostoncover.jpg); }
