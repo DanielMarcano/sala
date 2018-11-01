@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../templates/meta'); %>
+    <title>Sala On - Alquíler</title>
+    <link rel="stylesheet" href="../css/alquiler.css" inline>
+</head>
+
+
+
+<body>
+    <%- include('../templates/navigation'); %>
+    <header class="header">
+        <h1 class="header__title">Alquílanos</h1>
+    </header>
+    <main class="u-fixed-content-size-plus-header">
+        <div class="alquiler u-footer-margin">
+                <form action="/pedir_alquiler" class="form" id="form" method="post">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Nombre *</label>
+                        <input type="text" value="" name="name" id="name" class="form__input" autocomplete="off" maxlength="30"
+                            required>
+                    </div>
+                    <div class="form__group">
+                        <label for="lastname" class="form__label">Apellidos*</label>
+                        <input type="text" value="" name="lastname" id="lastname" class="form__input" autocomplete="off"
+                            maxlength="30" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email*</label>
+                        <input type="email" value="" name="email" id="email" class="form__input" autocomplete="off" maxlength="30"
+                            required>
+                    </div>
+                    <div class="form__group">
+                        <label for="phone" class="form__label">Teléfono*</label>
+                        <input type="tel" value="" name="phone" id="phone" class="form__input" autocomplete="off" maxlength="30"
+                            placeholder="+34111111111" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="business" class="form__label">Empresa</label>
+                        <input type="text" value="" name="business" id="business" class="form__input" autocomplete="off"
+                            maxlength="30">
+                    </div>
+                    <div class="form__group">
+                        <label for="more" class="form__label--textarea">Cuéntanos más*</label>
+                        <textarea name="more" id="more" class="form__textarea" autocomplete="off" required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <span class="form__span">Acepto que mis datos sean enviados*</span>
+                        <input type="checkbox" name="consent" id="consent-checkbox" class="form__checkbox">
+                        <label for="consent-checkbox" class="form__label-checkbox">
+                            <span class="form__button" id="consent-button" tabindex="0"></span>
+                        </label>
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" name="send" id="send" class="form__send">Enviar petición</button>
+                    </div>
+                </form>
+        </div>
+    </main>
+    <%- include('../templates/footer'); %>
+    <script src="../js/alquiler.bundle.js" inline></script>
+</body>
+
+</html>

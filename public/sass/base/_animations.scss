@@ -9,6 +9,15 @@
       opacity: 0.2;
     }
   }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
   @keyframes showHide {
     0% {
