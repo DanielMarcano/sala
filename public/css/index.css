@@ -23,7 +23,8 @@ html {
 body {
   color: #FFF;
   background-color: #000;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: all .5s; }
 
 @keyframes onOff {
   0% {
@@ -217,6 +218,9 @@ body {
 
 .u-no-margin {
   margin: 0 !important; }
+
+.u-disable-scroll {
+  overflow: hidden !important; }
 
 .link {
   position: relative;

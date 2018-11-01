@@ -128,10 +128,9 @@
     top: 0;
     left: 3000px;
     background: white;
-    transition: all 1s ease-in;
+    // transition: all 1s ease-in;
     opacity: 0;
     
-
     &::before {
         content: '';
         overflow: hidden;
@@ -148,7 +147,13 @@
     margin-top: $navigation-margin;
     min-height: $fixed-content-size;
     width: 100vw;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+
+    @include respond(phone) {
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
 
     &__content {
         position: absolute;

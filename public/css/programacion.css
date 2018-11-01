@@ -23,7 +23,8 @@ html {
 body {
   color: #FFF;
   background-color: #000;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: all .5s; }
 
 @keyframes onOff {
   0% {
@@ -217,6 +218,9 @@ body {
 
 .u-no-margin {
   margin: 0 !important; }
+
+.u-disable-scroll {
+  overflow: hidden !important; }
 
 .link {
   position: relative;
@@ -580,12 +584,12 @@ body {
   top: 0;
   left: 3000px;
   background: white;
-  transition: all 1s ease-in;
   opacity: 0;
   margin-top: 4.5rem;
   min-height: calc(100vh - 7.5rem);
   width: 100vw;
-  transition: all .3s ease-in-out; }
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out; }
   .popup::before {
     content: '';
     overflow: hidden;
@@ -597,6 +601,10 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0; }
+  @media (max-width: 37.5em) {
+    .popup {
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out; } }
   .popup__content {
     position: absolute;
     top: 50%;
