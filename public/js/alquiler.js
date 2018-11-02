@@ -47,7 +47,7 @@ consentButton.addEventListener('keyup', (e) => {
 
 requiredFields.forEach((element) => {
   element.addEventListener('focus', (e) => {
-    e.target.scrollIntoView();
+    // e.target.scrollIntoView();
   });
 });
 
@@ -61,7 +61,7 @@ const validateForm = () => {
       element.classList.add('form__validate');
     });
     if (invalidFields[0].value !== 'on') {
-      invalidFields[0].scrollIntoView();
+      // invalidFields[0].scrollIntoView();
       invalidFields[0].focus();
     } else {
       consentButton.focus();
