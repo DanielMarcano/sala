@@ -61,7 +61,7 @@ const validateForm = () => {
       element.classList.add('form__validate');
     });
     if (invalidFields[0].value !== 'on') {
-      invalidFields[0].scrollIntoView(false);
+      invalidFields[0].scrollIntoView();
       invalidFields[0].focus();
     } else {
       consentButton.focus();
