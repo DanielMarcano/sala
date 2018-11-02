@@ -1,4 +1,5 @@
 /** Beginning of icomoon **/
+@import url('https://fonts.googleapis.com/css?family=Monoton');
 
 @font-face {
     font-family: 'icomoon';
@@ -39,6 +40,14 @@
   }
   
   /** End of icomoon **/
+
+  @font-face {
+    font-family: 'gaegu_light';
+    src: url('/fonts/gaegu-light-webfont.woff2') format('woff2'),
+         url('/fonts/gaegu-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
   @font-face {
     font-family: 'sofiapro-light';

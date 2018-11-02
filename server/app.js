@@ -1,14 +1,17 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
+const { check, validationResult } = require('express-validator/check');
+const helmet = require('helmet');
 const { router } = require('./routes/main');
+
 
 const distPath = path.join(__dirname, '../dist');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.disable('x-powered-by');
+app.use(helmet());
 app.use(compression());
 
 app.set('view engine', 'ejs');

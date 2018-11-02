@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
+const {
+  Joi,
+  AlquilerSchema,
+} = require('../schemas/alquilerSchema');
 
 router.get('/', (req, res) => {
   res.status(200).render('index');
@@ -23,13 +27,40 @@ router.get('/alquiler', (req, res) => {
 
 const sendMail = function (req, res) {
 
+  const {
+    firstname,
+    lastname,
+    email,
+    phone,
+    address,
+    business,
+    more,
+  } = req.body;
+
+  const response = Joi.validate({
+    firstname,
+    lastname,
+    email,
+    phone,
+    address,
+    business,
+    more,
+  }, AlquilerSchema);
+
+  if (response.error !== null) {
+    return res.json({
+      message: 'El mensaje no pudo ser enviado. Inténtelo de nuevo más tarde.',
+    });
+  }
+
   const output = `
-    <p>Nombre: ${req.body.name}</p>
-    <p>Apellido: ${req.body.lastname}</p>
-    <p>Email: ${req.body.email}</p>
-    <p>Teléfono: ${req.body.phone}</p>
-    <p>Empresa: ${req.body.business}</p>
-    <p>Más sobre ti: ${req.body.more}</p>
+    <p>Nombre: ${response.value.firstname}</p>
+    <p>Apellido: ${response.value.lastname}</p>
+    <p>Email: ${response.value.email}</p>
+    <p>Teléfono: ${response.value.phone}</p>
+    <p>Empresa: ${response.value.address}</p>
+    <p>Empresa: ${response.value.business}</p>
+    <p>Más sobre ti: ${response.value.more}</p>
   `;
 
   const transporter = nodemailer.createTransport({
@@ -42,7 +73,7 @@ const sendMail = function (req, res) {
 
   const mailOptions = {
     from: '"Sala On" <salaonbcnalquileres@gmail.com>',
-    to: 'danielemarcano96@gmail.com',
+    to: 'salaonbcn@gmail.com',
     subject: 'Nueva Petición de Alquiler',
     html: output,
   };
@@ -51,17 +82,12 @@ const sendMail = function (req, res) {
     if (error) {
       return console.log(error);
     }
-    console.log('Message sent: %s', info.messageId);
-    // Preview only available when sending through an Ethereal account
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-    res.render('html/alquiler', { success: 'El mensaje se ha enviado correctamente' });
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    console.log(info);
+    res.json({ message: 'El mensaje se ha enviado correctamente.' });
   });
 };
 
-router.post('/pedir_alquiler', sendMail);
+router.post('/alquiler', sendMail);
 
 router.use((req, res, next) => {
   return res.status(404).render('html/error');

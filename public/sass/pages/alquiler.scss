@@ -16,7 +16,7 @@
 
     &__group {
         position: relative;
-        width: 80%;
+        width: 400px;
         max-width: 400px;
         padding: 1rem 2rem 1rem;
         display: flex;
@@ -25,6 +25,11 @@
         align-items: center;
         color: white;
         text-transform: uppercase;
+        
+        @include respond(tab-port) {
+            width: 100%;
+            min-width: 300px;
+        }
     }
 
     &__textarea {
@@ -140,6 +145,8 @@
     
     &__checkbox {
         visibility: hidden;
+        // position: absolute;
+        // top: 10rem;
     }
     
     &__checkbox:checked + label span {
@@ -182,6 +189,15 @@
         border-color: red;
     }
 
+    &__group-container {
+        display: flex;
+        flex-flow: row nowrap;
+
+        @include respond(tab-land) {
+            flex-flow: column nowrap;
+        }
+    }
+
 }
 
 .form__button {
@@ -219,10 +235,152 @@
 		transform: translate(-50%, -50%);
 		transition: opacity .5s;
     }
+}
+
+.conditions {
+    @include reset-link(white);
+    position: relative;
+    margin-right: -.5rem;
+    transition: all .3s;
+
+    &:link, &:visited {
+        &:hover {
+            color: grey;
+        }
+
+        &:hover::after {
+            border-color: grey;
+        }
+        &:focus {
+            outline: none;
+            color: grey;
+        }
+        &:focus::after {
+            border-color: grey;
+        }
+    }
     
-    &__group-container {
-        display: flex;
-        flex-flow: column nowrap;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 95%;
+        bottom: -5%;
+        left: 0;
+        border-bottom: 1px solid white;
+        transition: all .3s;
+    }
+}
+
+.popup {
+    position: fixed;
+    display: block;
+    overflow-y: scroll;
+    z-index: 200;
+    height: 100%;
+    top: 0;
+    left: 3000px;
+    background: white;
+    transition: all 1s ease-in;
+    opacity: 0;
+    
+    &::before {
+        content: '';
+        overflow: hidden;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 3000px;
+        transition: all 1s ease-in;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        background-color: black;
+    }
+    
+    margin-top: $navigation-margin;
+    min-height: $fixed-content-size;
+    width: 100vw;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+    @include respond(phone) {
+        -webkit-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0%;
+        padding: 2rem 2.5rem;
+        background-color: rgba(white, 1);
+        color: black;
+        mix-blend-mode: screen;
+        font-weight: 900;
+        font-size: 1rem !important;
+    }
+
+    &__length {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        text-indent: .1rem;
+    }
+
+    &__title, &__subtitle {
+        display: block;
+        font-weight: 300;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+    }
+
+    &__subtitle {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+
+    &__description, .sponsor__brief {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        text-align: justify;
+        line-height: 2rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: black;
+        position: absolute;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        text-indent: .3rem;
+        font-weight: 900;
+    }
+
+    &__close {
+        text-decoration: none;
+        display: inline-block;
+        left: 2rem;
+        top: 2rem;
+    }
+
+}
+
+.popup:target {
+    left: 0;
+    transition: all .6s .5s;
+    opacity: 1;
+
+    &::before {
+        left: 0;
+        transition: all .9s;
+        opacity: 1;
     }
 }
 
