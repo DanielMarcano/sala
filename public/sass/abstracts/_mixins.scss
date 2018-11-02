@@ -1,3 +1,17 @@
+@mixin letter-spacing($rem) {
+    letter-spacing: $rem;
+    text-indent: $rem;
+}
+
+@mixin reset-link($color) {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:link, &:visited {
+        color: $color;
+    }
+}
+
 @mixin remove_user_select {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

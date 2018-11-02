@@ -6,7 +6,6 @@
     left: 0;
     padding-top: 4.5rem;
     z-index: 1000;
-    background: black;
 
     &__checkbox {
         display: none;
@@ -24,8 +23,9 @@
         height: 3em;
         width: 3rem;
         position: absolute;
-        top: 1.15rem;
+        top: 50%;
         right: 2rem;
+        transform: translateY(-50%);
         z-index: 2000;
         box-shadow: 0 1rem 3rem rgba(black, .1);
         text-align: center;
@@ -62,9 +62,9 @@
     &__main-link {
         position: absolute;
         display: inline-block;
-        top: 0;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, 45%);
+        transform: translate(-50%, -50%);
         height: 2.5rem;
     }
 
@@ -96,11 +96,11 @@
     &__link {
         display: list-item;
         padding: 1.5rem;
-        text-decoration: none;
         text-transform: uppercase;
-        letter-spacing: .5rem;
-        color: inherit;
         transition: all .3s;
+
+        @include letter-spacing(.5rem);
+        @include reset-link(white);
 
         &:hover {
             @media screen and (min-width: 900px) {
@@ -108,20 +108,12 @@
                 color: black;
             }
         }
-
-        &:focus {
-            color: inherit;
-        }
-
-        &:visited {
-            color: inherit;
-        }
     }
 
     &__icon {
         position: absolute;
-        top: 1.4rem; // this stays
-        left: .2rem;
+        top: 1.4rem;
+        left: 0.25rem;
         pointer-events: none;
         transition: all .2s;
 
@@ -129,7 +121,7 @@
         &::before,
         &::after {
             width: 2.5rem;
-            height: 3px;
+            height: 4px;
             background-color: white;
             display: inline-block;
             transition: all .2s;
@@ -143,22 +135,17 @@
         }
 
         &::before {
-            top: -.8rem;
+            top: -.9rem;
         }
 
         &::after {
-            top: .8rem;
+            top: .85rem;
         }
     }
 
     &__checkbox:checked~&__nav {
         visibility: visible;
-        display: flex;
         z-index: 2000;
         opacity: 1;
-    }
-
-    &__checkbox:checked:root {
-        pointer-events: none;
     }
 }

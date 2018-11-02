@@ -328,8 +328,7 @@ body {
   top: 0;
   left: 0;
   padding-top: 4.5rem;
-  z-index: 1000;
-  background: black; }
+  z-index: 1000; }
   .navigation__checkbox {
     display: none; }
   .navigation__header {
@@ -342,8 +341,9 @@ body {
     height: 3em;
     width: 3rem;
     position: absolute;
-    top: 1.15rem;
+    top: 50%;
     right: 2rem;
+    transform: translateY(-50%);
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -366,9 +366,9 @@ body {
   .navigation__main-link {
     position: absolute;
     display: inline-block;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 45%);
+    transform: translate(-50%, -50%);
     height: 2.5rem; }
   .navigation__logo {
     height: inherit; }
@@ -393,28 +393,27 @@ body {
   .navigation__link {
     display: list-item;
     padding: 1.5rem;
-    text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: .5rem;
-    color: inherit;
-    transition: all .3s; }
+    transition: all .3s;
+    letter-spacing: 0.5rem;
+    text-indent: 0.5rem;
+    text-decoration: none;
+    cursor: pointer; }
+    .navigation__link:link, .navigation__link:visited {
+      color: white; }
     @media screen and (min-width: 900px) {
       .navigation__link:hover {
         background-color: white;
         color: black; } }
-    .navigation__link:focus {
-      color: inherit; }
-    .navigation__link:visited {
-      color: inherit; }
   .navigation__icon {
     position: absolute;
     top: 1.4rem;
-    left: .2rem;
+    left: 0.25rem;
     pointer-events: none;
     transition: all .2s; }
     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
       width: 2.5rem;
-      height: 3px;
+      height: 4px;
       background-color: white;
       display: inline-block;
       transition: all .2s; }
@@ -423,16 +422,13 @@ body {
       position: absolute;
       left: 0; }
     .navigation__icon::before {
-      top: -.8rem; }
+      top: -.9rem; }
     .navigation__icon::after {
-      top: .8rem; }
+      top: .85rem; }
   .navigation__checkbox:checked ~ .navigation__nav {
     visibility: visible;
-    display: flex;
     z-index: 2000;
     opacity: 1; }
-  .navigation__checkbox:checked:root {
-    pointer-events: none; }
 
 .row {
   max-width: 114rem;
@@ -502,8 +498,7 @@ body {
     justify-content: space-between;
     align-items: center;
     color: white;
-    text-transform: uppercase;
-    font-family: HelveticaNeue-Light; }
+    text-transform: uppercase; }
   .form__textarea {
     border-radius: 3px;
     padding: 1rem;
@@ -659,3 +654,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity .5s; }
+  .form__button__group-container {
+    display: flex;
+    flex-flow: column nowrap; }

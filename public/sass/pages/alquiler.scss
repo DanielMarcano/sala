@@ -25,7 +25,6 @@
         align-items: center;
         color: white;
         text-transform: uppercase;
-        font-family: HelveticaNeue-Light;
     }
 
     &__textarea {
@@ -219,5 +218,11 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		transition: opacity .5s;
-	}
+    }
+    
+    &__group-container {
+        display: flex;
+        flex-flow: column nowrap;
+    }
 }
+
