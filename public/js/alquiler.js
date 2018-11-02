@@ -47,7 +47,7 @@ consentButton.addEventListener('keyup', (e) => {
 
 requiredFields.forEach((element) => {
   element.addEventListener('focus', (e) => {
-    e.target.scrollIntoView(false);
+    e.target.scrollIntoView();
   });
 });
 
