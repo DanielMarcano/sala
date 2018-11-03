@@ -5,8 +5,7 @@
   display: block;
   margin-top: $navigation-height;
   margin-bottom: $footer-height;
-  height: $fixed-content-size;
-  max-height: $fixed-content-size;
+  min-height: $fixed-content-size;
   
   &__title {
     position: absolute;

@@ -570,7 +570,7 @@ body {
       width: 100%;
       background-color: white;
       transform: scaleX(0);
-      transition: all .1s ease-in-out; }
+      transition: all .2s ease-in-out; }
     .event__link:hover {
       color: black; }
       @media (max-width: 37.5em) {
@@ -590,13 +590,13 @@ body {
   top: 0;
   left: 3000px;
   background: white;
-  transition: all 1s ease-in;
+  transition: all .2s ease-in;
   opacity: 0;
   margin-top: 4.5rem;
   min-height: calc(100vh - 7.5rem);
   width: 100vw;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out; }
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
   .popup::before {
     content: '';
     overflow: hidden;
@@ -604,14 +604,14 @@ body {
     height: 100%;
     width: 100%;
     left: 3000px;
-    transition: all 1s ease-in;
+    transition: all .2s ease-in;
     background-size: cover;
     background-position: center;
     opacity: 0; }
   @media (max-width: 37.5em) {
     .popup {
-      -webkit-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out; } }
+      -webkit-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out; } }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -675,22 +675,22 @@ body {
 
 /* This is where I add each background to each event */
 #azulynotanrosa::before {
-  background-image: linear-gradient(to right bottom, black 10%, rgba(128, 128, 128, 0.1) 15%), url(/img/azulynotanrosacover.jpg); }
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/img/azulynotanrosacover.jpg); }
 
 #cap2intentos::before {
-  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/cap2intentoscover.jpg); }
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/img/cap2intentoscover.jpg); }
 
 #paquete3::before {
-  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/paquete3cover.jpg); }
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/img/paquete3cover.jpg); }
 
 #lacasadelfin::before {
-  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/lacasadelfindelostiemposcover.jpg); }
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/img/lacasadelfindelostiemposcover.jpg); }
 
 #ann::before {
-  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/anncover.jpeg); }
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/img/anncover.jpeg); }
 
 #backseat::before {
-  background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/backstreetfightercover.jpg); }
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/img/backstreetfightercover.jpg); }
 
 #papita::before {
   background-image: linear-gradient(to right, black, rgba(128, 128, 128, 0.1)), url(/img/papitamanitostoncover.jpg); }

@@ -489,10 +489,13 @@ body {
 
 .alquiler {
   position: relative;
-  display: block;
-  margin: 0 auto; }
+  display: block; }
+
+input {
+  border-radius: 0; }
 
 .form {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -707,68 +710,41 @@ body {
   overflow-y: scroll;
   z-index: 200;
   height: 100%;
+  width: 100vw;
   top: 0;
   left: 3000px;
-  background: white;
+  background-color: white;
   transition: all 1s ease-in;
-  opacity: 0;
-  margin-top: 4.5rem;
-  min-height: calc(100vh - 7.5rem);
-  width: 100vw;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out; }
-  .popup::before {
-    content: '';
-    overflow: hidden;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 3000px;
-    transition: all 1s ease-in;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    background-color: black; }
-  @media (max-width: 37.5em) {
-    .popup {
-      -webkit-transition: all .1s ease-in-out;
-      transition: all .1s ease-in-out; } }
+  opacity: 0; }
+  .popup p:not(:last-child) {
+    margin-bottom: 1rem; }
   .popup__content {
-    position: absolute;
+    margin-top: 4.5rem;
+    margin-bottom: 3rem;
+    position: relative;
     top: 0%;
     padding: 2rem 2.5rem;
-    background-color: white;
     color: black;
-    mix-blend-mode: screen;
+    z-index: 200;
     font-weight: 900;
-    font-size: 1rem !important; }
-  .popup__length {
-    display: block;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    text-indent: .1rem; }
-  .popup__title, .popup__subtitle {
+    font-size: 1rem !important;
+    width: 100%; }
+  .popup__title {
     display: block;
     font-weight: 300;
     letter-spacing: .5rem;
     text-indent: .5rem;
     text-transform: uppercase;
-    text-align: center; }
-  .popup__title {
+    text-align: center;
     font-size: 1.5rem; }
-  .popup__subtitle {
-    margin: 1rem 0;
-    font-size: 1.3rem; }
-  .popup__description, .popup .sponsor__brief {
+  .popup__description {
     font-size: 1.2rem;
     text-transform: uppercase;
     text-align: justify;
     line-height: 2rem; }
   .popup__link {
     text-decoration: none;
-    color: black;
-    position: absolute;
+    color: white;
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: .3rem;
@@ -778,7 +754,11 @@ body {
     text-decoration: none;
     display: inline-block;
     left: 2rem;
-    top: 2rem; }
+    top: 2rem;
+    color: black;
+    display: block;
+    text-align: center;
+    margin-bottom: 1.2rem; }
 
 .popup:target {
   left: 0;

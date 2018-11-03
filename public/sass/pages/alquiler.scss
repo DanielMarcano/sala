@@ -3,10 +3,14 @@
 .alquiler {
     position: relative;
     display: block;
-    margin: 0 auto;
+}
+
+input {
+    border-radius: 0;
 }
 
 .form {
+    position: relative;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -25,7 +29,7 @@
         align-items: center;
         color: white;
         text-transform: uppercase;
-        
+
         @include respond(tab-port) {
             width: 100%;
             min-width: 300px;
@@ -50,18 +54,19 @@
         transition: all .5s;
     }
 
-    &__textarea, &__input {
+    &__textarea,
+    &__input {
         &::placeholder {
             transition: all .2s;
             color: grey;
         }
-        
+
         &:focus {
             outline: none;
             color: black;
             background-color: rgba(white, 1);
             border-radius: 2px;
-            
+
             &::placeholder {
                 opacity: 0;
             }
@@ -89,7 +94,7 @@
         letter-spacing: .5rem;
         text-indent: .5rem;
     }
-    
+
     &__label--textarea {
         font-size: 1.2rem;
         margin-bottom: 2rem;
@@ -105,7 +110,7 @@
         text-indent: .5rem;
         margin-right: -.5rem;
     }
-    
+
     &__button {
         position: relative;
         display: inline-block;
@@ -122,16 +127,18 @@
         text-indent: .5rem;
         @include disableSelection;
         cursor: pointer;
-        transition: all .3s;	
-        
-        &:hover, &:focus {
+        transition: all .3s;
+
+
+        &:hover,
+        &:focus {
             border-color: white;
         }
-        
+
         &:focus {
             outline: 0;
         }
-        
+
         &::after {
             content: 'Aceptar';
             position: absolute;
@@ -142,15 +149,14 @@
             transition: opacity .5s;
         }
     }
-    
+
     &__checkbox {
         visibility: hidden;
-        // position: absolute;
-        // top: 10rem;
     }
-    
-    &__checkbox:checked + label span {
+
+    &__checkbox:checked+label span {
         transform: scale(1.05);
+
         &::after {
             content: 'Aceptado';
             background-color: white;
@@ -160,7 +166,7 @@
             border-radius: 3px;
         }
     }
-    
+
     &__send {
         height: 100%;
         width: 100%;
@@ -175,16 +181,18 @@
         cursor: pointer;
         transition: all .2s;
         line-height: 2rem;
-        
-        &:hover, &:focus {
+
+
+        &:hover,
+        &:focus {
             border-color: white;
         }
-        
+
         &:focus {
             outline: 0;
         }
     }
-    
+
     &__validate:invalid {
         border-color: red;
     }
@@ -201,39 +209,41 @@
 }
 
 .form__button {
-	position: relative;
-	display: inline-block;
-	outline: none;
-	background-color: black;
-	padding: 1rem 1.5rem;
-	border: 1px solid grey;
-	width: 150px;
-	height: 10px;
-	border-radius: 3px;
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: .5rem;
-	text-indent: .5rem;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    background-color: black;
+    padding: 1rem 1.5rem;
+    border: 1px solid grey;
+    width: 150px;
+    height: 10px;
+    border-radius: 3px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    text-indent: .5rem;
 
-	cursor: pointer;
-	transition: all .3s;	
-	
-	&:hover, &:focus {
-		border-color: white;
-	}
-	
-	&:focus {
-		outline: 0;
-	}
-	
-	&::after {
-		content: 'Aceptar';
-		position: absolute;
-		color: white;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		transition: opacity .5s;
+    cursor: pointer;
+    transition: all .3s;
+
+
+    &:hover,
+    &:focus {
+        border-color: white;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &::after {
+        content: 'Aceptar';
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity .5s;
     }
 }
 
@@ -243,7 +253,8 @@
     margin-right: -.5rem;
     transition: all .3s;
 
-    &:link, &:visited {
+    &:link,
+    &:visited {
         &:hover {
             color: grey;
         }
@@ -251,15 +262,17 @@
         &:hover::after {
             border-color: grey;
         }
+
         &:focus {
             outline: none;
             color: grey;
         }
+
         &:focus::after {
             border-color: grey;
         }
     }
-    
+
     &::after {
         content: '';
         position: absolute;
@@ -277,75 +290,42 @@
     overflow-y: scroll;
     z-index: 200;
     height: 100%;
+    width: 100vw;
     top: 0;
     left: 3000px;
-    background: white;
+    background-color: white;
     transition: all 1s ease-in;
     opacity: 0;
-    
-    &::before {
-        content: '';
-        overflow: hidden;
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        left: 3000px;
-        transition: all 1s ease-in;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        background-color: black;
-    }
-    
-    margin-top: $navigation-margin;
-    min-height: $fixed-content-size;
-    width: 100vw;
-    -webkit-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
 
-    @include respond(phone) {
-        -webkit-transition: all .1s ease-in-out;
-        transition: all .1s ease-in-out;
+    & p:not(:last-child) {
+        margin-bottom: 1rem;
     }
 
     &__content {
-        position: absolute;
+        margin-top: $navigation-height;
+        margin-bottom: $footer-height;
+        position: relative;
         top: 0%;
         padding: 2rem 2.5rem;
-        background-color: rgba(white, 1);
         color: black;
-        mix-blend-mode: screen;
+        z-index: 200;
         font-weight: 900;
         font-size: 1rem !important;
+        // height: 100%;
+        width: 100%;
     }
 
-    &__length {
-        display: block;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: .1rem;
-        text-indent: .1rem;
-    }
-
-    &__title, &__subtitle {
+    &__title {
         display: block;
         font-weight: 300;
         letter-spacing: .5rem;
         text-indent: .5rem;
         text-transform: uppercase;
         text-align: center;
-    }
-
-    &__title {
         font-size: 1.5rem;
     }
 
-    &__subtitle {
-        margin: 1rem 0;
-        font-size: 1.3rem;
-    }
-
-    &__description, .sponsor__brief {
+    &__description {
         font-size: 1.2rem;
         text-transform: uppercase;
         text-align: justify;
@@ -354,8 +334,7 @@
 
     &__link {
         text-decoration: none;
-        color: black;
-        position: absolute;
+        color: white;
         font-size: 1.3rem;
         text-transform: uppercase;
         letter-spacing: .3rem;
@@ -368,6 +347,10 @@
         display: inline-block;
         left: 2rem;
         top: 2rem;
+        color: black;
+        display: block;
+        text-align: center;
+        margin-bottom: 1.2rem;
     }
 
 }
@@ -383,4 +366,3 @@
         opacity: 1;
     }
 }
-
