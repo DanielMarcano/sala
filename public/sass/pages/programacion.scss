@@ -163,6 +163,9 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
     height: 100vh;
     width: 100vw;
     z-index: 1000;
+    @include respond(phone) {
+        background-repeat: no-repeat;
+    }
 
     &__nav {
         display: flex;
@@ -258,32 +261,56 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
 
 #labruja {
     background: center/contain url(/img/silvia.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/silvia.jpg) red;
+    }
 }
 
 #laberlinesa {
     background: center/contain url(/img/laura.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/laura.jpg) red;
+    }
 }
 
 #payasoyo {
     background: center/contain url(/img/daniel.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/daniel.jpg) red;
+    }
 }
 
 #yosoylaputaama {
     background: center/contain url(/img/teresa.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/teresa.jpg) red;
+    }
 }
 
 #treblinka {
     background: center/contain url(/img/diego.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/diego.jpg) red;
+    }
 }
 
 #atarantinoconamor {
     background: center/contain url(/img/leonor.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/leonor.jpg) red;
+    }
 }
 
 #quepuedohacerporti {
     background: center/contain url(/img/bianca.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/bianca.jpg) red;
+    }
 }
 
 #hijadelaguerra {
     background: center/contain url(/img/paula.jpg) red;
+    @include respond(phone) {
+        background: center/cover url(/img/paula.jpg) red;
+    }
 }

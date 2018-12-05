@@ -609,6 +609,9 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: 1000; }
+  @media (max-width: 37.5em) {
+    .popup {
+      background-repeat: no-repeat; } }
   .popup__nav {
     display: flex;
     flex-flow: row nowrap;
@@ -675,24 +678,48 @@ body {
 /* This is where I add each background to each event */
 #labruja {
   background: center/contain url(/img/silvia.jpg) red; }
+  @media (max-width: 37.5em) {
+    #labruja {
+      background: center/cover url(/img/silvia.jpg) red; } }
 
 #laberlinesa {
   background: center/contain url(/img/laura.jpg) red; }
+  @media (max-width: 37.5em) {
+    #laberlinesa {
+      background: center/cover url(/img/laura.jpg) red; } }
 
 #payasoyo {
   background: center/contain url(/img/daniel.jpg) red; }
+  @media (max-width: 37.5em) {
+    #payasoyo {
+      background: center/cover url(/img/daniel.jpg) red; } }
 
 #yosoylaputaama {
   background: center/contain url(/img/teresa.jpg) red; }
+  @media (max-width: 37.5em) {
+    #yosoylaputaama {
+      background: center/cover url(/img/teresa.jpg) red; } }
 
 #treblinka {
   background: center/contain url(/img/diego.jpg) red; }
+  @media (max-width: 37.5em) {
+    #treblinka {
+      background: center/cover url(/img/diego.jpg) red; } }
 
 #atarantinoconamor {
   background: center/contain url(/img/leonor.jpg) red; }
+  @media (max-width: 37.5em) {
+    #atarantinoconamor {
+      background: center/cover url(/img/leonor.jpg) red; } }
 
 #quepuedohacerporti {
   background: center/contain url(/img/bianca.jpg) red; }
+  @media (max-width: 37.5em) {
+    #quepuedohacerporti {
+      background: center/cover url(/img/bianca.jpg) red; } }
 
 #hijadelaguerra {
   background: center/contain url(/img/paula.jpg) red; }
+  @media (max-width: 37.5em) {
+    #hijadelaguerra {
+      background: center/cover url(/img/paula.jpg) red; } }
