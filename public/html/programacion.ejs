@@ -4,10 +4,10 @@
 <head>
     <%- include('../templates/meta'); %>
     <title>Sala On - Programación</title>
+    <link rel="canonical" href="http://www.salaonbcn.com/programacion">
+    <meta name="description" content="Toda la programación de nuestra sala. Aquí encontrarás nuestros eventos, obras, cursos, y mucho más.">
     <link rel="stylesheet" href="../css/programacion.css" inline>
 </head>
-
-
 
 <body>
     <%- include('../templates/navigation'); %>
@@ -18,39 +18,279 @@
         <div class="events">
             <div class="event-group">
                 <article class="event">
-                    <h2 class="event__title">Película</h2>
-                    <a href="#azulynotanrosa" class="event__sinopsis event__link">Sinopsis</a>
-                    <img class="event__img" src="/img/azulynotanrosa.jpg" alt="Azul y no tan Rosa">
-                    <a href="https://entradium.com/entradas/azul-y-no-tan-rosa-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#labruja" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/silvia.jpg" alt="La Bruja">
+                            <h2 class="event__title">La Bruja</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank" rel="nofollow">Comprar</a>
+                        <p class="event__date">15 - 12 - 2018 (19:00)</p>
+                    </div>
                 </article>
-                <div class="popup" id="azulynotanrosa">
-                    <a href="#" class="popup__close popup__link" data-back="azulynotanrosa">Volver</a>
-                    <a href="https://entradium.com/entradas/azul-y-no-tan-rosa-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
+                <div class="popup" id="labruja">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="labruja">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
                     <div class="popup__content">
-                        <h2 class="popup__title u-margin-bottom-small">Azul y no tan Rosa</h2>
-                        <p class="popup__length">Miguel Ferrari | 2012 | 110 mins</p>
+                        <h2 class="popup__title u-margin-bottom-small">"La Bruja"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Silvia Siles | Dirección: Cristian Fernández | Guión: Cristian
+                                Fernández</p>
+                            <p class="popup__length">15 mins appróx | Idioma: Español</p>
+                        </div>
                         <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
-                        <p class="popup__description">Diego, un fotógrafo de éxito, decide formalizar su relación con
-                            Fabrizio
-                            yéndose a vivir con él,
-                            pero, de manera inesperada, se ve obligado a hacerse cargo de su hijo Armando, que vive en
-                            España y al que no ha visto desde hace años. El chico llega con una maleta cargada de
-                            reproches, de modo que a Diego no le resultará fácil restablecer la relación afectiva con
-                            él. En
-                            tales circunstancias, un grupo de radicales homófobos le propinan a Fabrizio una brutal
-                            paliza
-                            que lo deja en coma.</p>
+                        <p class="popup__description">Una joven acusada de brujería reflexiona sobre su vida y a la
+                            sociedad que le ha tocado vivir mientras está encerrada en una oscura y silenciosa celda.</p>
                     </div>
                 </div>
                 <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#laberlinesa" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/laura.jpg" alt="La Berlinesa">
+                            <h2 class="event__title">La Berlinesa</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank" rel="nofollow">Comprar</a>
+                        <p class="event__date">15 - 12 - 2018 (19:30)</p>
+                    </div>
+                </article>
+                <div class="popup" id="laberlinesa">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="laberlinesa">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"La Berlinesa"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Laura Millaruelo | Dirección: Lara Vacas | Guión: Marc
+                                Villanueva</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Catalán</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            Berlín, años 40. Margaret Schulze sobrevive a las exigencias de los "hombres de su vida".
+                            Condicionada por su posición social y el contexto histórico donde se encuentra, vemos a una
+                            mujer totalmente infravalorada que se esfuerza por tomar una actitud noble y aristocrática,
+                            pero las apariencias no solamente engañan, sino que no duran para siempre: Margaret,
+                            liberándose por un instante de la presión social, romperá su silencio.
+                        </p>
+                    </div>
+                </div>
+                <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#payasoyo" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/daniel.jpg" alt="¿Payaso... Yo?">
+                            <h2 class="event__title">¿Payaso... Yo?</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">15 - 12 - 2018 (20:00)</p>
+                    </div>
+                </article>
+                <div class="popup" id="payasoyo">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="payasoyo">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"¿Payaso... Yo?"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Daniel Vásquez | Dirección: Jose Luis Userche | Guión: Jose
+                                Luis Userche</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Español</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            Una historia basada en hechos reales. Un payaso con poca fortuna es arrestado en las calles
+                            de la ciudad. Será trasladado a una oficina judicial en donde tendrá que dar declaraciones
+                            por los últimos acontecimientos que se han suscitado. Lo que nadie se imagina es que este
+                            noble hombre, nos regalará una historia aleccionadora defendiendo su libertad desde el amor
+                            y su maravilloso oficio de hacer reír.</p>
+                    </div>
+                </div>
+                <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#yosoylaputaama" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/teresa.jpg" alt="Yo soy la puta ama">
+                            <h2 class="event__title">Yo soy la puta ama</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">15 - 12 - 2018 (20:30)</p>
+                    </div>
+                </article>
+                <div class="popup" id="yosoylaputaama">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="yosoylaputaama">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"Yo soy la puta ama"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Teresa Roig | Dirección: Teresa Roig | Guión: Enrique Salas</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Español</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            Ella es "la puta ama". Tiene dinero, poder, relaciones... Sin embargo, esconde un gran
+                            secreto...</p>
+                    </div>
+                </div>
+                <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#treblinka" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/diego.jpg" alt="Treblinka">
+                            <h2 class="event__title">Treblinka</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">16 - 12 - 2018 (19:00)</p>
+                    </div>
+                </article>
+                <div class="popup" id="treblinka">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="treblinka">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"Treblinka"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Diego Mora | Dirección: Diego Mora | Guión: Diego Leon</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Español</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            En 1945, el campo de concentración nazi polaco Treblinka, se convierte en el escenario de
+                            la relación entre un dogmático soldado alemán y una orgullosa filósofa judía, la cual
+                            celebra la vida a través de la muerte, haciendo el amor en medio de una sangrienta
+                            contienda.
+                            Esta historia se convierte en un canto que nos conmueve al recordarnos que la dignidad, el
+                            respeto por la vida, la fe en Dios, e incluso el amor, son inherentes a cualquier ser
+                            humano, sin importar a qué bando de la guerra pertenezca.</p>
+                    </div>
+                </div>
+                <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#atarantinoconamor" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/leonor.jpg" alt="A Tarantino con Amor">
+                            <h2 class="event__title">A Tarantino con Amor</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">16 - 12 - 2018 (19:30)</p>
+                    </div>
+                </article>
+                <div class="popup" id="atarantinoconamor">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="atarantinoconamor">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"A Tarantino con Amor"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Leonor Olavarría | Dirección: Leonor Olavarría | Guión:
+                                Greymar Hernandez</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Español</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            Sola,<br>
+                            Asustada,<br>
+                            Y con un trago en la mano nos va contando su historia.<br>
+                            Lo unico que le queda es su obsesión para Tarantino.<br>
+                            Como diria Tarantino : “Verdaderamente pienso que una de mis fortalezas es el relato de
+                            historias”. Y asi piensa ella también.</p>
+                    </div>
+                </div>
+                <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#quepuedohacerporti" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/bianca.jpg" alt="¿Qué puedo hacer por ti?">
+                            <h2 class="event__title">¿Qué puedo hacer por ti?</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">16 - 12 - 2018 (20:00)</p>
+                    </div>
+                </article>
+                <div class="popup" id="quepuedohacerporti">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="quepuedohacerporti">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"¿Qué puedo hacer por ti?"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Bianca Palmisano | Dirección: Bianca Palmisano | Guión: Bianca
+                                Palmisano</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Español</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            Una mujer despierta en la habitación de un hospital. En ese momento empieza a saber porqué
+                            esta allí y comienza a relatar la historia de su vida y lo que su pareja ha provocado en
+                            ella durante éstos años. Después de recordar un hecho sucedido entre ellos la noche
+                            anterior, ella decide recoger sus cosas y desaparecer.</p>
+                    </div>
+                </div>
+                <article class="event">
+                    <h2 class="event__type">Monólogo</h2>
+                    <div class="event__body">
+                        <a href="#hijadelaguerra" class="event__link">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/paula.jpg" alt="Hija de la Guerra">
+                            <h2 class="event__title">Hija de la Guerra</h2>
+                        </div>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">16 - 12 - 2018 (20:30)</p>
+                    </div>
+                </article>
+                <div class="popup" id="hijadelaguerra">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="hijadelaguerra">Volver</a>
+                        <a href="https://entradium.com/sites/NjI4Mw==" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"Hija de la Guerra"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Paula Woyzechowsky | Dirección: Paula Woyzechowsky | Guión:
+                                Paula Woyzechowsky</p>
+
+                            <p class="popup__length">15 mins appróx| Idioma: Español</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">
+                            Una sobreviviente del Holocausto viaja en el tiempo recordando cómo se salvó de la muerte.
+                            ¡Aquello sí pasó!</p>
+                    </div>
+                </div>
+                <article class="event__empty"></article>
+                <!-- <article class="event">
                     <h2 class="event__title">Película</h2>
                     <a href="#cap2intentos" class="event__sinopsis event__link">Sinopsis</a>
                     <img class="event__img" src="/img/cap2intentos.jpg" alt="Cap 2 Intentos">
-                    <a href="https://entradium.com/entradas/cap-2-intentos-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
+                    <a href="https://entradium.com/entradas/cap-2-intentos-veffbcn2018" class="event__buy event__link"
+                        target="_blank">Comprar</a>
                 </article>
                 <div class="popup" id="cap2intentos">
                     <a href="#" class="popup__close popup__link" data-back="cap2intentos">Volver</a>
-                    <a href="https://entradium.com/entradas/cap-2-intentos-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    <a href="https://entradium.com/entradas/cap-2-intentos-veffbcn2018" class="popup__buy popup__link"
+                        target="_blank">Comprar</a>
                     <div class="popup__content">
                         <h2 class="popup__title u-margin-bottom-small">CAP 2 intentos</h2>
                         <p class="popup__length">Carlos Oteyza | 2016 | 100 mins</p>
@@ -69,50 +309,56 @@
                     <h2 class="event__title">Película</h2>
                     <a href="#paquete3" class="event__sinopsis event__link">Sinopsis</a>
                     <img class="event__img" src="/img/paquete3.jpg" alt="Paquete #3">
-                    <a href="https://entradium.com/entradas/paquete-3-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
+                    <a href="https://entradium.com/entradas/paquete-3-veffbcn2018" class="event__buy event__link"
+                        target="_blank">Comprar</a>
                 </article>
                 <div class="popup" id="paquete3">
-                        <a href="#" class="popup__close popup__link" data-back="paquete3">Volver</a>
-                        <a href="https://entradium.com/entradas/paquete-3-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
-                        <div class="popup__content">
-                            <h2 class="popup__title u-margin-bottom-small">Paquete#3</h2>
-                            <p class="popup__length">Alfredo Hueck | 2015 | 100 mins</p>
-                            <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
-                            <p class="popup__description">El Cholo es un taxista peruano que por circunstancias oscuras debe huir de su país para
-                                    trabajar en Venezuela. Por vueltas del destino, el Cholo termina conociendo a un
-                                    personaje extraño llamado El ruso quien le ofrece un trabajo como asesino a sueldo. Más
-                                    allá de la excelente paga, el negocio viene con hospedaje incluido, comida, diversiones
-                                    entre hermosas chicas y un grupo de compañeros entrañables de diferentes
-                                    nacionalidades que se desempeñan en lo mismo. Desde ese momento, las cosas para el
-                                    Cholo comienzan a marchar bien, pero lo que él desconoce es que la violencia es una
-                                    espiral del que nadie se puede escapar.</p>
-                        </div>
+                    <a href="#" class="popup__close popup__link" data-back="paquete3">Volver</a>
+                    <a href="https://entradium.com/entradas/paquete-3-veffbcn2018" class="popup__buy popup__link"
+                        target="_blank">Comprar</a>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">Paquete#3</h2>
+                        <p class="popup__length">Alfredo Hueck | 2015 | 100 mins</p>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">El Cholo es un taxista peruano que por circunstancias oscuras
+                            debe huir de su país para
+                            trabajar en Venezuela. Por vueltas del destino, el Cholo termina conociendo a un
+                            personaje extraño llamado El ruso quien le ofrece un trabajo como asesino a sueldo. Más
+                            allá de la excelente paga, el negocio viene con hospedaje incluido, comida, diversiones
+                            entre hermosas chicas y un grupo de compañeros entrañables de diferentes
+                            nacionalidades que se desempeñan en lo mismo. Desde ese momento, las cosas para el
+                            Cholo comienzan a marchar bien, pero lo que él desconoce es que la violencia es una
+                            espiral del que nadie se puede escapar.</p>
                     </div>
+                </div>
                 <article class="event">
                     <h2 class="event__title">Película</h2>
                     <a href="#lacasadelfin" class="event__sinopsis event__link">Sinopsis</a>
                     <img class="event__img" src="/img/lacasadelfindelostiempos.jpg" alt="La Casa del Fin de los Tiempos">
-                    <a href="https://entradium.com/entradas/la-casa-del-fin-de-los-tiempos-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
+                    <a href="https://entradium.com/entradas/la-casa-del-fin-de-los-tiempos-veffbcn2018" class="event__buy event__link"
+                        target="_blank">Comprar</a>
                 </article>
                 <div class="popup" id="lacasadelfin">
-                        <a href="#" class="popup__close popup__link" data-back="lacasadelfin">Volver</a>
-                        <a href="https://entradium.com/entradas/la-casa-del-fin-de-los-tiempos-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
-                        <div class="popup__content">
-                            <h2 class="popup__title u-margin-bottom-small">La Casa del Fin de los Tiempos</h2>
-                            <p class="popup__length">Alejandro Hidalgo | 2013 | 100 mins</p>
-                            <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
-                            <p class="popup__description">Dulce, una madre de familia, habita en una casa antigua junto a sus pequeños
-                                    hijos Leopoldo, Rodrigo y su esposo Juan José. En aquel lugar Dulce experimenta
-                                    aterradores encuentros con apariciones en la oscuridad. Misteriosos fantasmas
-                                    que le advierten de una profecía que está por desatarse. Dulce, desesperada,
-                                    intenta todo lo posible para cambiar el destino, pero una tragedia está por ocurrir.
-                                    Dulce es condenada a la pena máxima de prisión por un crimen que ella no ha
-                                    cometido. Treinta años después, envejecida, la mujer regresa a la casa para
-                                    continuar su condena en un arresto domiciliario. Allí, junto a la ayuda de un
-                                    sacerdote, luchará por descifrar el misterio y la tragedia que tanto la han
-                                    atormentado hasta descubrir el fenómeno que lo cambiará todo.</p>
-                        </div>
+                    <a href="#" class="popup__close popup__link" data-back="lacasadelfin">Volver</a>
+                    <a href="https://entradium.com/entradas/la-casa-del-fin-de-los-tiempos-veffbcn2018" class="popup__buy popup__link"
+                        target="_blank">Comprar</a>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">La Casa del Fin de los Tiempos</h2>
+                        <p class="popup__length">Alejandro Hidalgo | 2013 | 100 mins</p>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">Dulce, una madre de familia, habita en una casa antigua junto a
+                            sus pequeños
+                            hijos Leopoldo, Rodrigo y su esposo Juan José. En aquel lugar Dulce experimenta
+                            aterradores encuentros con apariciones en la oscuridad. Misteriosos fantasmas
+                            que le advierten de una profecía que está por desatarse. Dulce, desesperada,
+                            intenta todo lo posible para cambiar el destino, pero una tragedia está por ocurrir.
+                            Dulce es condenada a la pena máxima de prisión por un crimen que ella no ha
+                            cometido. Treinta años después, envejecida, la mujer regresa a la casa para
+                            continuar su condena en un arresto domiciliario. Allí, junto a la ayuda de un
+                            sacerdote, luchará por descifrar el misterio y la tragedia que tanto la han
+                            atormentado hasta descubrir el fenómeno que lo cambiará todo.</p>
                     </div>
+                </div>
                 <article class="event">
                     <h2 class="event__title">Película</h2>
                     <a href="#ann" class="event__sinopsis event__link">Sinopsis</a>
@@ -120,69 +366,76 @@
                     <a href="https://entradium.com/entradas/ann-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
                 </article>
                 <div class="popup" id="ann">
-                        <a href="#" class="popup__close popup__link" data-back="ann">Volver</a>
-                        <a href="https://entradium.com/entradas/ann-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
-                        <div class="popup__content">
-                            <h2 class="popup__title u-margin-bottom-small">Ann</h2>
-                            <p class="popup__length">Carla Forte | 2016 | 87 mins</p>
-                            <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
-                            <p class="popup__description">ANN es un largometraje que narra la historia de Rubén. Un artista visual de clase
-                                    baja que ha decidido abandonar su vida atormentada refugiándose en su propia
-                                    imaginación. El protagonista crea un mundo paralelo a la realidad, que lo
-                                    distancia de todo apego material y emocional, exorcizando de esta manera su
-                                    ego. Su esposa Ann, ante una deteriorada relación, intenta comprender el mundo
-                                    idealizado de Rubén; sin embargo, la degradación física y psicológica de su
-                                    esposo desvela una terrible confusión entre la realidad y su mundo imaginario, lo
-                                    que inevitablemente le obligará a elegir a qué lugar pertenecer antes de que sea
-                                    demasiado tarde.</p>
-                        </div>
+                    <a href="#" class="popup__close popup__link" data-back="ann">Volver</a>
+                    <a href="https://entradium.com/entradas/ann-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">Ann</h2>
+                        <p class="popup__length">Carla Forte | 2016 | 87 mins</p>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">ANN es un largometraje que narra la historia de Rubén. Un artista
+                            visual de clase
+                            baja que ha decidido abandonar su vida atormentada refugiándose en su propia
+                            imaginación. El protagonista crea un mundo paralelo a la realidad, que lo
+                            distancia de todo apego material y emocional, exorcizando de esta manera su
+                            ego. Su esposa Ann, ante una deteriorada relación, intenta comprender el mundo
+                            idealizado de Rubén; sin embargo, la degradación física y psicológica de su
+                            esposo desvela una terrible confusión entre la realidad y su mundo imaginario, lo
+                            que inevitablemente le obligará a elegir a qué lugar pertenecer antes de que sea
+                            demasiado tarde.</p>
                     </div>
+                </div>
                 <article class="event">
                     <h2 class="event__title">Película</h2>
                     <a href="#backseat" class="event__sinopsis event__link">Sinopsis</a>
                     <img class="event__img" src="/img/backseatfighter.jpg" alt="Backseat Fighter">
-                    <a href="https://entradium.com/entradas/backseat-fighter-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
+                    <a href="https://entradium.com/entradas/backseat-fighter-veffbcn2018" class="event__buy event__link"
+                        target="_blank">Comprar</a>
                 </article>
                 <div class="popup" id="backseat">
-                        <a href="#" class="popup__close popup__link" data-back="backseat">Volver</a>
-                        <a href="https://entradium.com/entradas/backseat-fighter-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
-                        <div class="popup__content">
-                            <h2 class="popup__title u-margin-bottom-small">Backseat Fighter</h2>
-                            <p class="popup__length">Mario Pagano | 2016 | 84 mins</p>
-                            <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
-                            <p class="popup__description">Mark es un policía encubierto que se oculta en la noche y en los combates clandestinos,
-                                    mientras es perseguido por una misión secreta que salió mal. Una vez más, decide huir y
-                                    en su camino se topa con Sandy, una hermosa prostituta que comparte el mismo deseo
-                                    que él: dejar atrás todo el dolor y comenzar de cero. Juntos comienzan un nuevo camino.
-                                    Sin embargo, el pasado no suele dar tregua y Mark deberá enfrentarse a él. Esto pondrá
-                                    en peligro ese plan de comenzar de nuevo, a Sandy y su entorno.</p>
-                        </div>
+                    <a href="#" class="popup__close popup__link" data-back="backseat">Volver</a>
+                    <a href="https://entradium.com/entradas/backseat-fighter-veffbcn2018" class="popup__buy popup__link"
+                        target="_blank">Comprar</a>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">Backseat Fighter</h2>
+                        <p class="popup__length">Mario Pagano | 2016 | 84 mins</p>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">Mark es un policía encubierto que se oculta en la noche y en los
+                            combates clandestinos,
+                            mientras es perseguido por una misión secreta que salió mal. Una vez más, decide huir y
+                            en su camino se topa con Sandy, una hermosa prostituta que comparte el mismo deseo
+                            que él: dejar atrás todo el dolor y comenzar de cero. Juntos comienzan un nuevo camino.
+                            Sin embargo, el pasado no suele dar tregua y Mark deberá enfrentarse a él. Esto pondrá
+                            en peligro ese plan de comenzar de nuevo, a Sandy y su entorno.</p>
                     </div>
+                </div>
                 <article class="event">
                     <h2 class="event__title">Película</h2>
                     <a href="#papita" class="event__sinopsis event__link">Sinopsis</a>
                     <img class="event__img" src="/img/papitamanitoston.jpg" alt="Papita Maní Tostón">
-                    <a href="https://entradium.com/entradas/papita-mani-toston-veffbcn2018" class="event__buy event__link" target="_blank">Comprar</a>
+                    <a href="https://entradium.com/entradas/papita-mani-toston-veffbcn2018" class="event__buy event__link"
+                        target="_blank">Comprar</a>
                 </article>
                 <div class="popup" id="papita">
-                        <a href="#" class="popup__close popup__link" data-back="papita">Volver</a>
-                        <a href="https://entradium.com/entradas/papita-mani-toston-veffbcn2018" class="popup__buy popup__link" target="_blank">Comprar</a>
-                        <div class="popup__content">
-                            <h2 class="popup__title u-margin-bottom-small">Papita, Mani, Toston</h2>
-                            <p class="popup__length">Luis Carlos Hueck | 2013 | 115 mins</p>
-                            <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
-                            <p class="popup__description">Andrés (Jean Pierre Agostini) es un fan empedernido de los Leones del Caracas
-                                    uno de los principales equipos de béisbol de Venezuela. Julissa (Juliette Pardau)
-                                    es una fanática de los Navegantes del Magallanes, el equipo rival.
-                                    Un día Andrés consigue por error unas entradas para ver el partido en la zona VIP
-                                    de Magallanes. Allí se encuentra con Julissa, que es la fanática #1 de sus rivales.
-                                    Ambos se enamoran pero, para poder estar juntos, tendrán que fingir ser del
-                                    equipo contrario, confundiendo y enfadando a sus familiares y amigos y
-                                    ocasionando las más divertidas situaciones.</p>
-                        </div>
+                    <a href="#" class="popup__close popup__link" data-back="papita">Volver</a>
+                    <a href="https://entradium.com/entradas/papita-mani-toston-veffbcn2018" class="popup__buy popup__link"
+                        target="_blank">Comprar</a>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">Papita, Mani, Toston</h2>
+                        <p class="popup__length">Luis Carlos Hueck | 2013 | 115 mins</p>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">Andrés (Jean Pierre Agostini) es un fan empedernido de los Leones
+                            del Caracas
+                            uno de los principales equipos de béisbol de Venezuela. Julissa (Juliette Pardau)
+                            es una fanática de los Navegantes del Magallanes, el equipo rival.
+                            Un día Andrés consigue por error unas entradas para ver el partido en la zona VIP
+                            de Magallanes. Allí se encuentra con Julissa, que es la fanática #1 de sus rivales.
+                            Ambos se enamoran pero, para poder estar juntos, tendrán que fingir ser del
+                            equipo contrario, confundiendo y enfadando a sus familiares y amigos y
+                            ocasionando las más divertidas situaciones.</p>
                     </div>
+                </div>
                 <article class="event__empty"></article>
-                <article class="event__empty"></article>
+                <article class="event__empty"></article>-->
             </div>
         </div>
     </main>
