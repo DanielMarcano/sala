@@ -71,6 +71,7 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
     }
 
     &__img {
+        display: block;
         max-width: 215px;
         height: 290px;
         z-index: 20000;
@@ -259,58 +260,16 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
 
 /* This is where I add each background to each event */
 
-#labruja {
-    background: center/contain url(/img/silvia.jpg) red;
+#candela {
+    background: center/contain url(/img/candela.jpg) turquoise;
     @include respond(phone) {
-        background: center/cover url(/img/silvia.jpg) red;
+        background: center/cover url(/img/candela.jpg) turquoise;
     }
 }
 
-#laberlinesa {
-    background: center/contain url(/img/laura.jpg) red;
+#esteve {
+    background: center/contain url(/img/esteve.jpg) turquoise;
     @include respond(phone) {
-        background: center/cover url(/img/laura.jpg) red;
-    }
-}
-
-#payasoyo {
-    background: center/contain url(/img/daniel.jpg) red;
-    @include respond(phone) {
-        background: center/cover url(/img/daniel.jpg) red;
-    }
-}
-
-#yosoylaputaama {
-    background: center/contain url(/img/teresa.jpg) red;
-    @include respond(phone) {
-        background: center/cover url(/img/teresa.jpg) red;
-    }
-}
-
-#treblinka {
-    background: center/contain url(/img/diego.jpg) red;
-    @include respond(phone) {
-        background: center/cover url(/img/diego.jpg) red;
-    }
-}
-
-#atarantinoconamor {
-    background: center/contain url(/img/leonor.jpg) red;
-    @include respond(phone) {
-        background: center/cover url(/img/leonor.jpg) red;
-    }
-}
-
-#quepuedohacerporti {
-    background: center/contain url(/img/bianca.jpg) red;
-    @include respond(phone) {
-        background: center/cover url(/img/bianca.jpg) red;
-    }
-}
-
-#hijadelaguerra {
-    background: center/contain url(/img/paula.jpg) red;
-    @include respond(phone) {
-        background: center/cover url(/img/paula.jpg) red;
+        background: center/cover url(/img/esteve.jpg) turquoise;
     }
 }

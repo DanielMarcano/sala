@@ -540,6 +540,7 @@ body {
     margin: 0;
     color: black; }
   .event__img {
+    display: block;
     max-width: 215px;
     height: 290px;
     z-index: 20000;
@@ -676,50 +677,14 @@ body {
     opacity: 1; }
 
 /* This is where I add each background to each event */
-#labruja {
-  background: center/contain url(/img/silvia.jpg) red; }
+#candela {
+  background: center/contain url(/img/candela.jpg) turquoise; }
   @media (max-width: 37.5em) {
-    #labruja {
-      background: center/cover url(/img/silvia.jpg) red; } }
+    #candela {
+      background: center/cover url(/img/candela.jpg) turquoise; } }
 
-#laberlinesa {
-  background: center/contain url(/img/laura.jpg) red; }
+#esteve {
+  background: center/contain url(/img/esteve.jpg) turquoise; }
   @media (max-width: 37.5em) {
-    #laberlinesa {
-      background: center/cover url(/img/laura.jpg) red; } }
-
-#payasoyo {
-  background: center/contain url(/img/daniel.jpg) red; }
-  @media (max-width: 37.5em) {
-    #payasoyo {
-      background: center/cover url(/img/daniel.jpg) red; } }
-
-#yosoylaputaama {
-  background: center/contain url(/img/teresa.jpg) red; }
-  @media (max-width: 37.5em) {
-    #yosoylaputaama {
-      background: center/cover url(/img/teresa.jpg) red; } }
-
-#treblinka {
-  background: center/contain url(/img/diego.jpg) red; }
-  @media (max-width: 37.5em) {
-    #treblinka {
-      background: center/cover url(/img/diego.jpg) red; } }
-
-#atarantinoconamor {
-  background: center/contain url(/img/leonor.jpg) red; }
-  @media (max-width: 37.5em) {
-    #atarantinoconamor {
-      background: center/cover url(/img/leonor.jpg) red; } }
-
-#quepuedohacerporti {
-  background: center/contain url(/img/bianca.jpg) red; }
-  @media (max-width: 37.5em) {
-    #quepuedohacerporti {
-      background: center/cover url(/img/bianca.jpg) red; } }
-
-#hijadelaguerra {
-  background: center/contain url(/img/paula.jpg) red; }
-  @media (max-width: 37.5em) {
-    #hijadelaguerra {
-      background: center/cover url(/img/paula.jpg) red; } }
+    #esteve {
+      background: center/cover url(/img/esteve.jpg) turquoise; } }
