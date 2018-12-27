@@ -15,6 +15,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngQuant = require('imagemin-pngquant');
+const htmlmin = require('gulp-htmlmin');
 
 const optimizeImages = () => {
   return gulp.src('public/img/*')
@@ -34,6 +35,14 @@ const optimizeImages = () => {
 };
 
 gulp.task('optimize:img', optimizeImages);
+
+const compressHTML = () => {
+  return gulp.src('dist/**/*.+(html|ejs)')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('dist/'));
+};
+
+gulp.task('compress:html', compressHTML);
 
 const fonts = () => {
   return gulp.src('./public/fonts/**/*')
@@ -116,7 +125,7 @@ const watch = () => {
   const jsWatcher = gulp.watch('./public/js/!(*.bundle).js', gulp.series(js, inline));
   jsWatcher.on('change', watcherReporter);
 
-  const htmlWatcher = gulp.watch('./public/**/*.+(html|ejs)', gulp.series(inline));
+  const htmlWatcher = gulp.watch('./public/**/*.+(html|ejs)', gulp.series(inline, compressHTML));
   htmlWatcher.on('change', watcherReporter);
 
   const scssWatcher = gulp.watch('./public/**/*.scss', gulp.series(compileSass, optimizeCSS, inline));
@@ -128,4 +137,4 @@ const watch = () => {
 
 gulp.task('watch', watch);
 
-gulp.task('default', gulp.series(optimizeImages, compileSass, optimizeCSS, js, inline, fonts, startBrowserSync, watch));
+gulp.task('default', gulp.series(optimizeImages, compileSass, optimizeCSS, js, inline, compressHTML, fonts, startBrowserSync, watch));

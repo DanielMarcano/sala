@@ -18,6 +18,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-validator": "^5.3.0",
+    "gulp-htmlmin": "^5.0.1",
     "helmet": "^3.14.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant": "^6.0.0",
