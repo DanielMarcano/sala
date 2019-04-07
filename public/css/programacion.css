@@ -550,7 +550,8 @@ body {
   .event__date {
     margin-top: 0;
     color: white;
-    user-select: none; }
+    user-select: none;
+    text-align: center; }
   .event__link:link, .event__link:visited {
     color: white;
     padding: .1rem;
@@ -683,8 +684,8 @@ body {
     #candela {
       background: center/cover url(/img/candela.jpg) turquoise; } }
 
-#esteve {
-  background: center/contain url(/img/esteve.jpg) turquoise; }
+#lacoach {
+  background: center/contain url(/img/lacoach.jpeg) turquoise; }
   @media (max-width: 37.5em) {
-    #esteve {
-      background: center/cover url(/img/esteve.jpg) turquoise; } }
+    #lacoach {
+      background: center/cover url(/img/lacoach.jpeg) turquoise; } }

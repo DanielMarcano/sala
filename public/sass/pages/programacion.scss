@@ -86,6 +86,7 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
         margin-top: 0;
         color: white;
         user-select: none;
+        text-align: center;
     }
 
     &__link {
@@ -267,9 +268,9 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
     }
 }
 
-#esteve {
-    background: center/contain url(/img/esteve.jpg) turquoise;
+#lacoach {
+    background: center/contain url(/img/lacoach.jpeg) turquoise;
     @include respond(phone) {
-        background: center/cover url(/img/esteve.jpg) turquoise;
+        background: center/cover url(/img/lacoach.jpeg) turquoise;
     }
 }
