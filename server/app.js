@@ -1,8 +1,6 @@
-require('newrelic');
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
-// const { check, validationResult } = require('express-validator/check');
 const helmet = require('helmet');
 const { router } = require('./routes/main');
 
