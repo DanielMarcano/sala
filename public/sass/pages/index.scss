@@ -28,7 +28,7 @@ html, body {
       letter-spacing: 0.7rem;
     }
 
-    @media screen and (orientation:landscape) {
+    @media screen and (orientation:landscape) and (max-width: 800px) {
       font-size: .8rem;
       line-height: 1.5rem;
    }
@@ -47,7 +47,7 @@ html, body {
       letter-spacing: 1.02rem;
     }
 
-    @media screen and (orientation:landscape) {
+    @media screen and (orientation:landscape) and (max-width: 800px) {
       font-size: .8rem;
       line-height: 1.5rem;
    }
