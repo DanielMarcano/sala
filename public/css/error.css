@@ -245,7 +245,7 @@ body {
   padding: 1rem 3rem; }
   @media screen and (max-width: 900px) {
     .link {
-      padding: 2rem 3rem; } }
+      padding: 1rem 1.3rem; } }
   .link--contact::after {
     content: "Ven a Sala Ón"; }
   .link--event {
@@ -266,7 +266,7 @@ body {
     padding: 1.1rem 0; }
     @media screen and (max-width: 900px) {
       .link::after {
-        padding: 2.1rem 0; } }
+        padding: 1.5rem 0; } }
   .link:link, .link:visited {
     text-transform: uppercase; }
   .link:hover::after {

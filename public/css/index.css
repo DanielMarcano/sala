@@ -245,7 +245,7 @@ body {
   padding: 1rem 3rem; }
   @media screen and (max-width: 900px) {
     .link {
-      padding: 2rem 3rem; } }
+      padding: 1rem 1.3rem; } }
   .link--contact::after {
     content: "Ven a Sala Ón"; }
   .link--event {
@@ -266,7 +266,7 @@ body {
     padding: 1.1rem 0; }
     @media screen and (max-width: 900px) {
       .link::after {
-        padding: 2.1rem 0; } }
+        padding: 1.5rem 0; } }
   .link:link, .link:visited {
     text-transform: uppercase; }
   .link:hover::after {
@@ -499,34 +499,36 @@ html, body {
 .main {
   position: relative;
   display: flex;
-  height: 100vh;
+  height: calc(100vh - (4.5rem + 3rem));
+  top: 4.5rem;
   max-height: inherit;
   overflow: hidden; }
   .main__text-container {
     width: 0px;
     font-size: 0.95rem;
     letter-spacing: 1.3rem; }
-    @media screen and (max-width: 900px) {
+    @media (max-width: 56.25em) {
       .main__text-container {
         font-size: .9rem;
         line-height: 2.7rem;
         letter-spacing: 0.7rem; } }
-    @media screen and (orientation: landscape) and (max-width: 800px) {
+    @media screen and (orientation: landscape) and (max-width: 850px) {
       .main__text-container {
         font-size: .8rem;
-        line-height: 1.5rem; } }
+        line-height: 1.8rem;
+        letter-spacing: 0.76rem; } }
   .main__title {
     margin: auto;
     letter-spacing: 1.5rem;
     text-transform: uppercase;
     line-height: 4rem;
     font-size: 1.2rem; }
-    @media screen and (max-width: 900px) {
+    @media (max-width: 56.25em) {
       .main__title {
         font-size: .9rem;
         line-height: 2.4rem;
         letter-spacing: 1.02rem; } }
-    @media screen and (orientation: landscape) and (max-width: 800px) {
+    @media screen and (orientation: landscape) and (max-width: 850px) {
       .main__title {
         font-size: .8rem;
-        line-height: 1.5rem; } }
+        line-height: 1.8rem; } }

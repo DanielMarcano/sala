@@ -13,24 +13,28 @@ html, body {
 .main {
   position: relative;
   display: flex;
-  height: 100vh;
+  height: calc(100vh - (#{$navigation-height} + #{$footer-height}));
+  top: $navigation-height;
+  // height: 100vh;
   max-height: inherit;
   overflow: hidden;
+
 
   &__text-container {
     width: 0px;
     font-size: 0.95rem;
     letter-spacing: 1.3rem;
 
-    @media screen and (max-width: 900px) {
+    @include respond(tab-port) {
       font-size: .9rem;
       line-height: 2.7rem;
       letter-spacing: 0.7rem;
     }
 
-    @media screen and (orientation:landscape) and (max-width: 800px) {
+    @media screen and (orientation:landscape) and (max-width: 850px) {
       font-size: .8rem;
-      line-height: 1.5rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.76rem;
    }
   }
   
@@ -41,15 +45,15 @@ html, body {
     line-height: 4rem;
     font-size: 1.2rem;
 
-    @media screen and (max-width: 900px) {
+    @include respond(tab-port) {
       font-size: .9rem;
       line-height: 2.4rem;
       letter-spacing: 1.02rem;
     }
 
-    @media screen and (orientation:landscape) and (max-width: 800px) {
+    @media screen and (orientation:landscape) and (max-width: 850px) {
       font-size: .8rem;
-      line-height: 1.5rem;
+      line-height: 1.8rem;
    }
   }
 }

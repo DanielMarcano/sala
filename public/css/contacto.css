@@ -245,7 +245,7 @@ body {
   padding: 1rem 3rem; }
   @media screen and (max-width: 900px) {
     .link {
-      padding: 2rem 3rem; } }
+      padding: 1rem 1.3rem; } }
   .link--contact::after {
     content: "Ven a Sala Ón"; }
   .link--event {
@@ -266,7 +266,7 @@ body {
     padding: 1.1rem 0; }
     @media screen and (max-width: 900px) {
       .link::after {
-        padding: 2.1rem 0; } }
+        padding: 1.5rem 0; } }
   .link:link, .link:visited {
     text-transform: uppercase; }
   .link:hover::after {
@@ -489,25 +489,28 @@ body {
 
 .contact {
   display: flex;
-  height: 60%;
+  position: relative;
   flex-flow: column nowrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 1.2rem;
-  letter-spacing: .2rem; }
-  .contact *:not(:last-child) {
-    margin-bottom: 3rem; }
+  letter-spacing: .2rem;
+  height: calc(90vh - (4.5rem + 3rem));
+  max-height: calc(90vh - (4.5rem + 3rem));
+  top: 4.5rem;
+  bottom: 3rem; }
   .contact__brief {
     text-align: center; }
   .contact__title {
+    width: 100%;
+    margin-top: .4rem;
+    font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: .5rem;
     text-indent: .5rem;
-    margin-top: 0;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-align: center; }
   .contact__phone:link, .contact__phone:visited, .contact__email:link, .contact__email:visited {
     text-decoration: none;
     border-bottom: 1px solid white;
     color: white; }
-  .contact__email {
-    line-height: 2rem; }
