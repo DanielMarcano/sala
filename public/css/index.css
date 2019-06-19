@@ -390,13 +390,12 @@ body {
     justify-content: space-evenly;
     position: absolute;
     visibility: hidden;
-    height: 0;
     background-color: #000;
     opacity: 0;
     transition: all .2s;
-    height: calc(100vh - 7.5rem) !important;
-    max-height: calc(100vh - 7.5rem) !important;
-    overflow-y: scroll; }
+    height: calc(100vh - (4.5rem + 3rem));
+    max-height: calc(100vh - (4.5rem + 3rem));
+    overflow: hidden; }
     @media screen and (max-width: 500px) {
       .navigation__nav {
         justify-content: flex-start; } }
@@ -487,7 +486,8 @@ body {
   .row [class^="col"] + [class^="col"] {
     margin-left: 0 !important; } }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -509,12 +509,12 @@ html, body {
     letter-spacing: 1.3rem; }
     @media (max-width: 56.25em) {
       .main__text-container {
-        font-size: .9rem;
+        font-size: 0.9rem;
         line-height: 2.7rem;
         letter-spacing: 0.7rem; } }
     @media screen and (orientation: landscape) and (max-width: 850px) {
       .main__text-container {
-        font-size: .8rem;
+        font-size: 0.8rem;
         line-height: 1.8rem;
         letter-spacing: 0.76rem; } }
   .main__title {
@@ -525,10 +525,10 @@ html, body {
     font-size: 1.2rem; }
     @media (max-width: 56.25em) {
       .main__title {
-        font-size: .9rem;
+        font-size: 0.9rem;
         line-height: 2.4rem;
         letter-spacing: 1.02rem; } }
     @media screen and (orientation: landscape) and (max-width: 850px) {
       .main__title {
-        font-size: .8rem;
+        font-size: 0.8rem;
         line-height: 1.8rem; } }

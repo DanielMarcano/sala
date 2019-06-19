@@ -261,14 +261,21 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
 
 /* This is where I add each background to each event */
 
-#candela {
+#one {
+    background: center/contain url(/img/velvet2face.png) turquoise;
+    @include respond(phone) {
+        background: center/cover url(/img/velvet2face.png) turquoise;
+    }
+}
+
+#two {
     background: center/contain url(/img/candela.jpg) turquoise;
     @include respond(phone) {
         background: center/cover url(/img/candela.jpg) turquoise;
     }
 }
 
-#lacoach {
+#three {
     background: center/contain url(/img/lacoach.jpeg) turquoise;
     @include respond(phone) {
         background: center/cover url(/img/lacoach.jpeg) turquoise;

@@ -2,7 +2,7 @@ const ityped = require('./vendor/ityped.min');
 
 window.onload = function () {
   const footer = document.querySelector('.footer');
-  window.scrollTo({ left: 0, top: footer.scrollHeight });
+  window.scrollTo({ left: 0, top: footer.scrollHeight / 2 });
 
   const words = ['dramaturgos', 'artistas', 'actorxs', 'soñadorxs', 'cantantes', 'bailarinxs', 'humanxs', 'rarxs', 'grandes', 'pequeñxs', 'amantes', 'hippies', 'cineastas', 'pintorxs', 'productorxs', 'directorxs', 'dramaturgxs', 'escritorxs', 'guionistas', 'cantantes', 'músicos'];
 

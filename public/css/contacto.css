@@ -390,13 +390,12 @@ body {
     justify-content: space-evenly;
     position: absolute;
     visibility: hidden;
-    height: 0;
     background-color: #000;
     opacity: 0;
     transition: all .2s;
-    height: calc(100vh - 7.5rem) !important;
-    max-height: calc(100vh - 7.5rem) !important;
-    overflow-y: scroll; }
+    height: calc(100vh - (4.5rem + 3rem));
+    max-height: calc(100vh - (4.5rem + 3rem));
+    overflow: hidden; }
     @media screen and (max-width: 500px) {
       .navigation__nav {
         justify-content: flex-start; } }
@@ -494,7 +493,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   font-size: 1.2rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   height: calc(90vh - (4.5rem + 3rem));
   max-height: calc(90vh - (4.5rem + 3rem));
   top: 4.5rem;
@@ -503,11 +502,11 @@ body {
     text-align: center; }
   .contact__title {
     width: 100%;
-    margin-top: .4rem;
+    margin-top: 0.4rem;
     font-size: 1.5rem;
     font-weight: 300;
-    letter-spacing: .5rem;
-    text-indent: .5rem;
+    letter-spacing: 0.5rem;
+    text-indent: 0.5rem;
     text-transform: uppercase;
     text-align: center; }
   .contact__phone:link, .contact__phone:visited, .contact__email:link, .contact__email:visited {

@@ -2,12 +2,12 @@
   "name": "salaonbcn",
   "version": "1.0.0",
   "description": "The official site of the Sala ON place",
-  "main": "index.js",
+  "main": "server/app",
   "repository": "https://github.com/DanielMarcano/salaonbcn.git",
   "author": "Daniel Marcano",
   "scripts": {
     "start": "node server/app.js",
-    "nodemon": "nodemon server.js -e \"css, js, html\""
+    "dev": "nodemon server.js -e \"css, js, html\""
   },
   "engines": {
     "node": "10.15.1"
@@ -24,7 +24,11 @@
     "imagemin-pngquant": "6.0.0",
     "ityped": "1.0.3",
     "joi": "14.0.3",
-    "nodemailer": "4.6.8"
+    "lodash": "^4.17.11",
+    "mongodb": "^3.2.5",
+    "mongoose": "^5.5.12",
+    "nodemailer": "4.6.8",
+    "validator": "^11.0.0"
   },
   "devDependencies": {
     "vinyl": "2.2.0",

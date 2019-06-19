@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
-const {
-  Joi,
-  AlquilerSchema,
-} = require('../schemas/alquilerSchema');
+const { Joi, Alquiler } = require('../models/alquiler');
 
 router.get('/', (req, res) => {
   res.status(200).render('index');
@@ -26,26 +23,22 @@ router.get('/alquiler', (req, res) => {
 });
 
 const sendMail = function (req, res) {
-
   const {
-    firstname,
-    lastname,
-    email,
-    phone,
-    address,
-    business,
-    more,
+    firstname, lastname, email, phone, address, business, more,
   } = req.body;
 
-  const response = Joi.validate({
-    firstname,
-    lastname,
-    email,
-    phone,
-    address,
-    business,
-    more,
-  }, AlquilerSchema);
+  const response = Joi.validate(
+    {
+      firstname,
+      lastname,
+      email,
+      phone,
+      address,
+      business,
+      more,
+    },
+    Alquiler,
+  );
 
   if (response.error !== null) {
     return res.json({

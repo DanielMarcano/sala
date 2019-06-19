@@ -390,13 +390,12 @@ body {
     justify-content: space-evenly;
     position: absolute;
     visibility: hidden;
-    height: 0;
     background-color: #000;
     opacity: 0;
     transition: all .2s;
-    height: calc(100vh - 7.5rem) !important;
-    max-height: calc(100vh - 7.5rem) !important;
-    overflow-y: scroll; }
+    height: calc(100vh - (4.5rem + 3rem));
+    max-height: calc(100vh - (4.5rem + 3rem));
+    overflow: hidden; }
     @media screen and (max-width: 500px) {
       .navigation__nav {
         justify-content: flex-start; } }
@@ -678,14 +677,20 @@ body {
     opacity: 1; }
 
 /* This is where I add each background to each event */
-#candela {
+#one {
+  background: center/contain url(/img/velvet2face.png) turquoise; }
+  @media (max-width: 37.5em) {
+    #one {
+      background: center/cover url(/img/velvet2face.png) turquoise; } }
+
+#two {
   background: center/contain url(/img/candela.jpg) turquoise; }
   @media (max-width: 37.5em) {
-    #candela {
+    #two {
       background: center/cover url(/img/candela.jpg) turquoise; } }
 
-#lacoach {
+#three {
   background: center/contain url(/img/lacoach.jpeg) turquoise; }
   @media (max-width: 37.5em) {
-    #lacoach {
+    #three {
       background: center/cover url(/img/lacoach.jpeg) turquoise; } }
