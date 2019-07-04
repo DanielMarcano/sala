@@ -262,22 +262,57 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
 /* This is where I add each background to each event */
 
 #one {
-    background: center/contain url(/img/velvet2face.png) turquoise;
+    background: center/contain url(/img/lacausa.png) turquoise;
     @include respond(phone) {
-        background: center/cover url(/img/velvet2face.png) turquoise;
+        background: center/cover url(/img/lacausa.png) turquoise;
     }
 }
 
 #two {
-    background: center/contain url(/img/candela.jpg) turquoise;
+    background: center/contain url(/img/apologia.png) turquoise;
     @include respond(phone) {
-        background: center/cover url(/img/candela.jpg) turquoise;
+        background: center/cover url(/img/apologia.png) turquoise;
     }
 }
 
 #three {
-    background: center/contain url(/img/lacoach.jpeg) turquoise;
+    background: center/contain url(/img/elperdon.png) turquoise;
     @include respond(phone) {
-        background: center/cover url(/img/lacoach.jpeg) turquoise;
+        background: center/cover url(/img/elperdon.png) turquoise;
     }
 }
+
+#four {
+    background: center/contain url(/img/antesdeldesayuno.png) turquoise;
+    @include respond(phone) {
+        background: center/cover url(/img/antesdeldesayuno.png) turquoise;
+    }
+}
+
+#five {
+    background: center/contain url(/img/candela.png) turquoise;
+    @include respond(phone) {
+        background: center/cover url(/img/candela.png) turquoise;
+    }
+}
+
+#six {
+    background: center/contain url(/img/lacoach.png) turquoise;
+    @include respond(phone) {
+        background: center/cover url(/img/lacoach.png) turquoise;
+    }
+}
+
+// #two {
+//     background: center/contain url(/img/candela.jpg) turquoise;
+//     @include respond(phone) {
+//         background: center/cover url(/img/candela.jpg) turquoise;
+//     }
+// }
+
+// #three {
+//     background: center/contain url(/img/lacoach.jpeg) turquoise;
+//     @include respond(phone) {
+//         background: center/cover url(/img/lacoach.jpeg) turquoise;
+//     }
+// }

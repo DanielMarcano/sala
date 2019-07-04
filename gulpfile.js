@@ -63,7 +63,7 @@ gulp.task('inline', inline);
 const startBrowserSync = (done) => {
   browserSync.init({
     proxy: 'localhost:3000',
-    tunnel: true,
+    tunnel: false,
   });
   done();
 };

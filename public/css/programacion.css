@@ -678,19 +678,37 @@ body {
 
 /* This is where I add each background to each event */
 #one {
-  background: center/contain url(/img/velvet2face.png) turquoise; }
+  background: center/contain url(/img/lacausa.png) turquoise; }
   @media (max-width: 37.5em) {
     #one {
-      background: center/cover url(/img/velvet2face.png) turquoise; } }
+      background: center/cover url(/img/lacausa.png) turquoise; } }
 
 #two {
-  background: center/contain url(/img/candela.jpg) turquoise; }
+  background: center/contain url(/img/apologia.png) turquoise; }
   @media (max-width: 37.5em) {
     #two {
-      background: center/cover url(/img/candela.jpg) turquoise; } }
+      background: center/cover url(/img/apologia.png) turquoise; } }
 
 #three {
-  background: center/contain url(/img/lacoach.jpeg) turquoise; }
+  background: center/contain url(/img/elperdon.png) turquoise; }
   @media (max-width: 37.5em) {
     #three {
-      background: center/cover url(/img/lacoach.jpeg) turquoise; } }
+      background: center/cover url(/img/elperdon.png) turquoise; } }
+
+#four {
+  background: center/contain url(/img/antesdeldesayuno.png) turquoise; }
+  @media (max-width: 37.5em) {
+    #four {
+      background: center/cover url(/img/antesdeldesayuno.png) turquoise; } }
+
+#five {
+  background: center/contain url(/img/candela.png) turquoise; }
+  @media (max-width: 37.5em) {
+    #five {
+      background: center/cover url(/img/candela.png) turquoise; } }
+
+#six {
+  background: center/contain url(/img/lacoach.png) turquoise; }
+  @media (max-width: 37.5em) {
+    #six {
+      background: center/cover url(/img/lacoach.png) turquoise; } }
