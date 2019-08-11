@@ -1,14 +1,16 @@
-const express = require('express');
+require('./db/mongoose');
+
+const { TOKEN_SECRET, PORT } = require('./config');
 const path = require('path');
+const distPath = path.join(__dirname, '../dist');
+
+const express = require('express');
 const compression = require('compression');
 const helmet = require('helmet');
-// require('./db/mongoose');
-// const routerUser = require('./routers/user');
-// const routerTask = require('./routers/task');
-const { router } = require('./routers/main');
 
-const distPath = path.join(__dirname, '../dist');
-const PORT = process.env.PORT || 3000;
+const { events } = require('./routers/events');
+const { users } = require('./routers/users');
+const { main } = require('./routers/main');
 
 const app = express();
 
@@ -28,9 +30,9 @@ app.use(express.json());
 app.use(express.static(`${distPath}/html`));
 app.use(express.static(distPath));
 
-// app.use(routerUser);
-// app.use(routerTask);
-app.use(router);
+app.use(users);
+app.use(events);
+app.use(main);
 
 app.listen(PORT, () => {
   console.log(`Server up and running at ${PORT}`);

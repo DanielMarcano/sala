@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
   res.status(200).render('index');
 });
 
+router.get('/admin', (req, res) => {
+  res.status(200).render('html/admin');
+});
+
 router.get('/contacto', (req, res) => {
   res.status(200).render('html/contacto');
 });
@@ -75,7 +79,6 @@ const sendMail = function (req, res) {
     if (error) {
       return console.log(error);
     }
-    console.log(info);
     res.json({ message: 'El mensaje se ha enviado correctamente.' });
   });
 };
@@ -87,5 +90,5 @@ router.use((req, res, next) => {
 });
 
 module.exports = {
-  router,
+  main: router,
 };

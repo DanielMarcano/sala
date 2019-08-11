@@ -1,62 +1,25 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const validator = require('validator');
-
 
 const UserSchema = new Schema({
   name: {
     type: String,
     required: true,
-    trim: true,
-  },
-  age: {
-    type: Number,
-    default: 0,
-    set: function(age) {
-      this._previousAge = this.age;
-      return age;
-    },
-    validate: {
-      validator: (value) => {
-        return !(value < 0);
-      },
-      message: 'Age must be bigger than 0',
-    },
-  },
-  email: {
-    type: String,
-    required: true,
-    trim: true,
-    lowercase: true,
-    validate: {
-      validator: validator.isEmail,
-      message: 'You must provide a valid email',
-    },
+    trim: true
   },
   password: {
     type: String,
+    enum: ['Teatro', 'Micro Teatro', 'Concierto', 'Película'],
     required: true,
-    minlength: 6,
-    trim: true,
-    validate: {
-      validator: (value) => {
-        return !value.toLowerCase().includes('password');
-      },
-      message: 'Password cannot contain the string "password"',
-    },
+    minlength: 8
   },
-});
-
-UserSchema.pre('remove', (next) => {
-  console.log('pre remove');
-  next();
-});
-
-UserSchema.post('remove', (removed, next) => {
-  console.log('post remove');
-  next();
-});
+  role: {
+    type: String,
+    enum: ['Administrador', 'Editor'],
+    default: 'Editor'
+  }
+})
 
 const User = mongoose.model('User', UserSchema);
 
-module.exports = User;
+module.exports = { User };

@@ -1,0 +1,368 @@
+@import "../main";
+
+.alquiler {
+    position: relative;
+    display: block;
+}
+
+input {
+    border-radius: 0;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    width: 100%;
+    font-size: 1rem;
+
+    &__group {
+        position: relative;
+        width: 400px;
+        max-width: 400px;
+        padding: 1rem 2rem 1rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        text-transform: uppercase;
+
+        @include respond(tab-port) {
+            width: 100%;
+            min-width: 300px;
+        }
+    }
+
+    &__textarea {
+        border-radius: 3px;
+        padding: 1rem;
+        display: block;
+        line-height: 2rem;
+        width: 90%;
+        height: 150px;
+        background-color: black;
+        resize: none;
+        line-height: 1.4rem;
+        color: white;
+        padding-bottom: .5rem;
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 1rem;
+        transition: all .5s;
+    }
+
+    &__textarea,
+    &__input {
+        &::placeholder {
+            transition: all .2s;
+            color: grey;
+        }
+
+        &:focus {
+            outline: none;
+            color: black;
+            background-color: rgba(white, 1);
+            border-radius: 2px;
+
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        background-color: black;
+        border: none;
+        border-bottom: 1px solid white;
+        line-height: 1rem;
+        color: white;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        transition: all .5s;
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+    }
+
+    &__label--textarea {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+    }
+
+    &__span {
+        font-size: .8rem;
+        text-align: center;
+        line-height: 1.4rem;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+        margin-right: -.5rem;
+    }
+
+    &__button {
+        position: relative;
+        display: inline-block;
+        outline: none;
+        background-color: black;
+        padding: 1rem 1.5rem;
+        border: 1px solid grey;
+        width: 100px;
+        height: 10px;
+        border-radius: 3px;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+        @include disableSelection;
+        cursor: pointer;
+        transition: all .3s;
+
+
+        &:hover,
+        &:focus {
+            border-color: white;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &::after {
+            content: 'Aceptar';
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity .5s;
+        }
+    }
+
+    &__checkbox {
+        visibility: hidden;
+    }
+
+    &__checkbox:checked+label span {
+        transform: scale(1.05);
+
+        &::after {
+            content: 'Aceptado';
+            background-color: white;
+            color: black;
+            padding: .8rem;
+            animation: show .5s forwards;
+            border-radius: 3px;
+        }
+    }
+
+    &__send {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-transform: uppercase;
+        padding: 1rem;
+        border-radius: 3px;
+        letter-spacing: 1rem;
+        text-indent: .5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all .2s;
+        line-height: 2rem;
+
+
+        &:hover,
+        &:focus {
+            border-color: white;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    &__validate:invalid {
+        border-color: red;
+    }
+
+    &__group-container {
+        display: flex;
+        flex-flow: row nowrap;
+
+        @include respond(tab-land) {
+            flex-flow: column nowrap;
+        }
+    }
+
+}
+
+.form__button {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    background-color: black;
+    padding: 1rem 1.5rem;
+    border: 1px solid grey;
+    width: 150px;
+    height: 10px;
+    border-radius: 3px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    text-indent: .5rem;
+
+    cursor: pointer;
+    transition: all .3s;
+
+
+    &:hover,
+    &:focus {
+        border-color: white;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &::after {
+        content: 'Aceptar';
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity .5s;
+    }
+}
+
+.conditions {
+    @include reset-link(white);
+    position: relative;
+    margin-right: -.5rem;
+    transition: all .3s;
+
+    &:link,
+    &:visited {
+        &:hover {
+            color: grey;
+        }
+
+        &:hover::after {
+            border-color: grey;
+        }
+
+        &:focus {
+            outline: none;
+            color: grey;
+        }
+
+        &:focus::after {
+            border-color: grey;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 95%;
+        bottom: -5%;
+        left: 0;
+        border-bottom: 1px solid white;
+        transition: all .3s;
+    }
+}
+
+.popup {
+    position: fixed;
+    display: block;
+    overflow-y: scroll;
+    z-index: 200;
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    left: 3000px;
+    background-color: white;
+    transition: all 1s ease-in;
+    opacity: 0;
+
+    & p:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        margin-top: $navigation-height;
+        margin-bottom: $footer-height;
+        position: relative;
+        top: 0%;
+        padding: 2rem 2.5rem;
+        color: black;
+        z-index: 200;
+        font-weight: 900;
+        font-size: 1rem !important;
+        // height: 100%;
+        width: 100%;
+    }
+
+    &__title {
+        display: block;
+        font-weight: 300;
+        letter-spacing: .5rem;
+        text-indent: .5rem;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        text-align: justify;
+        line-height: 2rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        text-indent: .3rem;
+        font-weight: 900;
+    }
+
+    &__close {
+        text-decoration: none;
+        display: inline-block;
+        left: 2rem;
+        top: 2rem;
+        color: black;
+        display: block;
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+}
+
+.popup:target {
+    left: 0;
+    transition: all .6s .5s;
+    opacity: 1;
+
+    &::before {
+        left: 0;
+        transition: all .9s;
+        opacity: 1;
+    }
+}

@@ -24,19 +24,19 @@
     "imagemin-pngquant": "6.0.0",
     "ityped": "1.0.3",
     "joi": "14.0.3",
-    "lodash": "4.17.11",
+    "lodash": "^4.17.15",
     "mongodb": "3.2.5",
     "mongoose": "5.5.12",
+    "multer": "1.4.2",
     "nodemailer": "4.6.8",
-    "validator": "^11.0.0"
+    "validator": "11.0.0"
   },
   "devDependencies": {
-    "vinyl": "2.2.0",
     "@babel/core": "7.1.2",
     "@babel/preset-env": "7.1.0",
     "babel-preset-env": "1.7.0",
     "babelify": "10.0.0",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "browserify": "16.2.3",
     "del": "3.0.0",
     "eslint": "4.19.1",
@@ -64,6 +64,7 @@
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify-es": "1.0.4",
     "gulp-useref": "3.1.5",
+    "vinyl": "2.2.0",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
   }

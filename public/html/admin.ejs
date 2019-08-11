@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../templates/noindex'); %>
+    <title>Sala Ón - Admin</title>
+    <link rel="stylesheet" href="../css/admin.css" inline />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="header__title">Admin</h1>
+      <% if (locals.success) { %>
+      <h2 style="color: white">
+        <%= success %>
+      </h2>
+      <% } %>
+    </header>
+    <main class="alquiler u-footer-margin">
+      <form
+        class="form"
+        id="form"
+        method="post"
+        novalidate
+        action="/events"
+        enctype="multipart/form-data"
+      >
+        <div class="form__group-container">
+          <div class="form__group">
+            <label for="title" class="form__label">Título*</label>
+            <input
+              type="text"
+              value=""
+              name="title"
+              id="title"
+              class="form__input"
+              autocomplete="off"
+              maxlength="30"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="type" class="form__label">Tipo*</label>
+            <select name="type" id="type" required>
+              <option value="Teatro">Teatro</option>
+              <option value="Micro Teatro">Micro Teatro</option>
+              <option value="Concierto">Concierto</option>
+              <option value="Película">Película</option>
+            </select>
+          </div>
+        </div>
+        <div class="form__group-container">
+          <div class="form__group">
+            <label for="action" class="form__label">Acción*</label>
+            <select name="action" id="action">
+              <option selected value="Comprar">Comprar</option>
+              <option value="Contactar">Contactar</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label for="shortDate" class="form__label">Fecha Corta*</label>
+            <input
+              type="text"
+              value=""
+              name="shortDate"
+              id="shortDate"
+              class="form__input"
+              autocomplete="off"
+              maxlength="30"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form__group-container">
+          <div class="form__group">
+            <label for="poster" class="form__label">Poster*</label>
+            <input
+              type="file"
+              name="poster"
+              id="poster"
+              class="form__input"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="background" class="form__label">Fondo</label>
+            <input
+              type="file"
+              name="background"
+              id="background"
+              class="form__input"
+            />
+          </div>
+        </div>
+
+        <div class="form__group-container">
+          <div class="form__group">
+            <label for="more" class="form__label">Más*</label>
+            <select name="more" id="more">
+              <option selected value="Descripción">Descripción</option>
+              <option value="Sinopsis">Sinopsis</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label for="description" class="form__label--textarea"
+              >Descripción*</label
+            >
+            <textarea
+              name="description"
+              id="description"
+              class="form__textarea"
+              autocomplete="off"
+              maxlength="300"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form__group-container">
+          <div class="form__group">
+            <label for="authors" class="form__label">Autores</label>
+            <input
+              type="text"
+              value=""
+              name="authors"
+              id="authors"
+              class="form__input"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form__group">
+            <label for="cast" class="form__label">Reparto</label>
+            <input
+              type="text"
+              value=""
+              name="cast"
+              id="cast"
+              class="form__input"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form__group">
+            <label for="directors" class="form__label">Directores</label>
+            <input
+              type="text"
+              value=""
+              name="directors"
+              id="directors"
+              class="form__input"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form__group">
+            <button type="submit" name="send" id="send" class="form__send">
+              Enviar petición
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="../js/alquiler.bundle.js" inline></script>
+  </body>
+</html>

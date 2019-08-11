@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const router = require('express').Router();
-const User = require('../models/user');
+const { User } = require('../models/user');
 const utilities = require('../utilities/routes');
 
 router
@@ -21,7 +21,7 @@ router
 router
   .route('/users/:id')
   .patch(async (req, res) => {
-    const update = _.pick(req.body, ['name', 'age', 'email', 'password']);
+    const update = _.pick(req.body, ['name', 'password', 'role']);
     const _id = req.params.id;
 
     try {
@@ -69,4 +69,6 @@ router
     }
   });
 
-module.exports = router;
+module.exports = {
+  users: router
+};

@@ -1,12 +1,8 @@
 const consentButton = document.getElementById('consent-button');
-// const send = document.getElementById('send');
-// const headerHeight = document.querySelector('header').scrollHeight;
 const form = document.getElementById('form');
 const requiredFields = form.querySelectorAll('[required]');
 const fields = form.querySelectorAll('input:not([type="checkbox"]), textarea');
 const focusable = document.querySelectorAll('input:not([type="checkbox"]), textarea, .conditions');
-
-// fields = Array.from(fields);
 
 const addValidationEvents = () => {
   fields.forEach((element) => {
@@ -16,30 +12,6 @@ const addValidationEvents = () => {
   });
 };
 
-// function isScrolledIntoView(el) {
-//   const rect = el.getBoundingClientRect();
-//   const elemTop = rect.top;
-//   const elemBottom = rect.bottom;
-
-//   // Only completely visible elements return true:
-//   const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-//   // Partially visible elements return true:
-//   //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-//   return isVisible;
-// }
-
-// const focus = () => {
-//   focusable.forEach((element) => {
-//     element.addEventListener('focus', (e) => {
-//       e.target.scrollIntoView();
-//       document.documentElement.scrollTop -= headerHeight;
-//       if (!isScrolledIntoView(e.target)) {
-//         document.documentElement.scrollTop += headerHeight;
-//       }
-//     });
-//   });
-// };
-
 consentButton.addEventListener('keyup', (e) => {
   e.preventDefault();
   if (e.key === 'Enter') consentButton.click();
@@ -47,7 +19,6 @@ consentButton.addEventListener('keyup', (e) => {
 
 requiredFields.forEach((element) => {
   element.addEventListener('focus', (e) => {
-    // e.target.scrollIntoView();
   });
 });
 
@@ -61,7 +32,6 @@ const validateForm = () => {
       element.classList.add('form__validate');
     });
     if (invalidFields[0].value !== 'on') {
-      // invalidFields[0].scrollIntoView();
       invalidFields[0].focus();
     } else {
       consentButton.focus();
@@ -111,10 +81,5 @@ form.addEventListener('submit', function (e) {
     restartFields();
   }
 });
-
-// // const formDataSaver = saveForm();
-// saveForm();
-
-// console.log(formDataSaver.entries().next());
 
 addValidationEvents();
