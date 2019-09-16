@@ -9,7 +9,8 @@ const EventSchema = new Schema({
   },
   type: {
     type: String,
-    enum: ['Teatro', 'Micro Teatro', 'Concierto', 'Película'],
+    enum: ['Teatro', 'Micro Teatro', 'Concierto', 
+    'Película', 'Curso', 'Taller'],
     required: true
   },
   action: {
@@ -31,6 +32,11 @@ const EventSchema = new Schema({
     trim: true
   },
   posterPath: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  link: {
     type: String,
     required: true,
     trim: true

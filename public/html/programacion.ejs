@@ -28,7 +28,41 @@
     </header>
     <main class="main u-footer-margin">
         <div class="events">
-            <div class="event-group">
+                <div class="event-group">
+                    <%for (var event in events){%>
+                        <article class="event" onmouseover="addClass(this)" onmouseout="removeClass(this)">
+                            <h2 class="event__type"><%= events[event].type %></h2>
+                            <div class="event__body">
+                                <a href="#popup" class="event__link event__sinopsis"><%= events[event].more %></a>
+                                <div class="event__poster">
+                                    <img class="event__img" src="/img/<%= events[event].posterPath %>" alt="<%= events[event].title %>">
+                                    <h2 class="event__title"><%= events[event].title %></h2>
+                                </div>
+                                <a href="<%= events[event].link %>" class="event__link" target="_blank"><%= events[event].action %></a>
+                                <p class="event__date"><%= events[event].shortDate %></p>
+                            </div>
+                        </article>   
+                    <%}%>
+                </div>
+
+                <!-- <div class="popup" id="one">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="one">Volver</a>
+                        <a href="https://entradium.com/events/la-causa" class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"La Causa"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Escrita por: Tomás Gaviro Ponce | Dirigida por: Cristina Sánchez Aguilar | Interpretada por: Clay Hernández</p>
+                            <p class="popup__length">20 de Julio a las 21:30hs</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Descripción</h3>
+                        <p class="popup__description">Una mujer toma la decisión más importante de su vida, y decide grabarse para dejarle un testimonio a su marido… y una despedida.<br></p>
+                    </div>
+                </div>   -->
+
+
+                <!-- <% for(var i=0; i < events.length; i++) {%>
                     <article class="event">
                             <h2 class="event__type">Teatro</h2>
                             <div class="event__body">
@@ -36,6 +70,22 @@
                                 <div class="event__poster">
                                     <img class="event__img" src="/img/lacausa.png" alt="La Causa">
                                     <!-- <h2 class="event__title">Velvet2</h2> -->
+                                <!-- </div>
+                                <a href="https://entradium.com/events/la-causa" class="event__link" target="_blank">Comprar</a>
+                                <p class="event__date">20 - Julio - 2019 (21:30)</p>
+                            </div>
+                        </article>
+                <% } %> -->
+
+
+            <!-- <div class="event-group">
+                    <article class="event">
+                            <h2 class="event__type">Teatro</h2>
+                            <div class="event__body">
+                                <a href="#one" class="event__link event__sinopsis">Descripción</a>
+                                <div class="event__poster">
+                                    <img class="event__img" src="/img/lacausa.png" alt="La Causa">
+                                    <h2 class="event__title">Velvet2</h2>
                                 </div>
                                 <a href="https://entradium.com/events/la-causa" class="event__link" target="_blank">Comprar</a>
                                 <p class="event__date">20 - Julio - 2019 (21:30)</p>
@@ -62,7 +112,7 @@
                                 <a href="#two" class="event__link event__sinopsis">Descripción</a>
                                 <div class="event__poster">
                                     <img class="event__img" src="/img/apologia.png" alt="Apología">
-                                    <!-- <h2 class="event__title">Velvet2</h2> -->
+                                    <h2 class="event__title">Velvet2</h2>
                                 </div>
                                 <a href="https://entradium.com/events/apologia" class="event__link" target="_blank">Comprar</a>
                                 <p class="event__date">20 - Julio - 2019 (20:30)</p>
@@ -89,7 +139,7 @@
                                 <a href="#three" class="event__link event__sinopsis">Descripción</a>
                                 <div class="event__poster">
                                     <img class="event__img" src="/img/elperdon.png" alt="Antes del desayuno">
-                                    <!-- <h2 class="event__title">Velvet2</h2> -->
+                                    <h2 class="event__title">Velvet2</h2>
                                 </div>
                                 <a href="https://entradium.com/events/el-perdon" class="event__link" target="_blank">Comprar</a>
                                 <p class="event__date">19 - Julio - 2019 (21:30)</p>
@@ -116,7 +166,7 @@
                                     <a href="#four" class="event__link event__sinopsis">Descripción</a>
                                     <div class="event__poster">
                                         <img class="event__img" src="/img/antesdeldesayuno.png" alt="Antes del desayuno">
-                                        <!-- <h2 class="event__title">Velvet2</h2> -->
+                                        <h2 class="event__title">Velvet2</h2>
                                     </div>
                                     <a href="https://entradium.com/events/antes-del-desayuno" class="event__link" target="_blank">Comprar</a>
                                     <p class="event__date">19 - Julio - 2019 (20:30)</p>
@@ -201,7 +251,7 @@
                         <a href="#six" class="event__link event__sinopsis">Descripción</a>
                         <div class="event__poster">
                             <img class="event__img" src="/img/lacoach.jpeg" alt="La Coach">
-                            <!-- <h2 class="event__title">La Coach</h2> -->
+                            <h2 class="event__title">La Coach</h2>
                         </div>
                         <a href="https://entradium.com/es/events/la-coach-la-primera-serie-en-vivo" class="event__link" target="_blank">Comprar</a>
                         <p class="event__date">20, 27 y 29 - Junio - 2019 (20:30)</p>
@@ -229,7 +279,7 @@
                 </div>
                 <article class="event__empty"></article>
             </div>
-        </div>
+        </div> -->
     </main>
     <%- include('../templates/footer'); %>
     <script src="../js/programacion.bundle.js" inline></script>

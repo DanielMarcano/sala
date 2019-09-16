@@ -20,8 +20,7 @@ input {
 
     &__group {
         position: relative;
-        width: 400px;
-        max-width: 400px;
+        width: 100%;
         padding: 1rem 2rem 1rem;
         display: flex;
         flex-flow: column nowrap;
@@ -49,7 +48,7 @@ input {
         color: white;
         padding-bottom: .5rem;
         text-align: left;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 1rem;
         transition: all .5s;
     }
@@ -83,7 +82,7 @@ input {
         padding-top: .5rem;
         padding-bottom: .5rem;
         text-align: center;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 1rem;
         transition: all .5s;
     }
@@ -169,14 +168,13 @@ input {
 
     &__send {
         height: 100%;
-        width: 100%;
         background-color: black;
         color: white;
         text-transform: uppercase;
         padding: 1rem;
         border-radius: 3px;
         letter-spacing: 1rem;
-        text-indent: .5rem;
+        text-indent: 1rem;
         font-size: 1rem;
         cursor: pointer;
         transition: all .2s;
@@ -200,6 +198,7 @@ input {
     &__group-container {
         display: flex;
         flex-flow: row nowrap;
+        width: 90vw;
 
         @include respond(tab-land) {
             flex-flow: column nowrap;
@@ -244,125 +243,5 @@ input {
         left: 50%;
         transform: translate(-50%, -50%);
         transition: opacity .5s;
-    }
-}
-
-.conditions {
-    @include reset-link(white);
-    position: relative;
-    margin-right: -.5rem;
-    transition: all .3s;
-
-    &:link,
-    &:visited {
-        &:hover {
-            color: grey;
-        }
-
-        &:hover::after {
-            border-color: grey;
-        }
-
-        &:focus {
-            outline: none;
-            color: grey;
-        }
-
-        &:focus::after {
-            border-color: grey;
-        }
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        width: 95%;
-        bottom: -5%;
-        left: 0;
-        border-bottom: 1px solid white;
-        transition: all .3s;
-    }
-}
-
-.popup {
-    position: fixed;
-    display: block;
-    overflow-y: scroll;
-    z-index: 200;
-    height: 100%;
-    width: 100vw;
-    top: 0;
-    left: 3000px;
-    background-color: white;
-    transition: all 1s ease-in;
-    opacity: 0;
-
-    & p:not(:last-child) {
-        margin-bottom: 1rem;
-    }
-
-    &__content {
-        margin-top: $navigation-height;
-        margin-bottom: $footer-height;
-        position: relative;
-        top: 0%;
-        padding: 2rem 2.5rem;
-        color: black;
-        z-index: 200;
-        font-weight: 900;
-        font-size: 1rem !important;
-        // height: 100%;
-        width: 100%;
-    }
-
-    &__title {
-        display: block;
-        font-weight: 300;
-        letter-spacing: .5rem;
-        text-indent: .5rem;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 1.5rem;
-    }
-
-    &__description {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        text-align: justify;
-        line-height: 2rem;
-    }
-
-    &__link {
-        text-decoration: none;
-        color: white;
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        letter-spacing: .3rem;
-        text-indent: .3rem;
-        font-weight: 900;
-    }
-
-    &__close {
-        text-decoration: none;
-        display: inline-block;
-        left: 2rem;
-        top: 2rem;
-        color: black;
-        display: block;
-        text-align: center;
-        margin-bottom: 1.2rem;
-    }
-
-}
-
-.popup:target {
-    left: 0;
-    transition: all .6s .5s;
-    opacity: 1;
-
-    &::before {
-        left: 0;
-        transition: all .9s;
-        opacity: 1;
     }
 }

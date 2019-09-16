@@ -502,8 +502,7 @@ input {
   font-size: 1rem; }
   .form__group {
     position: relative;
-    width: 400px;
-    max-width: 400px;
+    width: 100%;
     padding: 1rem 2rem 1rem;
     display: flex;
     flex-flow: column nowrap;
@@ -528,7 +527,6 @@ input {
     color: white;
     padding-bottom: .5rem;
     text-align: left;
-    text-transform: uppercase;
     font-size: 1rem;
     transition: all .5s; }
   .form__textarea::placeholder, .form__input::placeholder {
@@ -551,7 +549,6 @@ input {
     padding-top: .5rem;
     padding-bottom: .5rem;
     text-align: center;
-    text-transform: uppercase;
     font-size: 1rem;
     transition: all .5s; }
   .form__label {
@@ -623,14 +620,13 @@ input {
       border-radius: 3px; }
   .form__send {
     height: 100%;
-    width: 100%;
     background-color: black;
     color: white;
     text-transform: uppercase;
     padding: 1rem;
     border-radius: 3px;
     letter-spacing: 1rem;
-    text-indent: .5rem;
+    text-indent: 1rem;
     font-size: 1rem;
     cursor: pointer;
     transition: all .2s;
@@ -643,7 +639,8 @@ input {
     border-color: red; }
   .form__group-container {
     display: flex;
-    flex-flow: row nowrap; }
+    flex-flow: row nowrap;
+    width: 90vw; }
     @media (max-width: 75em) {
       .form__group-container {
         flex-flow: column nowrap; } }
@@ -676,94 +673,3 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity .5s; }
-
-.conditions {
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  margin-right: -.5rem;
-  transition: all .3s; }
-  .conditions:link, .conditions:visited {
-    color: white; }
-  .conditions:link:hover, .conditions:visited:hover {
-    color: grey; }
-  .conditions:link:hover::after, .conditions:visited:hover::after {
-    border-color: grey; }
-  .conditions:link:focus, .conditions:visited:focus {
-    outline: none;
-    color: grey; }
-  .conditions:link:focus::after, .conditions:visited:focus::after {
-    border-color: grey; }
-  .conditions::after {
-    content: '';
-    position: absolute;
-    width: 95%;
-    bottom: -5%;
-    left: 0;
-    border-bottom: 1px solid white;
-    transition: all .3s; }
-
-.popup {
-  position: fixed;
-  display: block;
-  overflow-y: scroll;
-  z-index: 200;
-  height: 100%;
-  width: 100vw;
-  top: 0;
-  left: 3000px;
-  background-color: white;
-  transition: all 1s ease-in;
-  opacity: 0; }
-  .popup p:not(:last-child) {
-    margin-bottom: 1rem; }
-  .popup__content {
-    margin-top: 4.5rem;
-    margin-bottom: 3rem;
-    position: relative;
-    top: 0%;
-    padding: 2rem 2.5rem;
-    color: black;
-    z-index: 200;
-    font-weight: 900;
-    font-size: 1rem !important;
-    width: 100%; }
-  .popup__title {
-    display: block;
-    font-weight: 300;
-    letter-spacing: .5rem;
-    text-indent: .5rem;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.5rem; }
-  .popup__description {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    text-align: justify;
-    line-height: 2rem; }
-  .popup__link {
-    text-decoration: none;
-    color: white;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    text-indent: .3rem;
-    font-weight: 900; }
-  .popup__close {
-    text-decoration: none;
-    display: inline-block;
-    left: 2rem;
-    top: 2rem;
-    color: black;
-    display: block;
-    text-align: center;
-    margin-bottom: 1.2rem; }
-
-.popup:target {
-  left: 0;
-  transition: all .6s .5s;
-  opacity: 1; }
-  .popup:target::before {
-    left: 0;
-    transition: all .9s;
-    opacity: 1; }

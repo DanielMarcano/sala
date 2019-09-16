@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const { Joi, Alquiler } = require('../models/alquiler');
+const { getAllEvents } = require('./events');
 
 router.get('/', (req, res) => {
   res.status(200).render('index');
@@ -18,8 +19,9 @@ router.get('/somos', (req, res) => {
   res.status(200).render('html/somos');
 });
 
-router.get('/programacion', (req, res) => {
-  res.status(200).render('html/programacion');
+router.get('/programacion', async (req, res) => {
+  const events = await getAllEvents();
+  res.status(200).render('html/programacion', { events: JSON.parse(events) });
 });
 
 router.get('/alquiler', (req, res) => {

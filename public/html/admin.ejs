@@ -45,10 +45,10 @@
               <option value="Micro Teatro">Micro Teatro</option>
               <option value="Concierto">Concierto</option>
               <option value="Película">Película</option>
+              <option value="Curso">Curso</option>
+              <option value="Taller">Taller</option>
             </select>
           </div>
-        </div>
-        <div class="form__group-container">
           <div class="form__group">
             <label for="action" class="form__label">Acción*</label>
             <select name="action" id="action">
@@ -58,21 +58,35 @@
           </div>
 
           <div class="form__group">
-            <label for="shortDate" class="form__label">Fecha Corta*</label>
-            <input
-              type="text"
-              value=""
-              name="shortDate"
-              id="shortDate"
-              class="form__input"
-              autocomplete="off"
-              maxlength="30"
-              required
-            />
+            <label for="more" class="form__label">Más*</label>
+            <select name="more" id="more">
+              <option selected value="Descripción">Descripción</option>
+              <option value="Sinopsis">Sinopsis</option>
+            </select>
           </div>
         </div>
+        <!-- <div class="form__group-container">
+          
+
+          
+        </div> -->
 
         <div class="form__group-container">
+          <div class="form__group">
+              <label for="shortDate" class="form__label">Fecha Corta*</label>
+              <input
+                type="text"
+                value=""
+                name="shortDate"
+                id="shortDate"
+                class="form__input"
+                autocomplete="off"
+                maxlength="30"
+                placeholder="06/06/2019 (20:30hs)"
+                required
+              />
+          </div>
+
           <div class="form__group">
             <label for="poster" class="form__label">Poster*</label>
             <input
@@ -85,6 +99,20 @@
           </div>
 
           <div class="form__group">
+              <label for="link" class="form__label">Link*</label>
+              <input
+              type="text"
+              value=""
+              name="link"
+              id="link"
+              class="form__input"
+              autocomplete="off"
+              placeholder="https://www.miwebsite.com/"
+              required
+            />
+            </div>
+
+          <div class="form__group">
             <label for="background" class="form__label">Fondo</label>
             <input
               type="file"
@@ -93,16 +121,12 @@
               class="form__input"
             />
           </div>
+
+          
         </div>
 
         <div class="form__group-container">
-          <div class="form__group">
-            <label for="more" class="form__label">Más*</label>
-            <select name="more" id="more">
-              <option selected value="Descripción">Descripción</option>
-              <option value="Sinopsis">Sinopsis</option>
-            </select>
-          </div>
+          
 
           <div class="form__group">
             <label for="description" class="form__label--textarea"
@@ -153,11 +177,13 @@
               autocomplete="off"
             />
           </div>
-          <div class="form__group">
-            <button type="submit" name="send" id="send" class="form__send">
-              Enviar petición
-            </button>
-          </div>
+        </div>
+        <div class="form__group-container">
+            <div class="form__group submit">
+                <button type="submit" name="send" id="send" class="form__send">
+                  Guardar
+                </button>
+              </div>
         </div>
       </form>
     </main>

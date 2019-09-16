@@ -8,7 +8,7 @@ const crypto = require('crypto');
 const mime = require('mime');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, '../../uploads/'))
+    cb(null, path.join(__dirname, '../../dist/img'))
   },
   filename: function (req, file, cb) {
     crypto.pseudoRandomBytes(16, function (err, raw) {
@@ -31,6 +31,7 @@ router
       'authors',
       'cast',
       'directors',
+      'link'
     ]);
 
     eventData.posterPath = await req.files.poster[0].filename;
@@ -48,8 +49,29 @@ router
     } catch (error) {
       res.status(400).send(error.message);
     }
-  })
-  .get(utilities.getAll(Event));
+  });
+
+const getAllEvents = async () => {
+  const model = Event;
+  // return new Promise((resolve, reject) => {
+    try {
+      const result = await model.find({})
+      return JSON.stringify(result);
+    } catch(e) {
+      return e;
+    }
+  };
+  // .get(async (req, res) => {
+  //   try {
+  //     const result = await Event.find({})
+
+  //     if (!result) return res.status(404).send();
+
+  //     res.status(200).send(result);
+  //   } catch (error) {
+  //     res.status(400).send(error);
+  //   }
+  // });
 
 router
   .route('/events/:id')
@@ -103,5 +125,6 @@ router
   });
 
 module.exports = {
-  events: router
+  events: router,
+  getAllEvents,
 }
