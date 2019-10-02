@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
   res.status(200).render('index');
 });
 
-router.get('/admin', (req, res) => {
-  res.status(200).render('html/admin');
-});
+// router.get('/admin', (req, res) => {
+//   res.status(200).render('html/admin');
+// });
 
 router.get('/contacto', (req, res) => {
   res.status(200).render('html/contacto');

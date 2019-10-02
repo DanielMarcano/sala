@@ -1,6 +1,4 @@
-const consentButton = document.getElementById('consent-button');
 const form = document.getElementById('form');
-const requiredFields = form.querySelectorAll('[required]');
 const fields = form.querySelectorAll('input:not([type="checkbox"]), textarea');
 const focusable = document.querySelectorAll('input:not([type="checkbox"]), textarea, .conditions');
 
@@ -11,16 +9,6 @@ const addValidationEvents = () => {
     });
   });
 };
-
-consentButton.addEventListener('keyup', (e) => {
-  e.preventDefault();
-  if (e.key === 'Enter') consentButton.click();
-});
-
-requiredFields.forEach((element) => {
-  element.addEventListener('focus', (e) => {
-  });
-});
 
 const validateForm = () => {
   const invalidFields = form.querySelectorAll(':invalid');
@@ -52,15 +40,16 @@ const restartFields = () => {
 
 const saveFormIntoJSON = () => {
   const formObject = {};
-  const updatedFields = form.querySelectorAll('input:not([type="checkbox"]), textarea');
+  const updatedFields = form.querySelectorAll('input, textarea');
   updatedFields.forEach((element) => {
     formObject[element.getAttribute('name')] = element.value;
   });
+  
   return JSON.stringify(formObject);
 };
 
 const sendForm = () => {
-  const request = new Request('/alquiler', {
+  const request = new Request('/events', {
     method: 'POST',
     cache: 'reload',
     body: saveFormIntoJSON(),
@@ -68,16 +57,15 @@ const sendForm = () => {
       'Content-Type': 'application/json',
     },
   });
+
   fetch(request)
     .then(response => response.json())
     .then(jsonData => alert(jsonData.message));
 };
 
 form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  if (validateForm(this)) {
-    sendForm();
-    restartFields();
+  if (!validateForm(this)) {
+    e.preventDefault();
   }
 });
 

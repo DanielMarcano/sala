@@ -27,6 +27,7 @@ router
       'title', 
       'type',
       'shortDate',
+      'longDate',
       'description',
       'authors',
       'cast',
@@ -45,15 +46,14 @@ router
     try {
       await event.save();
 
-      res.status(201).send(event);
+      res.status(201).render('html/admin', { message: '¡El evento ha sido creado!' });
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(500).render('html/admin', { message: 'El evento no ha sido creado...' });
     }
   });
 
 const getAllEvents = async () => {
   const model = Event;
-  // return new Promise((resolve, reject) => {
     try {
       const result = await model.find({})
       return JSON.stringify(result);
@@ -61,17 +61,6 @@ const getAllEvents = async () => {
       return e;
     }
   };
-  // .get(async (req, res) => {
-  //   try {
-  //     const result = await Event.find({})
-
-  //     if (!result) return res.status(404).send();
-
-  //     res.status(200).send(result);
-  //   } catch (error) {
-  //     res.status(400).send(error);
-  //   }
-  // });
 
 router
   .route('/events/:id')

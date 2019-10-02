@@ -5,7 +5,6 @@ const headerHeight = document.querySelector('header').scrollHeight;
 const addClass = element => document.documentElement.classList.add('u-disable-scroll');
 const removeClass = element => document.documentElement.classList.remove('u-disable-scroll');
 const scrollToId = (selector) => {
-  console.log(`a[href='#${selector}']`);
   document.querySelector(`a[href='#${selector}']`).scrollIntoView();
   document.documentElement.scrollTop -= headerHeight;
 };

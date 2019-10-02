@@ -487,17 +487,16 @@ body {
     margin-left: 0 !important; } }
 
 .event-group {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%; }
+  display: grid;
+  grid-gap: 2rem 0;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); }
+  @media (max-width: 37.5em) {
+    .event-group {
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); } }
 
 /* Beginning of .event block */
 .event {
-  flex-basis: 30%;
-  background-color: black;
-  margin-bottom: 3rem; }
+  background-color: black; }
   .event h2 {
     letter-spacing: 0.3rem;
     text-indent: 0.3rem;
@@ -594,6 +593,9 @@ body {
 
 /* End of .event block */
 .popup {
+  background-position: center;
+  background-size: contain;
+  background-color: turquoise;
   position: fixed;
   display: flex;
   flex-flow: column nowrap;
@@ -609,7 +611,18 @@ body {
   z-index: 1000; }
   @media (max-width: 37.5em) {
     .popup {
+      background-size: cover; } }
+  @media (max-width: 37.5em) {
+    .popup {
       background-repeat: no-repeat; } }
+  .popup:target {
+    left: 0;
+    transition: all .6s .5s;
+    opacity: 1; }
+    .popup:target::before {
+      left: 0;
+      transition: all .9s;
+      opacity: 1; }
   .popup__nav {
     display: flex;
     flex-flow: row nowrap;
@@ -663,49 +676,3 @@ body {
     text-transform: uppercase;
     text-align: justify;
     line-height: 2rem; }
-
-.popup:target {
-  left: 0;
-  transition: all .6s .5s;
-  opacity: 1; }
-  .popup:target::before {
-    left: 0;
-    transition: all .9s;
-    opacity: 1; }
-
-/* This is where I add each background to each event */
-#one {
-  background: center/contain url(/img/lacausa.png) turquoise; }
-  @media (max-width: 37.5em) {
-    #one {
-      background: center/cover url(/img/lacausa.png) turquoise; } }
-
-#two {
-  background: center/contain url(/img/apologia.png) turquoise; }
-  @media (max-width: 37.5em) {
-    #two {
-      background: center/cover url(/img/apologia.png) turquoise; } }
-
-#three {
-  background: center/contain url(/img/elperdon.png) turquoise; }
-  @media (max-width: 37.5em) {
-    #three {
-      background: center/cover url(/img/elperdon.png) turquoise; } }
-
-#four {
-  background: center/contain url(/img/antesdeldesayuno.png) turquoise; }
-  @media (max-width: 37.5em) {
-    #four {
-      background: center/cover url(/img/antesdeldesayuno.png) turquoise; } }
-
-#five {
-  background: center/contain url(/img/candela.png) turquoise; }
-  @media (max-width: 37.5em) {
-    #five {
-      background: center/cover url(/img/candela.png) turquoise; } }
-
-#six {
-  background: center/contain url(/img/lacoach.png) turquoise; }
-  @media (max-width: 37.5em) {
-    #six {
-      background: center/cover url(/img/lacoach.png) turquoise; } }

@@ -1,23 +1,21 @@
 @import "../main";
 
 $event-background: linear-gradient(to right bottom, rgba(black, .10), rgba(black, .10));
-// $white-event-background is for background covers that are too bright
 $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, .1));
 
 .event-group {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
+    display: grid;
+    grid-gap: 2rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    @include respond(phone) {
+        grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    }
 }
 
 /* Beginning of .event block */
 
 .event {
-    flex-basis: 30%;
     background-color: black;
-    margin-bottom: 3rem;
 
     & h2 {
         @include letter-spacing(.3rem);
@@ -147,6 +145,13 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
 /* End of .event block */
 
 .popup {
+    background-position: center;
+    background-size: contain;
+    background-color: turquoise;
+    @include respond(phone) {
+        background-size: cover;
+    }
+
     position: fixed;
     display: flex;
     flex-flow: column nowrap;
@@ -162,6 +167,18 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
     z-index: 1000;
     @include respond(phone) {
         background-repeat: no-repeat;
+    }
+
+    &:target {
+        left: 0;
+        transition: all .6s .5s;
+        opacity: 1;
+    
+        &::before {
+            left: 0;
+            transition: all .9s;
+            opacity: 1;
+        }
     }
 
     &__nav {
@@ -241,73 +258,3 @@ $white-event-background: linear-gradient(to right, rgba(black, 1.1), rgba(grey, 
     }
 
 }
-
-.popup:target {
-    left: 0;
-    transition: all .6s .5s;
-    opacity: 1;
-
-    &::before {
-        left: 0;
-        transition: all .9s;
-        opacity: 1;
-    }
-}
-
-/* This is where I add each background to each event */
-
-#one {
-    background: center/contain url(/img/lacausa.png) turquoise;
-    @include respond(phone) {
-        background: center/cover url(/img/lacausa.png) turquoise;
-    }
-}
-
-#two {
-    background: center/contain url(/img/apologia.png) turquoise;
-    @include respond(phone) {
-        background: center/cover url(/img/apologia.png) turquoise;
-    }
-}
-
-#three {
-    background: center/contain url(/img/elperdon.png) turquoise;
-    @include respond(phone) {
-        background: center/cover url(/img/elperdon.png) turquoise;
-    }
-}
-
-#four {
-    background: center/contain url(/img/antesdeldesayuno.png) turquoise;
-    @include respond(phone) {
-        background: center/cover url(/img/antesdeldesayuno.png) turquoise;
-    }
-}
-
-#five {
-    background: center/contain url(/img/candela.png) turquoise;
-    @include respond(phone) {
-        background: center/cover url(/img/candela.png) turquoise;
-    }
-}
-
-#six {
-    background: center/contain url(/img/lacoach.png) turquoise;
-    @include respond(phone) {
-        background: center/cover url(/img/lacoach.png) turquoise;
-    }
-}
-
-// #two {
-//     background: center/contain url(/img/candela.jpg) turquoise;
-//     @include respond(phone) {
-//         background: center/cover url(/img/candela.jpg) turquoise;
-//     }
-// }
-
-// #three {
-//     background: center/contain url(/img/lacoach.jpeg) turquoise;
-//     @include respond(phone) {
-//         background: center/cover url(/img/lacoach.jpeg) turquoise;
-//     }
-// }

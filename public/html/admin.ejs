@@ -7,6 +7,7 @@
   </head>
 
   <body>
+    <% var message; %>
     <header class="header">
       <h1 class="header__title">Admin</h1>
       <% if (locals.success) { %>
@@ -14,15 +15,20 @@
         <%= success %>
       </h2>
       <% } %>
+      <% if (message) { %>
+        <h3 style="color: white">
+          <%= message %>
+        </h3>
+      <% } %>
     </header>
     <main class="alquiler u-footer-margin">
       <form
         class="form"
         id="form"
         method="post"
-        novalidate
         action="/events"
         enctype="multipart/form-data"
+        novalidate
       >
         <div class="form__group-container">
           <div class="form__group">
@@ -38,40 +44,7 @@
               required
             />
           </div>
-          <div class="form__group">
-            <label for="type" class="form__label">Tipo*</label>
-            <select name="type" id="type" required>
-              <option value="Teatro">Teatro</option>
-              <option value="Micro Teatro">Micro Teatro</option>
-              <option value="Concierto">Concierto</option>
-              <option value="Película">Película</option>
-              <option value="Curso">Curso</option>
-              <option value="Taller">Taller</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label for="action" class="form__label">Acción*</label>
-            <select name="action" id="action">
-              <option selected value="Comprar">Comprar</option>
-              <option value="Contactar">Contactar</option>
-            </select>
-          </div>
 
-          <div class="form__group">
-            <label for="more" class="form__label">Más*</label>
-            <select name="more" id="more">
-              <option selected value="Descripción">Descripción</option>
-              <option value="Sinopsis">Sinopsis</option>
-            </select>
-          </div>
-        </div>
-        <!-- <div class="form__group-container">
-          
-
-          
-        </div> -->
-
-        <div class="form__group-container">
           <div class="form__group">
               <label for="shortDate" class="form__label">Fecha Corta*</label>
               <input
@@ -87,6 +60,53 @@
               />
           </div>
 
+          <div class="form__group">
+              <label for="longDate" class="form__label">Fecha Larga</label>
+              <input
+                type="text"
+                value=""
+                name="longDate"
+                id="longDate"
+                class="form__input"
+                autocomplete="off"
+                maxlength="30"
+                placeholder="Viernes, 6 de Junio del 2019 (20:30hs)"
+              />
+          </div>
+        </div>
+        <div class="form__group-container">
+            <div class="form__group">
+                <label for="type" class="form__label">Tipo*</label>
+                <select name="type" id="type" required>
+                  <option selected value=""></option>
+                  <option value="Teatro">Teatro</option>
+                  <option value="Micro Teatro">Micro Teatro</option>
+                  <option value="Concierto">Concierto</option>
+                  <option value="Película">Película</option>
+                  <option value="Curso">Curso</option>
+                  <option value="Taller">Taller</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="action" class="form__label">Acción*</label>
+                <select name="action" id="action" required>
+                  <option selected value=""></option>
+                  <option value="Comprar">Comprar</option>
+                  <option value="Contactar">Contactar</option>
+                </select>
+              </div>
+    
+              <div class="form__group">
+                <label for="more" class="form__label">Más*</label>
+                <select name="more" id="more" required>
+                  <option selected value=""></option>
+                  <option value="Descripción">Descripción</option>
+                  <option value="Sinopsis">Sinopsis</option>
+                </select>
+              </div>
+        </div>
+
+        <div class="form__group-container">
           <div class="form__group">
             <label for="poster" class="form__label">Poster*</label>
             <input
@@ -120,26 +140,6 @@
               id="background"
               class="form__input"
             />
-          </div>
-
-          
-        </div>
-
-        <div class="form__group-container">
-          
-
-          <div class="form__group">
-            <label for="description" class="form__label--textarea"
-              >Descripción*</label
-            >
-            <textarea
-              name="description"
-              id="description"
-              class="form__textarea"
-              autocomplete="off"
-              maxlength="300"
-              required
-            ></textarea>
           </div>
         </div>
 
@@ -178,6 +178,23 @@
             />
           </div>
         </div>
+
+        <div class="form__group-container">
+          <div class="form__group">
+            <label for="description" class="form__label--textarea"
+              >Descripción*</label
+            >
+            <textarea
+              name="description"
+              id="description"
+              class="form__textarea"
+              autocomplete="off"
+              maxlength="300"
+              required
+            ></textarea>
+          </div>
+        </div>
+
         <div class="form__group-container">
             <div class="form__group submit">
                 <button type="submit" name="send" id="send" class="form__send">
@@ -187,6 +204,6 @@
         </div>
       </form>
     </main>
-    <script src="../js/alquiler.bundle.js" inline></script>
+    <script src="../js/admin.bundle.js" inline></script>
   </body>
 </html>
