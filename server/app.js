@@ -1,4 +1,4 @@
-require('./db/mongoose');
+// require('./db/mongoose');
 
 const { TOKEN_SECRET, PORT } = require('./config');
 const path = require('path');
