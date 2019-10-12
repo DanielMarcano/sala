@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
   res.status(200).render('index');
 });
 
-// router.get('/admin', (req, res) => {
-//   res.status(200).render('html/admin');
-// });
+router.get('/admin', (req, res) => {
+  res.status(200).render('html/admin');
+});
 
 router.get('/contacto', (req, res) => {
   res.status(200).render('html/contacto');
@@ -20,9 +20,9 @@ router.get('/somos', (req, res) => {
 });
 
 router.get('/programacion', async (req, res) => {
-  // const events = await getAllEvents();
-  // res.status(200).render('html/programacion', { events: JSON.parse(events) });
-  res.status(200).render('html/programacion');
+  const events = await getAllEvents();
+  res.status(200).render('html/programacion', { events: JSON.parse(events) });
+  // res.status(200).render('html/programacion');
 });
 
 router.get('/alquiler', (req, res) => {
