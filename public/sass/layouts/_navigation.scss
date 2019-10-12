@@ -20,6 +20,15 @@
         left: 0;
     }
 
+    &__footer {
+        background-color: black;
+        position: absolute;
+        width: inherit;
+        bottom: 0;
+        left: 0;
+        color: white;
+    }
+
     &__button {
         height: 3em;
         width: 3rem;

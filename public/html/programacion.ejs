@@ -30,7 +30,37 @@
     <main class="main u-footer-margin">
         <div class="events">
             <div class="event-group">
-                    <article class="event">
+                <article class="event">
+                    <h2 class="event__type">CONCIERTO</h2>
+                    <div class="event__body">
+                        <a href="#one" class="event__link event__sinopsis">Sinopsis</a>
+                        <div class="event__poster">
+                            <img class="event__img" src="/img/velvet2.jpg" alt="VELVET 2">
+                        </div>
+    
+                        <a href="https://entradium.com/es/events/velvet-2"
+                            class="event__link" target="_blank">Comprar</a>
+                        <p class="event__date">25 - 10 - 2019 (21:00)</p>
+                    </div>
+                </article>
+                <div class="popup" id="one" style="background-image: url('/img/velvet2.jpg');">
+                    <div class="popup__nav">
+                        <a href="#" class="popup__close popup__link" data-back="one">Volver</a>
+                        <a href="https://entradium.com/es/events/velvet-2"
+                            class="popup__buy popup__link" target="_blank">Comprar</a>
+                    </div>
+                    <div class="popup__content">
+                        <h2 class="popup__title u-margin-bottom-small">"VELVET 2"</h2>
+                        <div class="popup__details">
+                            <p class="popup__length">Con Ildefons Vilanova</p>
+                            <p class="popup__length">Viernes 25 de Octubre a las 21:00hs</p>
+                        </div>
+                        <h3 class="popup__subtitle u-margin-top-normal">Sinopsis</h3>
+                        <p class="popup__description">Se trata de un recital de canciones interpretadas por lldefons Vilanova.<br>
+                            Desde boleros a clásicos de musicales, haremos un recorrido musical por diferentes estilos y emociones.</p>
+                    </div>
+                </div>
+                <article class="event">
                             <h2 class="event__type">Curso</h2>
                             <div class="event__body">
                                 <a href="#five" class="event__link event__sinopsis">Descripción</a>
@@ -88,6 +118,7 @@
                                     por cerrar debido a disponibilidad de los ponientes.<br></p>
                             </div>
                         </div>
+                
             </div>
     </main>
     <%- include('../templates/footer'); %>
