@@ -1,14 +1,10 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const { Joi, Alquiler } = require('../models/alquiler');
-// const { getAllEvents } = require('./events');
+const { getAllEvents } = require('./admin');
 
 router.get('/', (req, res) => {
   res.status(200).render('index');
-});
-
-router.get('/admin', (req, res) => {
-  res.status(200).render('html/admin');
 });
 
 router.get('/contacto', (req, res) => {
@@ -88,8 +84,13 @@ const sendMail = function (req, res) {
 
 router.post('/alquiler', sendMail);
 
-router.use((req, res, next) => {
-  return res.status(404).render('html/error');
+// router.get('/login', (req, res) => {
+//   res.status(200).redirect('/login');
+// });
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = {

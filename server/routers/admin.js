@@ -20,6 +20,11 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage });
 
+router.get('/', (req, res) => {
+  console.log('admin');
+  res.status(200).render('html/admin');
+});
+
 router
   .route('/events')
   .post(upload.fields([{ name: 'poster', maxCount: 1 }, { name: 'background', maxCount: 1 }]), async (req, res) => {
@@ -114,6 +119,6 @@ router
   });
 
 module.exports = {
-  events: router,
+  admin: router,
   getAllEvents,
 }

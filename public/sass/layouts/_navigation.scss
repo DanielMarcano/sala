@@ -1,19 +1,22 @@
 .navigation {
     position: fixed;
     width: 100%;
-    height: $navigation-height;
+    height: calc(100vh - #{$footer-height});
+    max-height: calc(100vh - #{$footer-height});
     top: 0;
     left: 0;
-    padding-top: 4.5rem;
     z-index: 1000;
+    @include remove_user_select();
 
     &__checkbox {
         display: none;
+        visibility: hidden;
+        opacity: 0;
     }
 
     &__header {
         background-color: black;
-        position: absolute;
+        position: relative;
         height: 4.5rem;
         width: inherit;
         top: 0;
@@ -81,21 +84,61 @@
     &__logo {
         height: inherit;
     }
+  
+  &__container {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .2s;
+        background-color: #000;
+        height: calc(100% - 4.5rem);
+        max-height: calc(100% - 4.5rem);
+        overflow-y: scroll;
+    }
+  
+  .creator {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: .65rem;
+    // font-family: 'Sacramento', cursive !important;
+    // font-smooth: always;
+    // -webkit-font-smoothing: subpixel-antialiased;
+    
+    @include respond(phone) {
+        position: fixed;
+        bottom: $footer-height;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    };
+
+    @include letter-spacing(.4rem);
+
+        &__link:link, &__link:visited {
+        text-decoration: none;
+        color: white;
+        transition: all .2s;
+
+            
+        
+            &:hover {
+                color: #f72092;
+            }
+        }
+    }
 
     &__nav {
-        width: inherit;
         display: flex;
         text-align: center;
         flex-flow: column nowrap;
         justify-content: space-evenly;
-        position: absolute;
-        visibility: hidden;
-        background-color: #000;
-        opacity: 0;
-        transition: all .2s;
-        height: calc(100vh - (#{$navigation-height} + #{$footer-height}));
-        max-height: calc(100vh - (#{$navigation-height} + #{$footer-height}));
-        overflow: hidden;
+        flex: 1;
+        overflow: scroll;
+        padding: 1rem 0;
+        backface-visibility: hidden;
 
         @media screen and (max-width: 500px) {
             justify-content: flex-start;
@@ -103,10 +146,10 @@
     }
 
     &__link {
-        display: list-item;
         padding: 1.5rem;
         text-transform: uppercase;
         transition: all .3s;
+        list-style: none !important;
 
         @include letter-spacing(.5rem);
         @include reset-link(white);
@@ -152,9 +195,15 @@
         }
     }
 
-    &__checkbox:checked~&__nav {
+    &__checkbox:checked~&__container {
         visibility: visible;
         z-index: 2000;
         opacity: 1;
     }
+}
+
+.br {
+    @include respond(tab-land) {
+        display: block;
+    };
 }
