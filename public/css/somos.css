@@ -411,10 +411,11 @@ body {
   .navigation .creator {
     text-align: center;
     color: white;
-    font-size: .8rem;
+    text-transform: uppercase;
+    font-size: .75rem;
     line-height: 1.5rem;
-    letter-spacing: 0.1rem;
-    text-indent: 0.1rem; }
+    letter-spacing: 0.4rem;
+    text-indent: 0.4rem; }
     @media (max-width: 37.5em) {
       .navigation .creator {
         position: fixed;
@@ -425,7 +426,8 @@ body {
     .navigation .creator__link:link, .navigation .creator__link:visited {
       text-decoration: none;
       color: white;
-      transition: all .2s; }
+      transition: all .2s;
+      margin-left: .4rem; }
       @media screen and (min-width: 900px) {
         .navigation .creator__link:link:hover, .navigation .creator__link:visited:hover {
           color: #f72092; } }
@@ -480,6 +482,9 @@ body {
     visibility: visible;
     z-index: 2000;
     opacity: 1; }
+
+.br {
+  display: block; }
 
 .row {
   max-width: 114rem;
