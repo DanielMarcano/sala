@@ -101,32 +101,33 @@
   .creator {
     text-align: center;
     color: white;
-    text-transform: uppercase;
-    font-size: .65rem;
-    // font-family: 'Sacramento', cursive !important;
-    // font-smooth: always;
-    // -webkit-font-smoothing: subpixel-antialiased;
+    // text-transform: uppercase;
+    font-size: .8rem;
+    line-height: 1.5rem;
     
     @include respond(phone) {
         position: fixed;
         bottom: $footer-height;
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;
+        width: 100%;
+        // font-size: .6rem;
     };
 
-    @include letter-spacing(.4rem);
+    @include letter-spacing(.1rem);
 
         &__link:link, &__link:visited {
         text-decoration: none;
         color: white;
         transition: all .2s;
 
-            
-        
+        @media screen and (min-width: 900px) {
             &:hover {
                 color: #f72092;
             }
+        }
+        
+            
         }
     }
 
@@ -204,6 +205,6 @@
 
 .br {
     @include respond(tab-land) {
-        display: block;
+        // display: block;
     };
 }
