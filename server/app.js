@@ -8,7 +8,7 @@ const session  = require('express-session');
 const express = require('express');
 const compression = require('compression');
 const helmet = require('helmet');
-const passport = require('passport');
+// const passport = require('passport');
 
 const { admin } = require('./routers/admin');
 const { users } = require('./routers/users');
@@ -75,7 +75,7 @@ app.use(
   }),
 );
 app.use(express.json());
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 app.use(session({
   cookie: { httpOnly: true },

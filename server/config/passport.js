@@ -1,4 +1,4 @@
-const jwtSecret = require('./jwtConfig');
+// const jwtSecret = require('./jwtConfig');
 const bcrypt = require('bcrypt');
 
 const BCRYPT_SALT_ROUNDS = 12;
