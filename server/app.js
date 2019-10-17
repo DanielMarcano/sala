@@ -48,7 +48,7 @@ const oidc = new ExpressOIDC({
     issuer: 'https://dev-452247.okta.com/oauth2/default',
     client_id: '0oa1kjwuj0hrbtvuA357',
     client_secret: 'rIqlMdUbI097RVBruZ1r8BLYGWpWMtovaLTxHKky',
-    redirect_uri: 'http://localhost:3001/users/callback',
+    redirect_uri: process.NODE_ENV != 'production' ? 'http://localhost:3001/users/callback' : 'http://www.salaonbcn.com/users/callback',
     routes: {
       callback: { 
         path: '/users/callback',
