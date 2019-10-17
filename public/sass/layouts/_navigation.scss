@@ -58,16 +58,16 @@
         top: 1rem;
     }
 
-    &__checkbox:checked+&__header>&__button &__icon {
+    &__checkbox:checked + & &__header>&__button &__icon {
         background-color: transparent;
     }
 
-    &__checkbox:checked+&__header>&__button &__icon::before {
+    &__checkbox:checked + & &__header>&__button &__icon::before {
         top: 0;
         transform: rotate(135deg);
     }
 
-    &__checkbox:checked+&__header>&__button &__icon::after {
+    &__checkbox:checked + & &__header>&__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
     }
@@ -196,15 +196,17 @@
         }
     }
 
-    &__checkbox:checked~&__container {
+    &__checkbox:checked + & &__container {
         visibility: visible;
-        z-index: 2000;
+        z-index: 9999;
         opacity: 1;
+    }
+
+    &__checkbox:checked + & {
+        z-index: 9999;
     }
 }
 
 .br {
-    // @include respond(tab-land) {
-        display: block;
-    // };
+    display: block;
 }
