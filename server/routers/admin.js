@@ -106,6 +106,8 @@ router
 
     if (req.files.background) {
       update.backgroundPath = req.files.background[0].filename;
+    } else {
+      update.backgroundPath = update.posterPath;
     }
 
     try {
