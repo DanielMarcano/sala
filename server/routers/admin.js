@@ -99,9 +99,14 @@ router
       'directors',
       'link'
     ]);
-    // const _id = req.body.id;
-    // console.log(_id);
-    console.log(update);
+
+    if (req.files.poster) {
+      update.posterPath = await req.files.poster[0].filename;
+    }
+
+    if (req.files.background) {
+      update.backgroundPath = req.files.background[0].filename;
+    }
 
     try {
       const event = await Event.findById(update.id);
