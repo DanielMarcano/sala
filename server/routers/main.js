@@ -12,13 +12,13 @@ router.get('/contacto', (req, res) => {
 });
 
 router.get('/somos', (req, res) => {
+  console.log(req.userContext);
   res.status(200).render('html/somos');
 });
 
 router.get('/programacion', async (req, res) => {
   const events = await getAllEvents();
   res.status(200).render('html/programacion', { events: JSON.parse(events) });
-  // res.status(200).render('html/programacion');
 });
 
 router.get('/alquiler', (req, res) => {
