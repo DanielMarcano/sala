@@ -84,15 +84,6 @@ const sendMail = function (req, res) {
 
 router.post('/alquiler', sendMail);
 
-// router.get('/login', (req, res) => {
-//   res.status(200).redirect('/login');
-// });
-
-router.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
-});
-
 module.exports = {
   main: router,
 };

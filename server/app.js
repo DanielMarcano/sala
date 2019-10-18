@@ -53,7 +53,10 @@ const oidc = new ExpressOIDC({
       callback: { 
         path: '/users/callback',
         defaultRedirect: '/admin' 
-      }
+      },
+      logout: {
+        path: '/logout'
+      },
     },
     scope: 'openid profile',
   });
@@ -76,17 +79,31 @@ app.use(
 );
 app.use(express.json());
 // app.use(passport.initialize());
-
 app.use(session({
   cookie: { httpOnly: true },
   secret: 'SOMETIMES_MY_MOM_COMES_TO_ME_STRANGER_THINGS',
   resave: true,
-  saveUninitialized: true,
+  saveUninitialized: false,
 }));
 
 app.use(oidc.router);
 
+// app.get('/logout', (req, res) => {
+//   req.logout();
+//   req.session.destroy((err) => {
+//     res.redirect('/');
+//   });
+// });
+
 // app.use((req, res, next) => {
+
+//   console.log('middleware');
+
+//   console.log(req.userContext);
+
+//   console.log(req.userinfo);
+
+
 //   if (!req.userinfo) {
 //     return next();
 //   }

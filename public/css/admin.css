@@ -722,3 +722,6 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity .5s; }
+
+.form__group img {
+  max-width: 30%; }

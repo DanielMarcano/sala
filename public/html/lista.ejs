@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130954281-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-130954281-1');
+    </script>
+    <%- include('../templates/meta'); %>
+    <title>Sala Ón - Programación</title>
+    <link rel="canonical" href="http://www.salaonbcn.com/programacion">
+    <meta name="description" content="Toda la programación de nuestra sala. Aquí encontrarás nuestros eventos, obras, cursos, y mucho más.">
+    <link rel="stylesheet" href="../css/programacion.css" inline>
+</head>
+
+<body>
+    <%- include('../templates/admin-navigation'); %>
+    <header class="header">
+        <h1 class="header__title">Lista</h1>
+    </header>
+    <main class="main u-footer-margin">
+        <div class="events">
+            <div class="event-group">
+                <%for (var event in events){%>
+                    <article id="" class="event">
+                        <h2 class="event__type"><%= events[event].type %></h2>
+                        <div class="event__body">
+                            <a href="http://www.salaonbcn.com/admin/events/editar/<%= events[event]._id %>" class="event__link event__sinopsis"">Editar</a>
+                            <div class="event__poster">
+                                <img class="event__img" src="/img/<%= events[event].posterPath %>" alt="<%= events[event].title %>">
+                                <h2 class="event__title"><%= events[event].title %></h2>
+                            </div>
+                            <a href="http://www.salaonbcn.com/admin/events/delete/<%= events[event]._id %>" class="event__link" target="_blank">Eliminar</a>
+                            <p class="event__date"><%= events[event].shortDate %></p>
+                        </div>
+                    </article>
+                <%}%>
+            </div>
+    </main>
+    <%- include('../templates/footer'); %>
+    <script src="../js/programacion.bundle.js" inline></script>
+</body>
+
+</html>

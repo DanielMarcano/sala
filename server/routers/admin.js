@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', (req, res) => {
-  console.log('admin');
+
   res.status(200).render('html/admin');
 });
 
@@ -67,6 +67,11 @@ const getAllEvents = async () => {
     }
   };
 
+  router.get('/lista', async (req, res) => {
+    const events = await getAllEvents();
+    res.status(200).render('html/lista', { events: JSON.parse(events) });
+  });
+
 router
   .route('/events/:id')
   .get(async (req, res) => {
@@ -82,12 +87,25 @@ router
       res.status(500).send(error.message);
     }
   })
-  .patch(async (req, res) => {
-    const update = _.pick(req.body, ['description', 'completed']);
-    const _id = req.params.id;
+  .post(upload.fields([{ name: 'poster', maxCount: 1 }, { name: 'background', maxCount: 1 }]), async (req, res) => {
+    const update = _.pick(req.body, [
+      'id',
+      'title', 
+      'type',
+      'shortDate',
+      'longDate',
+      'description',
+      'authors',
+      'cast',
+      'directors',
+      'link'
+    ]);
+    // const _id = req.body.id;
+    // console.log(_id);
+    console.log(update);
 
     try {
-      const event = await Event.findById(_id);
+      const event = await Event.findById(update.id);
 
       if (!event) return res.status(404).send({ error: 'Event could not be found' });
 
@@ -97,12 +115,15 @@ router
 
       if (!updated) return res.status(400).send({ error: 'Event could not be updated' });
 
-      res.status(200).send(updated);
+      res.status(200).redirect('/admin/lista');
     } catch (error) {
       res.status(400).send(error.message);
     }
-  })
-  .delete(async (req, res) => {
+  });
+
+  router
+  .route('/events/delete/:id')
+  .get(async (req, res) => {
     const _id = req.params.id;
 
     try {
@@ -112,12 +133,45 @@ router
 
       await event.delete();
 
-      res.status(200).send(event);
+      res.status(200).redirect('/admin/lista');
     } catch (error) {
       res.status(500).send({ error: 'Event was not deleted' });
     }
   });
 
+  router
+  .route('/events/editar/:id')
+  .get(async (req, res) => {
+    const _id = req.params.id;
+
+    try {
+      const event = await Event.findById(_id);
+
+      if (!event) return res.status(404).send();
+
+      res.status(200).render('html/editar', { event });
+    } catch (error) {
+      res.status(500).send(error.message);
+    }
+  })
+
+  // router.get('/logout', (req, res) => {
+  //   // console.log(req.user);
+  //   if (req.userContext) {
+  //     const idToken = req.userContext.tokens.id_token;
+  //     const to = encodeURI('http://localhost:3001');
+  //     const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
+  //     console.log(req);
+  //     console.log(req.logout);
+  
+  //     req.logout();
+  //     res.redirect(
+  //       `https://dev-452247.okta.com/oauth2/default/v1/logout?${params}`
+  //     );
+  //   } else {
+  //     res.redirect('/');
+  //   }
+  // });
 module.exports = {
   admin: router,
   getAllEvents,
