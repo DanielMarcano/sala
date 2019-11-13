@@ -333,17 +333,21 @@ body {
 .navigation {
   position: fixed;
   width: 100%;
-  height: calc(100vh - 3rem);
+  height: 4.5rem;
+  display: inline-block;
+  font-size: 0;
   max-height: calc(100vh - 3rem);
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 999;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+  .navigation.checked {
+    height: calc(100vh - 3rem); }
   .navigation__checkbox {
     display: none;
     visibility: hidden;
@@ -354,7 +358,8 @@ body {
     height: 4.5rem;
     width: inherit;
     top: 0;
-    left: 0; }
+    left: 0;
+    font-size: 1rem; }
   .navigation__footer {
     background-color: black;
     position: absolute;
@@ -405,8 +410,7 @@ body {
     opacity: 0;
     transition: all .2s;
     background-color: #000;
-    height: calc(100% - 4.5rem);
-    max-height: calc(100% - 4.5rem);
+    height: calc(100vh - 4.5rem - 3rem);
     overflow-y: scroll; }
   .navigation .creator {
     text-align: center;
@@ -448,6 +452,7 @@ body {
     text-transform: uppercase;
     transition: all .3s;
     list-style: none !important;
+    font-size: 1rem;
     letter-spacing: 0.5rem;
     text-indent: 0.5rem;
     text-decoration: none;

@@ -1,12 +1,18 @@
 .navigation {
     position: fixed;
     width: 100%;
-    height: calc(100vh - #{$footer-height});
+    height: 4.5rem;
+    display: inline-block;
+    font-size: 0;
     max-height: calc(100vh - #{$footer-height});
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 999;
     @include remove_user_select();
+
+    &.checked {
+        height: calc(100vh - #{$footer-height});
+    }
 
     &__checkbox {
         display: none;
@@ -21,6 +27,7 @@
         width: inherit;
         top: 0;
         left: 0;
+        font-size: 1rem;
     }
 
     &__footer {
@@ -93,8 +100,8 @@
         opacity: 0;
         transition: all .2s;
         background-color: #000;
-        height: calc(100% - 4.5rem);
-        max-height: calc(100% - 4.5rem);
+        height: calc(100vh - 4.5rem - #{$footer-height});
+        // max-height: calc(100% - 4.5rem);
         overflow-y: scroll;
     }
   
@@ -141,6 +148,7 @@
         padding: 1rem 0;
         backface-visibility: hidden;
 
+
         @media screen and (max-width: 500px) {
             justify-content: flex-start;
         }
@@ -151,6 +159,7 @@
         text-transform: uppercase;
         transition: all .3s;
         list-style: none !important;
+        font-size: 1rem;
 
         @include letter-spacing(.5rem);
         @include reset-link(white);
