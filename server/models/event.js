@@ -68,6 +68,8 @@ const EventSchema = new Schema({
   }
 })
 
+const formattedDescription = (description) => description.replace(new RegExp(/\.\s+/, 'g'), '.<br><br>');
+
 EventSchema.pre('save', function (next) {
   if (!this.backgroundPath) {
     this.backgroundPath = this.get('posterPath');
@@ -75,6 +77,9 @@ EventSchema.pre('save', function (next) {
   if (!this.longDate) {
     this.longDate = this.get('shortDate');
   }
+
+  this.description = formattedDescription(this.description);
+
   next();
 });
 
@@ -83,11 +88,12 @@ const Event = mongoose.model('Event', EventSchema);
 module.exports = { Event };
 
 // const myEvent = new Event({
-//   title: 'The Neverending Party',
+//   title: 'La fiesta de lo desconocido',
 //   type: 'Concierto',
 //   shortDate: '02/02/1996',
 //   posterPath: 'esteve.jpg',
-//   description: 'My amazing event is here now',
+//   link: 'hehehehe',
+//   description: 'My amazing event is here now. And I want to do it now. And I will... HAHA',
 //   authors: 'The Duffel Brothers',
 //   cast: 'Eleven y Daniel Marcano',
 //   directors: 'Robert Chacon'
