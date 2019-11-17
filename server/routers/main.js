@@ -60,23 +60,27 @@ const sendMail = function (req, res) {
   `;
 
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    host: 'smtp.thedefectivemoderns.es',
+    port: 25,
     auth: {
-      user: 'salaonbcnalquileres@gmail.com',
-      pass: '123456Portland',
-    },
+      user: 'alquileres@thedefectivemoderns.es',
+      pass: 'xyz00182B4rM4r',
+    }
   });
 
   const mailOptions = {
-    from: '"Sala On" <salaonbcnalquileres@gmail.com>',
-    to: 'salaonbcn@gmail.com',
+    from: '"Sala On" <alquileres@thedefectivemoderns.es>',
+    to: 'danielemarcano96@gmail.com',
     subject: 'Nueva Petición de Alquiler',
     html: output,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log(error);
+      console.log(error);
+      return res.json({
+        message: 'El mensaje no pudo ser enviado. Inténtelo de nuevo más tarde.',
+      });
     }
     res.json({ message: 'El mensaje se ha enviado correctamente.' });
   });

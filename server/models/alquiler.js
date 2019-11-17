@@ -13,7 +13,7 @@ const Alquiler = Joi.object().keys({
     .required(),
   phone: Joi.string()
     .min(3)
-    .max(14)
+    .max(30)
     .required(),
   address: Joi.string()
     .trim()
