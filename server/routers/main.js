@@ -127,7 +127,7 @@ const sendMail = function (req, res) {
 
   const mailOptions = {
     from: '"Sala On" <salaonbcn@gmail.com>',
-    to: 'salaonbcn@gmail.com',
+    to: 'danielemarcano96@gmail.com',
     subject: 'Nueva Petición de Alquiler',
     html: output,
   };
