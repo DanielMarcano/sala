@@ -1,4 +1,4 @@
-const ityped = require('./vendor/ityped.min');
+import * as ityped from './vendor/ityped.min';
 
 window.onload = function () {
   const error = document.getElementsByClassName('error__code')[0];

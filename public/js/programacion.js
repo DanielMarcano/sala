@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const initializeSinopsisButtons = () => {
-    sinopsisButtons.forEach((element) => element.addEventListener('click', sinopsisClickHandler));
+    sinopsisButtons.forEach(element => element.addEventListener('click', sinopsisClickHandler));
   };
 
   const scrollToId = (selector) => {
@@ -21,10 +21,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const closeButtonClickHandler = (event) => {
     enableScroll();
     setTimeout(() => scrollToId(event.target.getAttribute('data-back')), 0);
-  }
+  };
 
   const initializeCloseButtons = () => {
-    closeButtons.forEach((element) => element.addEventListener('click', closeButtonClickHandler));
+    closeButtons.forEach(element => element.addEventListener('click', closeButtonClickHandler));
   };
 
   initializeSinopsisButtons();
