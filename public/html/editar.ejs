@@ -29,6 +29,7 @@
         method="post"
         action="/admin/events/<%= event._id %>"
         enctype="multipart/form-data"
+        autocomplete="off"
         novalidate
       >
 
@@ -57,7 +58,6 @@
               name="title"
               id="title"
               class="form__input"
-              autocomplete="off"
               maxlength="30"
               required
             />
@@ -71,7 +71,6 @@
                 name="shortDate"
                 id="shortDate"
                 class="form__input"
-                autocomplete="off"
                 maxlength="30"
                 placeholder="06/06/2019 (20:30hs)"
                 required
@@ -86,7 +85,6 @@
                 name="longDate"
                 id="longDate"
                 class="form__input"
-                autocomplete="off"
                 maxlength="30"
                 placeholder="Viernes, 6 de Junio del 2019 (20:30hs)"
               />
@@ -127,7 +125,7 @@
         <div class="form__group-container">
           <div class="form__group">
             <label for="poster" class="form__label">Poster*</label>
-            <img src="/img/<%= event.posterPath %>" alt="">
+            <img src="data:<%= events[event].poster.mimetype %>;base64,<%= events[event].poster.rawImage %>" alt="">
             <input
               type="file"
               name="poster"
@@ -145,7 +143,6 @@
               name="link"
               id="link"
               class="form__input"
-              autocomplete="off"
               placeholder="https://www.miwebsite.com/"
               required
             />
@@ -153,13 +150,12 @@
 
           <div class="form__group">
             <label for="background" class="form__label">Fondo</label>
-            <img src="/img/<%= event.posterPath %>" alt="">
+            <img src="data:<%= events[event].background.mimetype %>;base64,<%= events[event].background.rawImage" alt="">
             <input
               type="file"
               name="background"
               id="background"
               class="form__input"
-              placeholder="<%= event.backgroundPath %>"
             />
           </div>
         </div>
@@ -173,7 +169,6 @@
               name="authors"
               id="authors"
               class="form__input"
-              autocomplete="off"
             />
           </div>
           <div class="form__group">
@@ -184,7 +179,6 @@
               name="cast"
               id="cast"
               class="form__input"
-              autocomplete="off"
             />
           </div>
           <div class="form__group">
@@ -195,7 +189,6 @@
               name="directors"
               id="directors"
               class="form__input"
-              autocomplete="off"
             />
           </div>
         </div>
@@ -209,7 +202,6 @@
               name="description"
               id="description"
               class="form__textarea"
-              autocomplete="off"
               required
             ><%= event.description %></textarea>
           </div>
