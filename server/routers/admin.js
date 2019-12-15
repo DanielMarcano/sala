@@ -5,6 +5,7 @@ const path = require('path');
 const multer = require('multer');
 const crypto = require('crypto');
 const fs = require('fs');
+const { env } = require('../config');
 const { Event } = require('../models/event');
 
 const storage = multer.diskStorage({
@@ -23,7 +24,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', (req, res) => {
-  res.status(200).render('html/admin');
+  res.status(200).render('html/admin', { env });
 });
 
 router
@@ -60,9 +61,9 @@ router
     try {
       await event.save();
 
-      res.status(201).render('html/admin', { message: '¡El evento ha sido creado!' });
+      res.status(201).render('html/admin', { message: '¡El evento ha sido creado!', env });
     } catch (error) {
-      res.status(500).render('html/admin', { message: 'El evento no ha sido creado...' });
+      res.status(500).render('html/admin', { message: 'El evento no ha sido creado...', env });
     }
   });
 
@@ -78,7 +79,7 @@ const getAllEvents = async () => {
 
 router.get('/lista', async (req, res) => {
   const events = await getAllEvents();
-  res.status(200).render('html/lista', { events: JSON.parse(events) });
+  res.status(200).render('html/lista', { events: JSON.parse(events), env });
 });
 
 router
@@ -173,7 +174,7 @@ router
 
       if (!event) return res.status(404).send();
 
-      res.status(200).render('html/editar', { event });
+      res.status(200).render('html/editar', { event, env });
     } catch (error) {
       res.status(500).send(error.message);
     }

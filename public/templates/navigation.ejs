@@ -1,7 +1,7 @@
 <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
 <div class="navigation">
     <div class="navigation__header">
-        <a href="http://www.salaonbcn.com" class="navigation__main-link">
+        <a href="<%= env %>" class="navigation__main-link">
             <img src="/img/logo_white.png" alt="Logo" title="Logo" class="navigation__logo">
         </a>
         <label for="navi-toggle" class="navigation__button" tabindex="0">
@@ -10,10 +10,10 @@
     </div>
     <div class="navigation__container">
         <nav class="navigation__nav">
-            <a href="http://www.salaonbcn.com/somos" class="navigation__link">¿Quiénes somos?</a>
-            <a href="http://www.salaonbcn.com/programacion" class="navigation__link">Programación</a>
-            <a href="http://www.salaonbcn.com/alquiler" class="navigation__link">Alquílanos</a>
-            <a href="http://www.salaonbcn.com/contacto" class="navigation__link">Contáctanos</a>
+            <a href="<%= env %>somos" class="navigation__link">¿Quiénes somos?</a>
+            <a href="<%= env %>programacion" class="navigation__link">Programación</a>
+            <a href="<%= env %>alquiler" class="navigation__link">Alquílanos</a>
+            <a href="<%= env %>contacto" class="navigation__link">Contáctanos</a>
         </nav>
         <p class="creator">creada por<span class="br"></span><a href="https://www.linkedin.com/in/daninstam/" class="creator__link">Daniel Marcano</a></span></p>
     </div>

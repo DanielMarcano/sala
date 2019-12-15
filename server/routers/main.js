@@ -1,27 +1,28 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
+const { env } = require('../config');
 const { Joi, Alquiler } = require('../models/alquiler');
 const { getAllEvents } = require('./admin');
 
 router.get('/', (req, res) => {
-  res.status(200).render('index');
+  res.status(200).render('index', { env });
 });
 
 router.get('/contacto', (req, res) => {
-  res.status(200).render('html/contacto');
+  res.status(200).render('html/contacto', { env });
 });
 
 router.get('/somos', (req, res) => {
-  res.status(200).render('html/somos');
+  res.status(200).render('html/somos', { env });
 });
 
 router.get('/programacion', async (req, res) => {
   const events = await getAllEvents();
-  res.status(200).render('html/programacion', { events: JSON.parse(events) });
+  res.status(200).render('html/programacion', { events: JSON.parse(events), env });
 });
 
 router.get('/alquiler', (req, res) => {
-  res.status(200).render('html/alquiler');
+  res.status(200).render('html/alquiler', { env });
 });
 
 const sendMail = function (req, res) {

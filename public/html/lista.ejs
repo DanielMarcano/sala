@@ -33,12 +33,12 @@
                     <article id="" class="event">
                         <h2 class="event__type"><%= events[event].type %></h2>
                         <div class="event__body">
-                            <a href="http://www.salaonbcn.com/admin/events/editar/<%= events[event]._id %>" class="event__link event__sinopsis"">Editar</a>
+                            <a href="<%= env %>admin/events/editar/<%= events[event]._id %>" class="event__link event__sinopsis"">Editar</a>
                             <div class="event__poster">
                                 <img class="event__img" src="data:<%= events[event].poster.mimetype %>;base64,<%= events[event].poster.rawImage %>" alt="<%= events[event].title %>">
                                 <h2 class="event__title"><%= events[event].title %></h2>
                             </div>
-                            <a href="http://www.salaonbcn.com/admin/events/delete/<%= events[event]._id %>" class="event__link" target="_blank">Eliminar</a>
+                            <a href="<%= env %>admin/events/delete/<%= events[event]._id %>" class="event__link" target="_blank">Eliminar</a>
                             <p class="event__date"><%= events[event].shortDate %></p>
                         </div>
                     </article>
