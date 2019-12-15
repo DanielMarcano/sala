@@ -1,35 +1,54 @@
 require('./db/mongoose');
-
-const { PORT } = require('./config');
 const path = require('path');
-const distPath = path.join(__dirname, '../dist');
-const session  = require('express-session');
-
+const session = require('express-session');
 const express = require('express');
 const compression = require('compression');
 const helmet = require('helmet');
+const { ExpressOIDC } = require('@okta/oidc-middleware');
+const i18next = require('i18next');
+const i18nextMiddleware = require('i18next-express-middleware');
+const Backend = require('i18next-node-fs-backend');
 
 const { admin } = require('./routers/admin');
-const { users } = require('./routers/users');
 const { main } = require('./routers/main');
+const { PORT } = require('./config');
 
+const distPath = path.join(__dirname, '../dist');
 const app = express();
 
-const ExpressOIDC = require('@okta/oidc-middleware').ExpressOIDC;
+i18next
+  .use(Backend)
+  // .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    lng: 'es',
+    backend: {
+      loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+      addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.missing.json'),
+    },
+    ns: ['translations'],
+    defaultNS: 'translations',
+    fallbackLng: 'es',
+    preload: ['es'],
+    saveMissing: true,
+    removeLngFromUrl: true,
+  });
+
+
+app.use(i18nextMiddleware.handle(i18next));
 
 const oidc = new ExpressOIDC({
-    issuer: 'https://dev-452247.okta.com/oauth2/default',
-    client_id: '0oa1kjwuj0hrbtvuA357',
-    client_secret: 'rIqlMdUbI097RVBruZ1r8BLYGWpWMtovaLTxHKky',
-    appBaseUrl: process.env.NODE_ENV != 'production' ? 'http://localhost:3001' : 'http://www.salaonbcn.com',
-    routes: {
-      loginCallback: { 
-        path: '/users/callback',
-        afterCallback: '/admin' 
-      }
+  issuer: 'https://dev-452247.okta.com/oauth2/default',
+  client_id: '0oa1kjwuj0hrbtvuA357',
+  client_secret: 'rIqlMdUbI097RVBruZ1r8BLYGWpWMtovaLTxHKky',
+  appBaseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3001' : 'http://www.salaonbcn.com',
+  routes: {
+    loginCallback: {
+      path: '/users/callback',
+      afterCallback: '/admin',
     },
-    scope: 'openid profile',
-  });
+  },
+  scope: 'openid profile',
+});
 
 app.use(helmet());
 app.use(compression());
@@ -67,6 +86,8 @@ oidc.on('ready', () => {
   });
 });
 
-oidc.on('error', err => {
+oidc.on('error', (err) => {
   console.error(err);
 });
+
+module.exports = { i18next };

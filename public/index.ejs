@@ -23,8 +23,8 @@
 <body>
   <%- include('templates/navigation'); %>
   <main class="main">
-    <h1 class="main__title">Un<br>espacio<br>abierto<br>para<br>todxs<br>lxs<br><div class="main__text-container"><span class="u-text-standout js-main__people"
-      id="js-main__people">artistas</span></div></h1>
+    <h1 class="main__title u-no-pointer-events"><%- t('index.title'); %><div class="main__text-container"><span class="u-text-standout js-main__people hidden"
+      id="js-main__people"><%= t('index.audience', { returnObjects: true }); %></span></div></h1>
   </main>
   <%- include('templates/footer'); %>
   <script src="js/index.bundle.js" inline></script>

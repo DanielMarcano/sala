@@ -1,3 +1,8 @@
+.u-no-pointer-events {
+    pointer-events: none;
+    user-select: none;
+}
+
 .u-blink {
     animation: showHide 5s infinite;
     pointer-events: none;
