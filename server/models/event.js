@@ -46,6 +46,11 @@ const EventSchema = new Schema({
       mimetype: { type: String, required: true },
     },
     required: true,
+    get: (poster) => {
+      const parsedPoster = poster;
+      parsedPoster.rawImage = poster.rawImage.toString('base64');
+      return parsedPoster;
+    },
   },
   background: {
     type: {
@@ -81,7 +86,7 @@ const EventSchema = new Schema({
   },
 }, {
   toObject: { getters: true },
-  toJSON: { getters: true },
+  toJSON: { getters: false },
 });
 
 const formattedDescription = description => description.replace(new RegExp(/\.\s+/, 'g'), '.<br><br>');
