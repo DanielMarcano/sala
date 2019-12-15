@@ -111,13 +111,21 @@ router
     ]);
 
     if (req.files.poster) {
-      update.posterPath = await req.files.poster[0].filename;
+      const { mimetype: posterMimetype } = req.files.poster[0];
+      const posterImage = await fs.readFileSync(req.files.poster[0].path);
+      const posterBase64 = posterImage.toString('base64');
+
+      update.poster = { rawImage: Buffer.from(posterBase64, 'base64'), mimetype: posterMimetype };
     }
 
     if (req.files.background) {
-      update.backgroundPath = req.files.background[0].filename;
-    } else {
-      update.backgroundPath = update.posterPath;
+      const { mimetype: backgroundMimetype } = req.files.background[0];
+      const backgroundImage = fs.readFileSync(req.files.background[0].path);
+      const backgroundBase64 = backgroundImage.toString('base64');
+
+      update.background = { rawImage: Buffer.from(backgroundBase64, 'base64'), mimetype: backgroundMimetype };
+    } else if (req.files.poster && !req.files.background) {
+      update.background = update.poster;
     }
 
     try {
