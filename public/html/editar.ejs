@@ -30,8 +30,7 @@
         action="/admin/events/<%= event._id %>"
         enctype="multipart/form-data"
         autocomplete="off"
-        novalidate
-      >
+        novalidate>
 
       <div class="form__group-container">
 
@@ -44,8 +43,7 @@
               id="id"
               class="form__input"
               readonly
-              required
-            />
+              required>
         </div>
       </div>
 
@@ -58,10 +56,8 @@
               name="title"
               id="title"
               class="form__input"
-              autocomplete="off"
               maxlength="30"
-              required
-            />
+              required>
           </div>
 
           <div class="form__group">
@@ -72,11 +68,9 @@
                 name="shortDate"
                 id="shortDate"
                 class="form__input"
-                autocomplete="off"
                 maxlength="30"
                 placeholder="06/06/2019 (20:30hs)"
-                required
-              />
+                required>
           </div>
 
           <div class="form__group">
@@ -87,10 +81,8 @@
                 name="longDate"
                 id="longDate"
                 class="form__input"
-                autocomplete="off"
                 maxlength="30"
-                placeholder="Viernes, 6 de Junio del 2019 (20:30hs)"
-              />
+                placeholder="Viernes, 6 de Junio del 2019 (20:30hs)">
           </div>
         </div>
         <div class="form__group-container">
@@ -127,15 +119,13 @@
 
         <div class="form__group-container">
           <div class="form__group">
-            <label for="poster" class="form__label">Poster*</label>
+            <label for="poster" class="form__label">Poster</label>
             <img src="data:<%= event.poster.mimetype %>;base64,<%= event.poster.rawImage %>" alt="">
             <input
               type="file"
               name="poster"
               id="poster"
-              class="form__input"
-              required
-            />
+              class="form__input">
           </div>
 
           <div class="form__group">
@@ -146,10 +136,8 @@
               name="link"
               id="link"
               class="form__input"
-              autocomplete="off"
               placeholder="https://www.miwebsite.com/"
-              required
-            />
+              required>
             </div>
 
           <div class="form__group">
@@ -159,8 +147,7 @@
               type="file"
               name="background"
               id="background"
-              class="form__input"
-            />
+              class="form__input">
           </div>
         </div>
 
@@ -172,9 +159,7 @@
               value="<%= event.authors %>"
               name="authors"
               id="authors"
-              class="form__input"
-              autocomplete="off"
-            />
+              class="form__input">
           </div>
           <div class="form__group">
             <label for="cast" class="form__label">Reparto</label>
@@ -183,9 +168,7 @@
               value="<%= event.cast %>"
               name="cast"
               id="cast"
-              class="form__input"
-              autocomplete="off"
-            />
+              class="form__input">
           </div>
           <div class="form__group">
             <label for="directors" class="form__label">Directores</label>
@@ -194,24 +177,18 @@
               value="<%= event.directors %>"
               name="directors"
               id="directors"
-              class="form__input"
-              autocomplete="off"
-            />
+              class="form__input">
           </div>
         </div>
 
         <div class="form__group-container">
           <div class="form__group">
-            <label for="description" class="form__label--textarea"
-              >Descripción*</label
-            >
+            <label for="description" class="form__label--textarea">Descripción*</label>
             <textarea
               name="description"
               id="description"
               class="form__textarea"
-              autocomplete="off"
-              required
-            ><%= event.description %></textarea>
+              required><%= event.description %></textarea>
           </div>
         </div>
 

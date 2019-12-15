@@ -101,8 +101,12 @@
         transition: all .2s;
         background-color: #000;
         height: calc(100vh - 4.5rem - #{$footer-height});
-        // max-height: calc(100% - 4.5rem);
         overflow-y: auto;
+
+        &.navigation__admin {
+            height: calc(100vh - 4.5rem);
+            padding-bottom: 3rem;
+        }
     }
   
   .creator {

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+const formattedDescription = description => description.replace(new RegExp(/\.\s+/, 'g'), '.<br><br>');
+
+const plainDescription = description => description.replace(new RegExp(/<br>/, 'g'), '\n');
+
 const EventSchema = new Schema({
   title: {
     type: String,
@@ -57,7 +61,11 @@ const EventSchema = new Schema({
       rawImage: {
         type: Buffer,
         required: true,
-        get: rawImage => console.log(rawImage),
+        get: (background) => {
+          const parsedBackground = background;
+          parsedBackground.rawImage = background.rawImage.toString('base64');
+          return parsedBackground;
+        },
       },
       mimetype: { type: String, required: true },
     },
@@ -71,6 +79,9 @@ const EventSchema = new Schema({
   description: {
     type: String,
     required: true,
+    get: (description) => {
+      return plainDescription(description);
+    },
   },
   authors: {
     type: String,
@@ -88,8 +99,6 @@ const EventSchema = new Schema({
   toObject: { getters: true },
   toJSON: { getters: false },
 });
-
-const formattedDescription = description => description.replace(new RegExp(/\.\s+/, 'g'), '.<br><br>');
 
 EventSchema.pre('save', function (next) {
   if (!this.background) {
