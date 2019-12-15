@@ -36,14 +36,14 @@
                         <div class="event__body">
                             <a href="#<%= events[event]._id %>" class="event__link event__sinopsis""><%= events[event].more %></a>
                             <div class="event__poster">
-                                <img class="event__img" src="/img/<%= events[event].posterPath %>" alt="<%= events[event].title %>">
+                                <img class="event__img" src="data:<%= events[event].poster.mimetype %>;base64,<%= events[event].poster.rawImage %>" alt="<%= events[event].title %>">
                                 <h2 class="event__title"><%= events[event].title %></h2>
                             </div>
                             <a href="<%= events[event].link %>" class="event__link" target="_blank"><%= events[event].action %></a>
                             <p class="event__date"><%= events[event].shortDate %></p>
                         </div>
                     </article>
-                    <div class="popup" id="<%= events[event]._id %>" style="background-image: url('/img/<%= events[event].backgroundPath %>')">
+                    <div class="popup" id="<%= events[event]._id %>" style="background-image: url('data:<%= events[event].background.mimetype %>;base64,<%= events[event].background.rawImage %>')">
                         <div class="popup__nav">
                             <a href="#" class="popup__close popup__link" data-back="<%= events[event]._id %>">Volver</a>
                             <a href="<%= events[event].link %>" class="popup__buy popup__link" target="_blank"><%= events[event].action %></a>

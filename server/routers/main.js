@@ -95,14 +95,13 @@ const sendMail = function (req, res) {
   const transporter = nodemailer.createTransport({
     host: 'smtp.sendgrid.net',
     port: process.env.SMTP_PORT,
-    tls: true,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
     tls: {
       rejectUnauthorized: true,
-    }
+    },
   });
 
   // const transporter = nodemailer.createTransport({

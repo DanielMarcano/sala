@@ -35,7 +35,7 @@
                         <div class="event__body">
                             <a href="http://www.salaonbcn.com/admin/events/editar/<%= events[event]._id %>" class="event__link event__sinopsis"">Editar</a>
                             <div class="event__poster">
-                                <img class="event__img" src="/img/<%= events[event].posterPath %>" alt="<%= events[event].title %>">
+                                <img class="event__img" src="data:<%= events[event].poster.mimetype %>;base64,<%= events[event].poster.rawImage %>" alt="<%= events[event].title %>">
                                 <h2 class="event__title"><%= events[event].title %></h2>
                             </div>
                             <a href="http://www.salaonbcn.com/admin/events/delete/<%= events[event]._id %>" class="event__link" target="_blank">Eliminar</a>

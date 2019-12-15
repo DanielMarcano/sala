@@ -1,78 +1,94 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
+const { Schema } = mongoose;
 
 const EventSchema = new Schema({
   title: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   type: {
     type: String,
     enum: ['Teatro', 'Micro Teatro', 'Concierto', 
-    'Película', 'Curso', 'Taller'],
-    required: true
+      'Película', 'Curso', 'Taller'],
+    required: true,
   },
   action: {
     type: String,
     enum: ['Comprar', 'Contactar'],
-    default: 'Comprar'
+    default: 'Comprar',
   },
   shortDate: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   lastDate: {
     type: String,
-    trim: true
+    trim: true,
   },
   longDate: {
     type: String,
-    trim: true
-  },
-  posterPath: {
-    type: String,
-    required: true,
-    trim: true
+    trim: true,
   },
   link: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
-  backgroundPath: {
-    type: String,
-    trim: true
+  poster: {
+    type: {
+      rawImage: {
+        type: Buffer,
+        required: true,
+      },
+      mimetype: { type: String, required: true },
+    },
+    required: true,
+  },
+  background: {
+    type: {
+      rawImage: {
+        type: Buffer,
+        required: true,
+        get: rawImage => console.log(rawImage),
+      },
+      mimetype: { type: String, required: true },
+    },
+    trim: true,
   },
   more: {
     type: String,
     enum: ['Descripción', 'Sinopsis'],
-    default: 'Descripción'
+    default: 'Descripción',
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   authors: {
     type: String,
-    trim: true
+    trim: true,
   },
   cast: {
     type: String,
-    trim: true
+    trim: true,
   },
   directors: {
     type: String,
-    trim: true
-  }
-})
+    trim: true,
+  },
+}, {
+  toObject: { getters: true },
+  toJSON: { getters: true },
+});
 
-const formattedDescription = (description) => description.replace(new RegExp(/\.\s+/, 'g'), '.<br><br>');
+const formattedDescription = description => description.replace(new RegExp(/\.\s+/, 'g'), '.<br><br>');
 
 EventSchema.pre('save', function (next) {
-  if (!this.backgroundPath) {
-    this.backgroundPath = this.get('posterPath');
+  if (!this.background) {
+    this.background = this.get('poster');
   }
   if (!this.longDate) {
     this.longDate = this.get('shortDate');

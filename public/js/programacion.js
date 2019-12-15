@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const enableScroll = () => document.documentElement.classList.remove('u-disable-scroll');
   const sinopsisClickHandler = (event) => {
     disableScroll();
-  }
+  };
 
   const initializeSinopsisButtons = () => {
     sinopsisButtons.forEach(element => element.addEventListener('click', sinopsisClickHandler));

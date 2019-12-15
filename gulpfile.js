@@ -1,16 +1,10 @@
-// TODO: Uninstall commented thingies from the project!
-
 const gulp = require('gulp');
 const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync');
 const inlinesource = require('gulp-inline-source');
 const browserify = require('browserify');
-// const rename = require('gulp-rename');
-// const glob = require('glob');
-// const es = require('event-stream');
 const babelify = require('babelify');
-// const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -18,7 +12,6 @@ const imagemin = require('gulp-imagemin');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngQuant = require('imagemin-pngquant');
 const htmlmin = require('gulp-htmlmin');
-// const log = require('gulplog');
 const tap = require('gulp-tap');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
@@ -71,7 +64,6 @@ const startBrowserSync = (done) => {
     proxy: 'localhost:3000',
     tunnel: false,
   });
-  console.log('yo vine paka???');
   done();
 };
 

@@ -1,23 +1,25 @@
 const _ = require('lodash');
 const router = require('express').Router();
-const { Event } = require('../models/event');
-const utilities = require('../utilities/routes');
-const path = require('path');
-const multer  = require('multer');
-const crypto = require('crypto');
 const mime = require('mime');
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, '../../dist/img'))
-  },
-  filename: function (req, file, cb) {
-    crypto.pseudoRandomBytes(16, function (err, raw) {
-      if (err) return cb(err)
+const path = require('path');
+const multer = require('multer');
+const crypto = require('crypto');
+const fs = require('fs');
+const { Event } = require('../models/event');
 
-      cb(null, `${raw.toString('hex')}.${mime.extension(file.mimetype)}`)
-    })
-  }
-})
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, '../../dist/img'));
+  },
+  filename: (req, file, cb) => {
+    crypto.pseudoRandomBytes(16, (err, raw) => {
+      if (err) return cb(err);
+
+      cb(null, `${raw.toString('hex')}.${mime.extension(file.mimetype)}`);
+    });
+  },
+});
+
 const upload = multer({ storage });
 
 router.get('/', (req, res) => {
@@ -28,7 +30,7 @@ router
   .route('/events')
   .post(upload.fields([{ name: 'poster', maxCount: 1 }, { name: 'background', maxCount: 1 }]), async (req, res) => {
     const eventData = _.pick(req.body, [
-      'title', 
+      'title',
       'type',
       'shortDate',
       'longDate',
@@ -36,13 +38,21 @@ router
       'authors',
       'cast',
       'directors',
-      'link'
+      'link',
     ]);
 
-    eventData.posterPath = await req.files.poster[0].filename;
-    
+    const { mimetype: posterMimetype } = req.files.poster[0];
+    const posterImage = await fs.readFileSync(req.files.poster[0].path);
+    const posterBase64 = posterImage.toString('base64');
+
+    eventData.poster = { rawImage: Buffer.from(posterBase64, 'base64'), mimetype: posterMimetype };
+
     if (req.files.background) {
-      eventData.backgroundPath = req.files.background[0].filename;
+      const { mimetype: backgroundMimetype } = req.files.background[0];
+      const backgroundImage = fs.readFileSync(req.files.background[0].path);
+      const backgroundBase64 = backgroundImage.toString('base64');
+
+      eventData.background = { rawImage: Buffer.from(backgroundBase64, 'base64'), mimetype: backgroundMimetype };
     }
 
     const event = new Event(eventData);
@@ -58,18 +68,18 @@ router
 
 const getAllEvents = async () => {
   const model = Event;
-    try {
-      const result = await model.find({})
-      return JSON.stringify(result);
-    } catch(e) {
-      return e;
-    }
-  };
+  try {
+    const result = await model.find({});
+    return JSON.stringify(result);
+  } catch (e) {
+    return e;
+  }
+};
 
-  router.get('/lista', async (req, res) => {
-    const events = await getAllEvents();
-    res.status(200).render('html/lista', { events: JSON.parse(events) });
-  });
+router.get('/lista', async (req, res) => {
+  const events = await getAllEvents();
+  res.status(200).render('html/lista', { events: JSON.parse(events) });
+});
 
 router
   .route('/events/:id')
@@ -89,7 +99,7 @@ router
   .post(upload.fields([{ name: 'poster', maxCount: 1 }, { name: 'background', maxCount: 1 }]), async (req, res) => {
     const update = _.pick(req.body, [
       'id',
-      'title', 
+      'title',
       'type',
       'shortDate',
       'longDate',
@@ -97,7 +107,7 @@ router
       'authors',
       'cast',
       'directors',
-      'link'
+      'link',
     ]);
 
     if (req.files.poster) {
@@ -127,7 +137,7 @@ router
     }
   });
 
-  router
+router
   .route('/events/delete/:id')
   .get(async (req, res) => {
     const _id = req.params.id;
@@ -145,7 +155,7 @@ router
     }
   });
 
-  router
+router
   .route('/events/editar/:id')
   .get(async (req, res) => {
     const _id = req.params.id;
@@ -159,26 +169,26 @@ router
     } catch (error) {
       res.status(500).send(error.message);
     }
-  })
+  });
 
-  // router.get('/logout', (req, res) => {
-  //   // console.log(req.user);
-  //   if (req.userContext) {
-  //     const idToken = req.userContext.tokens.id_token;
-  //     const to = encodeURI('http://localhost:3001');
-  //     const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
-  //     console.log(req);
-  //     console.log(req.logout);
-  
-  //     req.logout();
-  //     res.redirect(
-  //       `https://dev-452247.okta.com/oauth2/default/v1/logout?${params}`
-  //     );
-  //   } else {
-  //     res.redirect('/');
-  //   }
-  // });
+// router.get('/logout', (req, res) => {
+//   // console.log(req.user);
+//   if (req.userContext) {
+//     const idToken = req.userContext.tokens.id_token;
+//     const to = encodeURI('http://localhost:3001');
+//     const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
+//     console.log(req);
+//     console.log(req.logout);
+
+//     req.logout();
+//     res.redirect(
+//       `https://dev-452247.okta.com/oauth2/default/v1/logout?${params}`
+//     );
+//   } else {
+//     res.redirect('/');
+//   }
+// });
 module.exports = {
   admin: router,
   getAllEvents,
-}
+};
