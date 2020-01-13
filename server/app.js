@@ -18,7 +18,7 @@ const app = express();
 
 i18next
   .use(Backend)
-  // .use(i18nextMiddleware.LanguageDetector)
+  .use(i18nextMiddleware.LanguageDetector)
   .init({
     lng: 'es',
     backend: {
@@ -28,13 +28,21 @@ i18next
     ns: ['translations'],
     defaultNS: 'translations',
     fallbackLng: 'es',
-    preload: ['es'],
+    preload: ['es', 'en', 'cat'],
     saveMissing: true,
-    removeLngFromUrl: true,
+    debug: true,
+    detection: {
+      order: ['path', 'session', 'querystring', 'cookie'],
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupSession: 'lng',
+      lookupPath: 'lng',
+    },
   });
 
-
-app.use(i18nextMiddleware.handle(i18next));
+app.use(i18nextMiddleware.handle(i18next, {
+  removeLngFromUrl: false,
+}));
 
 const oidc = new ExpressOIDC({
   issuer: 'https://dev-452247.okta.com/oauth2/default',
