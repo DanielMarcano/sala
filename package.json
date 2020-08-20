@@ -16,7 +16,7 @@
   "dependencies": {
     "@okta/oidc-middleware": "^2.0.0",
     "@okta/okta-sdk-nodejs": "^1.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "compression": "1.7.2",
     "ejs": "2.6.1",
     "express": "4.16.3",
